@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Me4chi — Game, Desktop and Web Developer</title>
+  <desc id="desc">Animated Japanese pixel art night scene with a torii gate, moon, lanterns and stars.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#100c28"/>
+      <stop offset="1" stop-color="#211747"/>
+    </linearGradient>
+    <filter id="pinkGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="moonGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#fff" stroke-opacity=".035"/>
+    </pattern>
+    <style>
+      .star{animation:blink 1.8s steps(2) infinite}.s2{animation-delay:-.6s}.s3{animation-delay:-1.2s}
+      .cloud{animation:drift 15s linear infinite}.cloud2{animation-duration:22s;animation-delay:-8s}
+      .lantern{transform-origin:top center;animation:sway 3s ease-in-out infinite}.lantern2{animation-delay:-1.4s}
+      .petal{animation:fall 7s linear infinite}.p2{animation-delay:-2s}.p3{animation-delay:-5s}
+      @keyframes blink{50%{opacity:.18}}@keyframes drift{to{transform:translateX(1350px)}}
+      @keyframes sway{50%{transform:rotate(4deg)}}@keyframes fall{to{transform:translate(80px,380px) rotate(360deg)}}
+    </style>
+  </defs>
+
+  <rect width="1200" height="360" rx="10" fill="url(#sky)"/>
+  <rect width="1200" height="360" rx="10" fill="url(#grid)"/>
+  <path d="M0 314h1200v46H0z" fill="#09071a"/>
+  <path d="M0 307q120-40 240 0t240 0 240 0 240 0 240 0v53H0z" fill="#0d0920"/>
+
+  <g filter="url(#moonGlow)">
+    <circle cx="965" cy="98" r="70" fill="#ffcc4d"/>
+    <rect x="932" y="65" width="16" height="11" fill="#dba544" opacity=".55"/>
+    <rect x="986" y="105" width="22" height="13" fill="#dba544" opacity=".5"/>
+  </g>
+
+  <g fill="#fff8e7" class="star">
+    <rect x="82" y="68" width="6" height="18"/><rect x="76" y="74" width="18" height="6"/>
+    <rect x="720" y="54" width="5" height="15"/><rect x="715" y="59" width="15" height="5"/>
+  </g>
+  <g fill="#59e6ff" class="star s2">
+    <rect x="810" y="132" width="5" height="15"/><rect x="805" y="137" width="15" height="5"/>
+  </g>
+  <g fill="#ff5c9a" class="star s3">
+    <rect x="1105" y="58" width="5" height="15"/><rect x="1100" y="63" width="15" height="5"/>
+  </g>
+
+  <g class="cloud" fill="#7666a0" opacity=".35" transform="translate(-180 0)">
+    <rect y="128" width="84" height="13"/><rect x="24" y="115" width="58" height="13"/><rect x="76" y="128" width="72" height="13"/>
+  </g>
+  <g class="cloud cloud2" fill="#7666a0" opacity=".24" transform="translate(-420 70)">
+    <rect y="128" width="84" height="13"/><rect x="24" y="115" width="58" height="13"/><rect x="76" y="128" width="72" height="13"/>
+  </g>
+
+  <g transform="translate(866 164)" fill="#f0445c" filter="url(#pinkGlow)">
+    <rect x="0" y="0" width="250" height="17"/><rect x="-15" y="-10" width="280" height="10"/>
+    <rect x="30" y="44" width="190" height="13"/>
+    <rect x="48" y="15" width="21" height="174"/><rect x="181" y="15" width="21" height="174"/>
+  </g>
+
+  <g class="lantern" transform="translate(108 22)">
+    <path d="M20 0v46" stroke="#7666a0" stroke-width="3"/>
+    <rect y="46" width="42" height="9" fill="#34152c"/><rect y="55" width="42" height="48" fill="#ff5c9a" filter="url(#pinkGlow)"/><rect y="103" width="42" height="9" fill="#34152c"/>
+    <text x="21" y="88" text-anchor="middle" font-family="monospace" font-size="23" fill="#5f1b39">夢</text>
+  </g>
+  <g class="lantern lantern2" transform="translate(1120 54)">
+    <path d="M20 0v40" stroke="#7666a0" stroke-width="3"/>
+    <rect y="40" width="42" height="9" fill="#34152c"/><rect y="49" width="42" height="48" fill="#ff5c9a" filter="url(#pinkGlow)"/><rect y="97" width="42" height="9" fill="#34152c"/>
+    <text x="21" y="82" text-anchor="middle" font-family="monospace" font-size="23" fill="#5f1b39">創</text>
+  </g>
+
+  <g font-family="monospace" fill="#fff8e7">
+    <text x="90" y="166" font-size="66" font-weight="900" letter-spacing="8">ME4CHI</text>
+    <text x="94" y="205" font-size="17" fill="#ffb6d4" letter-spacing="5">GAME • DESKTOP • WEB DEVELOPER</text>
+    <text x="94" y="244" font-size="19" fill="#ffcc4d" letter-spacing="9">ゲーム・アプリ・ウェブ</text>
+    <rect x="94" y="272" width="310" height="4" fill="#ff5c9a"/>
+    <rect x="414" y="272" width="72" height="4" fill="#59e6ff"/>
+  </g>
+
+  <g class="petal" fill="#ffb6d4"><rect x="340" y="-20" width="11" height="7" transform="rotate(35 340 -20)"/></g>
+  <g class="petal p2" fill="#ff5c9a"><rect x="610" y="-20" width="11" height="7" transform="rotate(35 610 -20)"/></g>
+  <g class="petal p3" fill="#ffb6d4"><rect x="780" y="-20" width="11" height="7" transform="rotate(35 780 -20)"/></g>
+
+  <rect x="8" y="8" width="1184" height="344" rx="6" fill="none" stroke="#ff5c9a" stroke-width="3"/>
+  <path d="M8 32h24V8M1192 32h-24V8M8 328h24v24M1192 328h-24v24" fill="none" stroke="#59e6ff" stroke-width="6"/>
+</svg>

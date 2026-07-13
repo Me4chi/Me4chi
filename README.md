@@ -1,60 +1,66 @@
-<h1 align="center">Hi, I'm Me4chi 👋</h1>
-
 <p align="center">
-  <strong>Game, Desktop & Web Developer</strong><br>
-  I turn ideas into playable games and useful software.
+  <a href="https://me4chi.github.io/Me4chi/">
+    <img src="https://raw.githubusercontent.com/Me4chi/Me4chi/main/assets/profile-banner.svg" width="100%" alt="Me4chi — Game, Desktop and Web Developer">
+  </a>
 </p>
 
 <p align="center">
-  <a href="https://me4chi.github.io/Me4chi/"><img src="https://img.shields.io/badge/Portfolio-View_website-ADFF2F?style=for-the-badge&logoColor=black" alt="Portfolio"></a>
-  <a href="https://github.com/Me4chi"><img src="https://img.shields.io/badge/GitHub-Me4chi-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-  <a href="https://t.me/despairOFexistence"><img src="https://img.shields.io/badge/Telegram-Message_me-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
-  <a href="mailto:uzlow.k005@gmail.com"><img src="https://img.shields.io/badge/Email-Let's_talk-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+  <a href="https://me4chi.github.io/Me4chi/"><img src="https://img.shields.io/badge/ポートフォリオ-OPEN_PORTFOLIO-ff5c9a?style=for-the-badge&labelColor=100c28" alt="Portfolio"></a>
+  <a href="https://t.me/Me4chiKun"><img src="https://img.shields.io/badge/電報-TELEGRAM-59e6ff?style=for-the-badge&labelColor=100c28" alt="Telegram"></a>
+  <a href="mailto:uzlow.k005@gmail.com"><img src="https://img.shields.io/badge/メール-SEND_EMAIL-ffcc4d?style=for-the-badge&labelColor=100c28" alt="Email"></a>
 </p>
+
+<div align="center">
+
+### 「 プレイヤー情報 」 PLAYER PROFILE
+
+**Game · Desktop · Web Developer**
+
+I turn ideas into playable worlds and useful software.<br>
+Clean code, responsive interfaces and clear communication from start to release.
+
+</div>
 
 ---
 
-### About me
+### 「 技能 」 TECH STACK
 
-- 🎮 I build 2D and 3D games with **Unity** and **Godot**
-- 🖥️ I create desktop applications with **C#** and **.NET**
-- 🌐 I develop responsive websites with **HTML**, **CSS** and **JavaScript**
-- 🛠️ I work with gameplay systems, UI, prototypes, bug fixing and API integration
-- 🤝 Available for freelance projects
-
-### Tech stack
-
-<p>
-  <img src="https://img.shields.io/badge/Unity-000000?style=flat-square&logo=unity&logoColor=white" alt="Unity">
-  <img src="https://img.shields.io/badge/Godot-478CBF?style=flat-square&logo=godotengine&logoColor=white" alt="Godot">
-  <img src="https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt="C sharp">
-  <img src="https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt=".NET">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git">
+<p align="center">
+  <img src="https://img.shields.io/badge/Unity-100c28?style=for-the-badge&logo=unity&logoColor=white" alt="Unity">
+  <img src="https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=godotengine&logoColor=white" alt="Godot">
+  <img src="https://img.shields.io/badge/C%23-8b5cf6?style=for-the-badge&logo=dotnet&logoColor=white" alt="C sharp">
+  <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET">
+  <br>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=100c28" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
 </p>
 
-### Selected projects
+### 「 クエスト 」 WHAT I BUILD
 
-| Project | Stack | Description |
-|---|---|---|
-| [Curses of Legends](https://github.com/Me4chi/Curses-Of-Legends) | Godot, GDScript | Game project with player, enemy, dialogue and scene systems |
-| [Live or Death](https://github.com/Me4chi/Live-or-Death) | Unity, C#, ShaderLab | Unity game project with C# gameplay code and custom shaders |
-| [Love](https://github.com/Me4chi/Love) | HTML, CSS, JavaScript | Interactive browser experience |
+| 🎮 GAME DEVELOPMENT | 🖥️ DESKTOP APPLICATIONS | 🌐 WEB DEVELOPMENT |
+|:---:|:---:|:---:|
+| Unity · Godot | C# · .NET | HTML · CSS · JavaScript |
+| 2D / 3D gameplay | Windows utilities | Responsive websites |
+| UI · Prototypes · Fixes | APIs · JSON · Git | Animation · Interactive UI |
 
-### What I can build
+### 「 作業方法 」 HOW I WORK
 
 ```text
-Games                 Desktop apps            Websites
-Unity / Godot         C# / .NET               HTML / CSS / JS
-2D & 3D gameplay      Windows utilities       Responsive layouts
-UI and prototypes     API integrations        Interactive pages
+01  DISCOVER  ━━━  goals, scope and the smallest useful version
+02  BUILD     ━━━  visible progress in short, testable stages
+03  POLISH    ━━━  testing, responsive details and performance
+04  DELIVER   ━━━  clean source files and a clear handoff
 ```
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=Me4chi&show_icons=true&hide_border=true&bg_color=100c28&title_color=ff5c9a&icon_color=59e6ff&text_color=fff8e7" height="165" alt="GitHub statistics">
+</p>
 
 ---
 
 <p align="center">
-  <strong>Have a project in mind?</strong><br>
-  <a href="mailto:uzlow.k005@gmail.com">Send me an email</a> · <a href="https://t.me/despairOFexistence">Message me on Telegram</a>
+  <strong>新しいクエストがありますか？ · HAVE A NEW QUEST?</strong><br><br>
+  <a href="mailto:uzlow.k005@gmail.com">Email</a> · <a href="https://t.me/Me4chiKun">Telegram</a> · <a href="https://me4chi.github.io/Me4chi/">Portfolio</a>
 </p>
