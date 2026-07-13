@@ -13,7 +13,7 @@
   --sun: #ffcc4d;
   --cyan: #59e6ff;
   --red: #f0445c;
-  --max: 1180px;
+  --max: 1360px;
   --pixel: "Press Start 2P", monospace;
   --jp: "DotGothic16", sans-serif;
 }
@@ -174,6 +174,7 @@ h1, h2, h3 { margin: 0; line-height: 1.08; }
 h1, .section h2, .contact-section h2 { font-family: var(--jp); }
 h1 { max-width: 700px; font-size: clamp(52px, 6.6vw, 87px); letter-spacing: -.045em; text-wrap: balance; }
 h1 span, .section-heading h2 span, .about-section h2 span { color: var(--sakura); text-shadow: 4px 4px 0 #5a214c; }
+h1 .hero-last { color: var(--paper); text-shadow: none; }
 .jp-title { margin: 17px 0 0; color: var(--sun); font-family: var(--jp); font-size: 22px; letter-spacing: .28em; }
 .hero-text { max-width: 650px; margin: 25px 0 34px; color: var(--muted); font-size: 17px; }
 .hero-actions { display: flex; align-items: center; gap: 28px; }
@@ -393,6 +394,106 @@ footer .text-link { font-size: 6px; }
   .pixel-moon { width: 95px; height: 95px; }
   .quest-card { padding: 22px; }
   .contact-section h2 { font-size: 44px; }
+}
+
+@media (min-width: 1001px) {
+  body::before,
+  body::after {
+    position: fixed;
+    z-index: 12;
+    top: 50%;
+    color: #8d82aa;
+    font-family: var(--pixel);
+    font-size: 6px;
+    letter-spacing: .28em;
+    writing-mode: vertical-rl;
+    pointer-events: none;
+  }
+  body::before { content: "東京 // DIGITAL CRAFT"; left: 22px; transform: translateY(-50%); }
+  body::after { content: "SCROLL ↓ // 2026"; right: 22px; transform: translateY(-50%) rotate(180deg); }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: 88px;
+    border-bottom: 0;
+  }
+  .site-header::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+    border-bottom: 2px solid #3a2b685e;
+    background: #09071ad9;
+    backdrop-filter: blur(16px);
+    transform: translateX(-50%);
+  }
+  nav { gap: 44px; }
+
+  .hero {
+    min-height: calc(100svh - 88px);
+    grid-template-columns: minmax(0, 1.08fr) minmax(540px, .92fr);
+    gap: 76px;
+    padding: 58px 34px 82px;
+    border-right: 1px solid #3a2b6857;
+    border-left: 1px solid #3a2b6857;
+    background: linear-gradient(90deg, #100c2826, transparent 34% 66%, #32164a1f);
+  }
+  .hero::before,
+  .hero::after {
+    position: absolute;
+    color: #70668d;
+    font-family: var(--pixel);
+    font-size: 6px;
+    letter-spacing: .12em;
+  }
+  .hero::before { content: "X: 043.21  Y: 018.06"; top: 22px; left: 34px; }
+  .hero::after { content: "SYSTEM READY ■"; right: 34px; bottom: 22px; color: var(--cyan); }
+  .hero-copy h1 { max-width: 780px; font-size: clamp(62px, 4.45vw, 80px); }
+  .hero-copy h1 > span { display: block; white-space: nowrap; }
+  .hero-text { max-width: 700px; }
+  .mini-stats { max-width: 720px; margin-top: 44px; }
+
+  .hero-visual { min-height: 620px; }
+  .pixel-scene { inset: 0; }
+  .profile-card { width: 310px; }
+  .pixel-orbit { width: 430px; height: 430px; }
+  .orbit-two { width: 350px; height: 350px; }
+  .torii { width: 295px; height: 250px; }
+  .torii-leg { height: 230px; }
+
+  .section { padding: 150px 34px; }
+  .section-heading { position: relative; }
+  .section-heading:not(.row-heading)::after {
+    content: "◆  桜  ◆";
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+    color: #ff5c9a38;
+    font-family: var(--jp);
+    font-size: 48px;
+    letter-spacing: .45em;
+  }
+  .service-grid { gap: 28px; padding: 10px 0 22px; }
+  .quest-card { min-height: 455px; padding: 32px; }
+  .quest-card:nth-child(1),
+  .quest-card:nth-child(3) { transform: translateY(14px); }
+  .quest-card.hot { transform: translateY(-12px); }
+  .quest-card:nth-child(1):hover,
+  .quest-card:nth-child(3):hover { transform: translateY(3px); }
+  .quest-card.hot:hover { transform: translateY(-23px); }
+  .quest-card h3 { font-size: 32px; }
+
+  .inventory-window { box-shadow: 16px 16px 0 #03020a; }
+  .skill-groups article { min-height: 325px; padding: 42px 36px; }
+  .process-map { gap: 2px; background: var(--line); }
+  .process-map li { min-height: 270px; background: linear-gradient(180deg, #ff5c9a10, #100c28 72%); }
+  .process-map b { font-size: 29px; }
+  .about-section { padding-top: 165px; padding-bottom: 165px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
