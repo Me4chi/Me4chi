@@ -207,13 +207,5 @@
     <p>© 2026 ME4CHI · BUILT WITH HTML & CSS · 日本</p>
     <a class="text-link" href="#top">TOP ↑</a>
   </footer>
-  <script>
-    const marquee = document.querySelector('.marquee');
-    new IntersectionObserver((entries, observer) => {
-      if (!entries[0].isIntersecting) return;
-      marquee.classList.add('is-running');
-      observer.disconnect();
-    }, { threshold: .95 }).observe(marquee);
-  </script>
 </body>
 </html>

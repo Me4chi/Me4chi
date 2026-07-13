@@ -246,9 +246,8 @@ h1 .hero-last { color: var(--paper); text-shadow: none; }
 @keyframes orbit-spin { to { transform: rotate(360deg); } }
 
 .marquee { position: relative; z-index: 3; overflow: hidden; padding-left: 32px; border-top: 2px solid var(--line); border-bottom: 2px solid var(--line); background: #130e2d; }
-.marquee-track { width: max-content; display: flex; align-items: center; min-height: 82px; font-family: var(--pixel); font-size: 9px; color: #9890b6; animation: marquee 24s linear 1.2s infinite paused; will-change: transform; }
+.marquee-track { width: max-content; display: flex; align-items: center; min-height: 82px; font-family: var(--pixel); font-size: 9px; color: #9890b6; animation: marquee 24s linear infinite; will-change: transform; }
 .marquee-set { display: flex; flex: none; align-items: center; gap: 32px; padding-right: 32px; }
-.marquee.is-running .marquee-track { animation-play-state: running; }
 .marquee i { color: var(--sakura); font-family: var(--jp); font-size: 15px; font-style: normal; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
