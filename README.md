@@ -8,7 +8,7 @@
 <p align="center">
   <a href="https://me4chi.github.io/Me4chi/"><img src="https://img.shields.io/badge/Portfolio-View_website-ADFF2F?style=for-the-badge&logoColor=black" alt="Portfolio"></a>
   <a href="https://github.com/Me4chi"><img src="https://img.shields.io/badge/GitHub-Me4chi-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
-  <a href="https://t.me/despairOFexistence"><img src="https://img.shields.io/badge/Telegram-Message_me-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
+  <a href="https://t.me/Me4chiKun"><img src="https://img.shields.io/badge/Telegram-Message_me-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
   <a href="mailto:uzlow.k005@gmail.com"><img src="https://img.shields.io/badge/Email-Let's_talk-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
 </p>
 
