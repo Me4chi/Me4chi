@@ -523,12 +523,58 @@ footer .text-link { font-size: 6px; }
       linear-gradient(var(--cyan) 50%, transparent 0) 8px 8px / 16px 16px;
     opacity: .5;
   }
-  .desktop-stack span { color: var(--sakura-light); font-size: clamp(7px, .46vw, 10px); line-height: 1.8; }
-  .desktop-stack b { color: var(--paper); font-weight: 400; letter-spacing: .08em; }
-  .desktop-stack i { color: var(--sakura); font-family: var(--jp); font-size: clamp(16px, 1vw, 22px); font-style: normal; line-height: .6; }
+  .desktop-stack span {
+    width: 100%;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #ff5c9a4d;
+    color: var(--sakura-light);
+    font-size: clamp(7px, .46vw, 10px);
+    line-height: 1.8;
+  }
+  .desktop-stack b {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 11px;
+    padding: clamp(10px, 1.2vh, 15px) 12px;
+    border: 1px solid #594283;
+    background: linear-gradient(90deg, #ff5c9a12, #59e6ff08);
+    color: var(--paper);
+    font-weight: 400;
+    letter-spacing: .08em;
+    box-shadow: 4px 4px 0 #080617;
+  }
+  .desktop-stack b::before {
+    content: "";
+    flex: none;
+    width: 7px;
+    height: 7px;
+    background: var(--cyan);
+    box-shadow: 3px 3px 0 #59e6ff42;
+  }
+  .stack-art {
+    width: min(100%, 180px);
+    align-self: center;
+    overflow: visible;
+    shape-rendering: crispEdges;
+    filter: drop-shadow(7px 7px 0 #03020a);
+    animation: stack-art-bob 2.8s steps(2, end) infinite alternate;
+  }
+  .art-shadow { fill: #03020a; }
+  .art-paper { fill: var(--paper); }
+  .art-pink { fill: var(--sakura); }
+  .art-cyan { fill: var(--cyan); }
+  .art-ink { fill: var(--night); }
+  .art-sun { fill: var(--sun); }
   .stack-left { left: clamp(18px, 1.5vw, 32px); border-left-color: var(--sakura); animation: stack-sway-left 5s ease-in-out infinite alternate; }
   .stack-right { right: clamp(18px, 1.5vw, 32px); align-items: flex-end; border-right-color: var(--cyan); text-align: right; animation: stack-sway-right 5.4s ease-in-out -2s infinite alternate; }
   .stack-right::before { transform: scaleX(-1); }
+  .stack-right b { flex-direction: row-reverse; background: linear-gradient(90deg, #59e6ff08, #ff5c9a12); }
+  .stack-right b::before { background: var(--sakura); box-shadow: -3px 3px 0 #ff5c9a42; }
+  @keyframes stack-art-bob {
+    from { transform: translateY(-3px); }
+    to { transform: translateY(4px); }
+  }
   @keyframes stack-sway-left {
     from { transform: translateX(-3px) rotate(-.2deg); }
     to { transform: translateX(6px) rotate(.2deg); }
