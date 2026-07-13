@@ -1,26 +1,60 @@
-![bd565dcc0a556add0b0a0ed6b26d686e](https://github.com/Apalon13/Apalon13/assets/129262864/e99f5757-6600-44c3-89a6-e388bbc2d6dd)
+<h1 align="center">Hi, I'm Me4chi 👋</h1>
 
-### Languages
+<p align="center">
+  <strong>Game, Desktop & Web Developer</strong><br>
+  I turn ideas into playable games and useful software.
+</p>
 
-![C#](https://img.shields.io/badge/C%23-black?style=flat&logo=c%23&logoColor=pink)
-![SQL](https://img.shields.io/badge/-SQL-000?&logo=sqlite&logoColor=pink)
-![JavaScript](https://img.shields.io/badge/JavaScript-black?style=flat&logo=javascript&logoColor=pink)
-![HTML](https://img.shields.io/badge/HTML-black?style=flat&logo=html5&logoColor=pink)
-![CSS](https://img.shields.io/badge/CSS-black?style=flat&logo=css3&logoColor=pink)
-![GDScript](https://img.shields.io/badge/GDScript-black?style=flat&logo=godotengine&logoColor=pink)
-![Go](https://img.shields.io/badge/Go-black?style=flat&logo=go&logoColor=pink)
+<p align="center">
+  <a href="https://me4chi.github.io/Me4chi/"><img src="https://img.shields.io/badge/Portfolio-View_website-ADFF2F?style=for-the-badge&logoColor=black" alt="Portfolio"></a>
+  <a href="https://github.com/Me4chi"><img src="https://img.shields.io/badge/GitHub-Me4chi-181717?style=for-the-badge&logo=github" alt="GitHub"></a>
+  <a href="https://t.me/despairOFexistence"><img src="https://img.shields.io/badge/Telegram-Message_me-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram"></a>
+  <a href="mailto:uzlow.k005@gmail.com"><img src="https://img.shields.io/badge/Email-Let's_talk-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+</p>
 
+---
 
-### Technologies
+### About me
 
-![Unity](https://img.shields.io/badge/Unity-black?style=flat&logo=unity&logoColor=pink)
-![Godot](https://img.shields.io/badge/Godot-black?style=flat&logo=godotengine&logoColor=pink)
-![.NET](https://img.shields.io/badge/.NET-black?style=flat&logo=dotnet&logoColor=pink)
-![Node.js](https://img.shields.io/badge/-Node.js-black?&logo=node.js&logoColor=pink)
+- 🎮 I build 2D and 3D games with **Unity** and **Godot**
+- 🖥️ I create desktop applications with **C#** and **.NET**
+- 🌐 I develop responsive websites with **HTML**, **CSS** and **JavaScript**
+- 🛠️ I work with gameplay systems, UI, prototypes, bug fixing and API integration
+- 🤝 Available for freelance projects
 
-### Social Links
+### Tech stack
 
-[Telegram](https://t.me/despairOFexistence) | [VK](https://vk.com/pchemuja)
+<p>
+  <img src="https://img.shields.io/badge/Unity-000000?style=flat-square&logo=unity&logoColor=white" alt="Unity">
+  <img src="https://img.shields.io/badge/Godot-478CBF?style=flat-square&logo=godotengine&logoColor=white" alt="Godot">
+  <img src="https://img.shields.io/badge/C%23-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt="C sharp">
+  <img src="https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white" alt=".NET">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git">
+</p>
 
-<img height="137px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Apalon13&hide=html&hide_title=true&hide_border=true&layout=compact&langs_count=6&exclude_repo=comp426,Redventures-Movie-Quotes&text_color=000&icon_color=fff&bg_color=0,ffc0cb,ffc0cb,f19cbb&theme=graywhite"/>
- 
+### Selected projects
+
+| Project | Stack | Description |
+|---|---|---|
+| [Curses of Legends](https://github.com/Me4chi/Curses-Of-Legends) | Godot, GDScript | Game project with player, enemy, dialogue and scene systems |
+| [Live or Death](https://github.com/Me4chi/Live-or-Death) | Unity, C#, ShaderLab | Unity game project with C# gameplay code and custom shaders |
+| [Love](https://github.com/Me4chi/Love) | HTML, CSS, JavaScript | Interactive browser experience |
+
+### What I can build
+
+```text
+Games                 Desktop apps            Websites
+Unity / Godot         C# / .NET               HTML / CSS / JS
+2D & 3D gameplay      Windows utilities       Responsive layouts
+UI and prototypes     API integrations        Interactive pages
+```
+
+---
+
+<p align="center">
+  <strong>Have a project in mind?</strong><br>
+  <a href="mailto:uzlow.k005@gmail.com">Send me an email</a> · <a href="https://t.me/despairOFexistence">Message me on Telegram</a>
+</p>
