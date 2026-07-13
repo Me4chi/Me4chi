@@ -58,6 +58,7 @@ img { display: block; max-width: 100%; }
   background: repeating-linear-gradient(0deg, transparent 0 3px, #0002 4px);
   opacity: .3;
 }
+.desktop-stack { display: none; }
 .petal-field { position: fixed; inset: 0; z-index: 15; overflow: hidden; pointer-events: none; }
 .petal-field i {
   position: absolute;
@@ -397,21 +398,7 @@ footer .text-link { font-size: 6px; }
 }
 
 @media (min-width: 1001px) {
-  body::before,
-  body::after {
-    position: fixed;
-    z-index: 12;
-    top: 50%;
-    color: #8d82aa;
-    font-family: var(--pixel);
-    font-size: 6px;
-    letter-spacing: .28em;
-    writing-mode: vertical-rl;
-    pointer-events: none;
-  }
-  body::before { content: "東京 // DIGITAL CRAFT"; left: 22px; transform: translateY(-50%); }
-  body::after { content: "SCROLL ↓ // 2026"; right: 22px; transform: translateY(-50%) rotate(180deg); }
-
+  .marquee { display: none; }
   .site-header {
     position: sticky;
     top: 0;
@@ -439,6 +426,7 @@ footer .text-link { font-size: 6px; }
     grid-template-columns: minmax(0, 1.08fr) minmax(540px, .92fr);
     gap: 76px;
     padding: 58px 34px 82px;
+    border-bottom: 2px solid var(--line);
     border-right: 1px solid #3a2b6857;
     border-left: 1px solid #3a2b6857;
     background: linear-gradient(90deg, #100c2826, transparent 34% 66%, #32164a1f);
@@ -494,6 +482,39 @@ footer .text-link { font-size: 6px; }
   .process-map li { min-height: 270px; background: linear-gradient(180deg, #ff5c9a10, #100c28 72%); }
   .process-map b { font-size: 29px; }
   .about-section { padding-top: 165px; padding-bottom: 165px; }
+}
+
+@media (min-width: 1800px) {
+  .desktop-stack {
+    position: fixed;
+    z-index: 12;
+    top: 50%;
+    display: flex;
+    width: 170px;
+    flex-direction: column;
+    gap: 13px;
+    padding: 20px;
+    background: linear-gradient(135deg, #171133c7, #09071a66);
+    color: #9f96bb;
+    font-family: var(--pixel);
+    font-size: 8px;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+  .desktop-stack::before {
+    content: "";
+    width: 34px;
+    height: 4px;
+    margin-bottom: 6px;
+    background: var(--sakura);
+    box-shadow: 42px 0 0 var(--cyan);
+  }
+  .desktop-stack span { color: var(--sakura-light); font-size: 6px; line-height: 1.7; }
+  .desktop-stack b { color: var(--paper); font-weight: 400; letter-spacing: .08em; }
+  .desktop-stack i { color: var(--sakura); font-family: var(--jp); font-size: 13px; font-style: normal; line-height: .6; }
+  .stack-left { left: 28px; border-left: 2px solid var(--sakura); box-shadow: -8px 8px 0 #05040e; }
+  .stack-right { right: 28px; align-items: flex-end; border-right: 2px solid var(--cyan); box-shadow: 8px 8px 0 #05040e; text-align: right; }
+  .stack-right::before { margin-right: 42px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
