@@ -54,10 +54,6 @@ Clean code, responsive interfaces and clear communication from start to release.
 04  DELIVER   ━━━  clean source files and a clear handoff
 ```
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Me4chi&show_icons=true&hide_border=true&bg_color=100c28&title_color=ff5c9a&icon_color=59e6ff&text_color=fff8e7" height="165" alt="GitHub statistics">
-</p>
-
 ---
 
 <p align="center">
