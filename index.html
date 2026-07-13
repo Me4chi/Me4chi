@@ -79,8 +79,12 @@
 
     <div class="marquee" aria-label="Technology stack">
       <div class="marquee-track">
-        <span>UNITY</span><i>✦</i><span>GODOT</span><i>桜</i><span>C#</span><i>✦</i><span>HTML5</span><i>桜</i><span>CSS3</span><i>✦</i><span>JAVASCRIPT</span><i>桜</i>
-        <span>UNITY</span><i>✦</i><span>GODOT</span><i>桜</i><span>C#</span><i>✦</i><span>HTML5</span><i>桜</i><span>CSS3</span><i>✦</i><span>JAVASCRIPT</span><i>桜</i>
+        <div class="marquee-set">
+          <span>UNITY</span><i>✦</i><span>GODOT</span><i>桜</i><span>C#</span><i>✦</i><span>HTML5</span><i>桜</i><span>CSS3</span><i>✦</i><span>JAVASCRIPT</span><i>桜</i>
+        </div>
+        <div class="marquee-set" aria-hidden="true">
+          <span>UNITY</span><i>✦</i><span>GODOT</span><i>桜</i><span>C#</span><i>✦</i><span>HTML5</span><i>桜</i><span>CSS3</span><i>✦</i><span>JAVASCRIPT</span><i>桜</i>
+        </div>
       </div>
     </div>
 
@@ -203,7 +207,7 @@
       if (!entries[0].isIntersecting) return;
       marquee.classList.add('is-running');
       observer.disconnect();
-    }, { threshold: .25 }).observe(marquee);
+    }, { threshold: .95 }).observe(marquee);
   </script>
 </body>
 </html>
