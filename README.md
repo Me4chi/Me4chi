@@ -5,16 +5,23 @@
 </p>
 
 <p align="center">
-  <a href="https://me4chi.github.io/Me4chi/"><img src="https://img.shields.io/badge/ポートフォリオ-OPEN_PORTFOLIO-ff5c9a?style=for-the-badge&labelColor=100c28" alt="Portfolio"></a>
-  <a href="https://t.me/Me4chiKun"><img src="https://img.shields.io/badge/電報-TELEGRAM-59e6ff?style=for-the-badge&labelColor=100c28" alt="Telegram"></a>
-  <a href="mailto:uzlow.k005@gmail.com"><img src="https://img.shields.io/badge/メール-SEND_EMAIL-ffcc4d?style=for-the-badge&labelColor=100c28" alt="Email"></a>
+  <a href="https://github.com/Me4chi">
+    <img src="https://github.com/Me4chi.png?size=180" width="150" height="150" alt="Me4chi GitHub avatar">
+  </a>
+</p>
+
+<h1 align="center">✿ ME4CHI ✿</h1>
+<p align="center"><strong>Game · Desktop · Web Developer</strong></p>
+
+<p align="center">
+  <a href="https://me4chi.github.io/Me4chi/"><img src="https://img.shields.io/badge/PORTFOLIO-OPEN-0b281b?style=for-the-badge&labelColor=3a2417&color=d0ae67" alt="Portfolio"></a>
+  <a href="https://t.me/Me4chiKun"><img src="https://img.shields.io/badge/TELEGRAM-%40Me4chiKun-0b281b?style=for-the-badge&labelColor=3a2417&color=e97f91" alt="Telegram"></a>
+  <a href="mailto:uzlow.k005@gmail.com"><img src="https://img.shields.io/badge/EMAIL-CONTACT-0b281b?style=for-the-badge&labelColor=3a2417&color=91ad55" alt="Email"></a>
 </p>
 
 <div align="center">
 
-### 「 プレイヤー情報 」 PLAYER PROFILE
-
-**Game · Desktop · Web Developer**
+### ✿ PLAYER PROFILE ✿
 
 I turn ideas into playable worlds and useful software.<br>
 Clean code, responsive interfaces and clear communication from start to release.
@@ -23,21 +30,21 @@ Clean code, responsive interfaces and clear communication from start to release.
 
 ---
 
-### 「 技能 」 TECH STACK
+### ✿ DEVELOPMENT STACK ✿
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Unity-100c28?style=for-the-badge&logo=unity&logoColor=white" alt="Unity">
-  <img src="https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=godotengine&logoColor=white" alt="Godot">
-  <img src="https://img.shields.io/badge/C%23-8b5cf6?style=for-the-badge&logo=dotnet&logoColor=white" alt="C sharp">
-  <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET">
+  <img src="https://img.shields.io/badge/Unity-0b281b?style=for-the-badge&logo=unity&logoColor=f2dda6" alt="Unity">
+  <img src="https://img.shields.io/badge/Godot-0b281b?style=for-the-badge&logo=godotengine&logoColor=91ad55" alt="Godot">
+  <img src="https://img.shields.io/badge/C%23-0b281b?style=for-the-badge&logo=dotnet&logoColor=e97f91" alt="C sharp">
+  <img src="https://img.shields.io/badge/.NET-0b281b?style=for-the-badge&logo=dotnet&logoColor=d0ae67" alt=".NET">
   <br>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=100c28" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+  <img src="https://img.shields.io/badge/HTML5-0b281b?style=for-the-badge&logo=html5&logoColor=e97f91" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-0b281b?style=for-the-badge&logo=css3&logoColor=91ad55" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-0b281b?style=for-the-badge&logo=javascript&logoColor=d0ae67" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Git-0b281b?style=for-the-badge&logo=git&logoColor=f2dda6" alt="Git">
 </p>
 
-### 「 クエスト 」 WHAT I BUILD
+### ✿ AVAILABLE QUESTS ✿
 
 | 🎮 GAME DEVELOPMENT | 🖥️ DESKTOP APPLICATIONS | 🌐 WEB DEVELOPMENT |
 |:---:|:---:|:---:|
@@ -45,7 +52,7 @@ Clean code, responsive interfaces and clear communication from start to release.
 | 2D / 3D gameplay | Windows utilities | Responsive websites |
 | UI · Prototypes · Fixes | APIs · JSON · Git | Animation · Interactive UI |
 
-### 「 作業方法 」 HOW I WORK
+### ✿ MISSION MAP ✿
 
 ```text
 01  DISCOVER  ━━━  goals, scope and the smallest useful version
@@ -57,6 +64,6 @@ Clean code, responsive interfaces and clear communication from start to release.
 ---
 
 <p align="center">
-  <strong>新しいクエストがありますか？ · HAVE A NEW QUEST?</strong><br><br>
+  <strong>✿ HAVE A NEW QUEST? ✿</strong><br><br>
   <a href="mailto:uzlow.k005@gmail.com">Email</a> · <a href="https://t.me/Me4chiKun">Telegram</a> · <a href="https://me4chi.github.io/Me4chi/">Portfolio</a>
 </p>
