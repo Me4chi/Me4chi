@@ -5,9 +5,6 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Me4chi">
-    <img src="https://github.com/Me4chi.png?size=180" width="150" height="150" alt="Me4chi GitHub avatar">
-  </a>
 </p>
 
 <h1 align="center">✿ ME4CHI ✿</h1>
