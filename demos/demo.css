@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: "DM Sans", sans-serif; }
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+.demo-back {
+  position: fixed;
+  z-index: 20;
+  right: 18px;
+  bottom: 18px;
+  padding: 11px 15px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  background: #111d;
+  color: #fff;
+  font-size: 12px;
+  backdrop-filter: blur(10px);
+}
+.demo-toast {
+  position: fixed;
+  z-index: 30;
+  right: 20px;
+  bottom: 76px;
+  max-width: 330px;
+  padding: 15px 18px;
+  border-radius: 12px;
+  background: #111;
+  color: #fff;
+  box-shadow: 0 14px 40px #0004;
+  transform: translateY(16px);
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s;
+}
+.demo-toast.show { transform: none; opacity: 1; }
+
+/* Marketplace */
+.market { background: #f4f2ee; color: #181816; }
+.market .demo-nav {
+  display: flex;
+  width: min(1180px, calc(100% - 36px));
+  align-items: center;
+  gap: 28px;
+  margin: auto;
+  padding: 22px 0;
+}
+.market-logo { font: 800 22px "Space Grotesk"; letter-spacing: -.06em; }
+.market-logo span { color: #ff5c35; }
+.market .demo-nav nav { display: flex; gap: 24px; margin: auto; color: #69665e; font-size: 14px; }
+.cart-pill { padding: 10px 14px; border: 0; border-radius: 999px; background: #181816; color: #fff; }
+.market-hero {
+  display: grid;
+  width: min(1180px, calc(100% - 36px));
+  min-height: 430px;
+  grid-template-columns: 1.05fr .95fr;
+  margin: 16px auto 60px;
+  overflow: hidden;
+  border-radius: 32px;
+  background: #d9e9c9;
+}
+.market-copy { align-self: center; padding: 55px; }
+.market-copy small { color: #52713d; font-weight: 700; letter-spacing: .14em; }
+.market-copy h1 { max-width: 600px; margin: 16px 0; font: 700 clamp(48px, 6vw, 82px)/.95 "Space Grotesk"; letter-spacing: -.07em; }
+.market-copy p { max-width: 480px; color: #4e5946; }
+.market-cta { display: inline-block; margin-top: 18px; padding: 14px 20px; border-radius: 999px; background: #ff5c35; color: #fff; font-weight: 700; }
+.market-art { position: relative; min-height: 410px; background: radial-gradient(circle at 52% 45%, #fff8 0 25%, transparent 26%), linear-gradient(135deg, #91c675, #d9e9c9); }
+.market-art::before { content: "🎧"; position: absolute; top: 50%; left: 50%; font-size: 180px; filter: drop-shadow(0 30px 24px #43642d4d); transform: translate(-50%, -50%) rotate(-9deg); }
+.market-art::after { content: "NEW"; position: absolute; top: 36px; right: 36px; display: grid; width: 76px; height: 76px; place-items: center; border-radius: 50%; background: #181816; color: #fff; font-weight: 800; }
+.market-section { width: min(1180px, calc(100% - 36px)); margin: 0 auto 80px; }
+.market-title { display: flex; align-items: end; justify-content: space-between; margin-bottom: 24px; }
+.market-title h2 { margin: 0; font: 700 38px "Space Grotesk"; letter-spacing: -.05em; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filter { padding: 9px 14px; border: 1px solid #d5d0c6; border-radius: 999px; background: transparent; }
+.filter.active { border-color: #181816; background: #181816; color: #fff; }
+.product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.product { padding: 12px; border-radius: 20px; background: #fff; box-shadow: 0 12px 35px #31291b0d; }
+.product-art { display: grid; min-height: 230px; place-items: center; border-radius: 14px; background: var(--product-bg); font-size: 82px; }
+.product-info { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 15px 4px 5px; }
+.product-info h3 { margin: 0 0 4px; font-size: 15px; }
+.product-info p { margin: 0; color: #7b776e; font-size: 13px; }
+.add-cart { width: 38px; height: 38px; border: 0; border-radius: 50%; background: #181816; color: #fff; font-size: 20px; }
+
+/* News */
+.news { background: #101114; color: #f4f0e8; }
+.news .demo-nav { display: flex; width: min(1220px, calc(100% - 36px)); align-items: center; gap: 30px; margin: auto; padding: 20px 0; border-bottom: 1px solid #37383d; }
+.news-logo { font: 700 26px "Space Grotesk"; letter-spacing: -.06em; }
+.news-logo i { color: #ff4d45; font-style: normal; }
+.news .demo-nav nav { display: flex; gap: 24px; margin-left: auto; color: #a8a6a0; font-size: 13px; }
+.live-pill { padding: 7px 10px; border: 1px solid #ff4d45; color: #ff716b; font-size: 11px; letter-spacing: .12em; }
+.news-main { width: min(1220px, calc(100% - 36px)); margin: 34px auto 80px; }
+.news-kicker { color: #ff5b53; font-size: 12px; font-weight: 700; letter-spacing: .14em; }
+.lead-story { display: grid; grid-template-columns: 1.35fr .65fr; gap: 26px; padding-bottom: 32px; border-bottom: 1px solid #37383d; }
+.lead-art { position: relative; min-height: 430px; overflow: hidden; background: radial-gradient(circle at 65% 35%, #ce5cff 0 5%, transparent 6%), radial-gradient(circle at 48% 55%, #7659ff 0 16%, transparent 17%), linear-gradient(135deg, #1c2351, #18111f 55%, #ff4d4533); }
+.lead-art::before { content: "AI"; position: absolute; right: 8%; bottom: -8%; color: #fff1; font: 800 240px "Space Grotesk"; }
+.lead-copy { align-self: end; }
+.lead-copy h1 { margin: 10px 0 16px; font: 700 clamp(44px, 5vw, 72px)/.98 "Space Grotesk"; letter-spacing: -.065em; }
+.lead-copy p { color: #aaa9a4; }
+.meta { color: #777980; font-size: 12px; }
+.news-layout { display: grid; grid-template-columns: 1fr 320px; gap: 44px; margin-top: 38px; }
+.feed-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.feed-head h2, .trending h2 { margin: 0; font: 700 28px "Space Grotesk"; }
+.news .filters { margin-top: 16px; }
+.news .filter { border-color: #3b3d42; color: #aaa; }
+.news .filter.active { background: #f4f0e8; color: #101114; }
+.feed { display: grid; gap: 0; }
+.story { display: grid; grid-template-columns: 170px 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid #303137; }
+.story-art { display: grid; min-height: 115px; place-items: center; background: var(--story-bg); font-size: 44px; }
+.story h3 { margin: 4px 0 9px; font: 600 21px/1.15 "Space Grotesk"; }
+.story p { margin: 0 0 10px; color: #9c9da2; font-size: 13px; }
+.trending { padding-left: 25px; border-left: 1px solid #37383d; }
+.trend { display: grid; grid-template-columns: 34px 1fr; gap: 12px; padding: 18px 0; border-bottom: 1px solid #303137; }
+.trend b { color: #ff5b53; font: 600 24px "Space Grotesk"; }
+.trend p { margin: 0; line-height: 1.35; }
+
+/* Cafe */
+.cafe { background: #f3eadb; color: #263c2d; }
+.cafe .demo-nav { display: flex; width: min(1180px, calc(100% - 36px)); align-items: center; margin: auto; padding: 20px 0; }
+.cafe-logo { font: 800 25px "Fraunces"; }
+.cafe-logo span { color: #b94e35; }
+.cafe .demo-nav nav { display: flex; gap: 28px; margin-left: auto; font-size: 14px; }
+.reserve-pill { margin-left: 30px; padding: 11px 17px; border: 0; border-radius: 3px; background: #263c2d; color: #fff; }
+.cafe-hero { display: grid; width: min(1180px, calc(100% - 36px)); min-height: 570px; grid-template-columns: 1fr 1fr; margin: 10px auto 70px; overflow: hidden; border-radius: 50px 6px 50px 6px; background: #d9c8ac; }
+.cafe-copy { align-self: center; padding: 60px; }
+.cafe-copy small { color: #b94e35; font-weight: 700; letter-spacing: .16em; }
+.cafe-copy h1 { margin: 14px 0 18px; font: 800 clamp(54px, 6vw, 84px)/.95 "Fraunces"; letter-spacing: -.04em; }
+.cafe-copy p { max-width: 460px; color: #5c665e; }
+.cafe-cta { display: inline-block; margin-top: 18px; padding: 13px 18px; border-radius: 3px; background: #b94e35; color: #fff; }
+.cafe-art { position: relative; background: radial-gradient(circle at 50% 48%, #f1dfc1 0 31%, transparent 32%), linear-gradient(135deg, #638064, #263c2d); }
+.cafe-art::before { content: "☕"; position: absolute; top: 48%; left: 50%; font-size: 190px; filter: drop-shadow(0 35px 25px #14251a66); transform: translate(-50%, -50%) rotate(4deg); }
+.cafe-art::after { content: "OPEN DAILY\A 08 — 22"; white-space: pre; position: absolute; right: 26px; bottom: 26px; padding: 14px; border: 1px solid #f3eadb88; color: #f3eadb; font-size: 11px; letter-spacing: .12em; }
+.cafe-section { width: min(1180px, calc(100% - 36px)); margin: 0 auto 80px; }
+.cafe-heading { max-width: 650px; margin-bottom: 30px; }
+.cafe-heading small { color: #b94e35; font-weight: 700; letter-spacing: .14em; }
+.cafe-heading h2 { margin: 8px 0; font: 700 45px "Fraunces"; }
+.menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.menu-card { padding: 26px; border: 1px solid #c7b89f; background: #f8f2e8; }
+.menu-card > span { font-size: 44px; }
+.menu-card h3 { margin: 14px 0 7px; font: 700 24px "Fraunces"; }
+.menu-card p { color: #6b736c; }
+.menu-card b { color: #b94e35; }
+.booking { display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; padding: 46px; background: #263c2d; color: #f3eadb; }
+.booking h2 { margin: 0 0 12px; font: 700 44px "Fraunces"; }
+.booking p { color: #b9c4ba; }
+.booking form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.booking input, .booking select { width: 100%; padding: 13px; border: 1px solid #718373; background: #ffffff0a; color: #fff; }
+.booking select option { color: #111; }
+.booking button { grid-column: 1 / -1; padding: 14px; border: 0; background: #b94e35; color: #fff; }
+
+@media (max-width: 850px) {
+  .demo-nav nav { display: none !important; }
+  .market-hero, .cafe-hero, .lead-story, .booking { grid-template-columns: 1fr; }
+  .market-art, .cafe-art { min-height: 340px; }
+  .product-grid { grid-template-columns: 1fr 1fr; }
+  .news-layout { grid-template-columns: 1fr; }
+  .trending { padding-left: 0; border-left: 0; }
+  .menu-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .market-copy, .cafe-copy { padding: 34px 24px; }
+  .market-copy h1, .cafe-copy h1 { font-size: 49px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .market-title { display: block; }
+  .filters { margin-top: 16px; }
+  .lead-story { gap: 20px; }
+  .lead-art { min-height: 300px; }
+  .lead-copy h1 { font-size: 43px; }
+  .story { grid-template-columns: 110px 1fr; }
+  .booking { padding: 28px 20px; }
+  .booking form { grid-template-columns: 1fr; }
+}

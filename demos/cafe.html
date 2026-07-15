@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3eadb">
+  <title>MORI Coffee — Demo by Me4chi</title>
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body class="cafe">
+  <header class="demo-nav">
+    <a class="cafe-logo" href="#">MORI<span> ✦</span></a>
+    <nav><a href="#menu">Menu</a><a href="#story">Our story</a><a href="#booking">Visit</a></nav>
+    <a class="reserve-pill" href="#booking">Book a table</a>
+  </header>
+
+  <main>
+    <section class="cafe-hero" id="story">
+      <div class="cafe-copy">
+        <small>COFFEE · FOOD · SLOW MORNINGS</small>
+        <h1>A quiet place in a busy city.</h1>
+        <p>Seasonal coffee, handmade desserts and a room designed for long conversations.</p>
+        <a class="cafe-cta" href="#menu">Discover our menu →</a>
+      </div>
+      <div class="cafe-art" aria-hidden="true"></div>
+    </section>
+
+    <section class="cafe-section" id="menu">
+      <div class="cafe-heading"><small>THIS SEASON</small><h2>Simple ingredients, careful preparation.</h2><p>Three house favorites made fresh every day.</p></div>
+      <div class="menu-grid">
+        <article class="menu-card"><span>☕</span><h3>Forest latte</h3><p>Espresso, cedar syrup and oat milk.</p><b>$6.50</b></article>
+        <article class="menu-card"><span>🥐</span><h3>Morning set</h3><p>Butter croissant, seasonal jam and filter coffee.</p><b>$12</b></article>
+        <article class="menu-card"><span>🍰</span><h3>Matcha cloud</h3><p>Soft sponge, matcha cream and fresh berries.</p><b>$8</b></article>
+      </div>
+    </section>
+
+    <section class="cafe-section booking" id="booking">
+      <div><h2>Save your table</h2><p>Choose a date and time. We will keep your favorite corner ready.</p></div>
+      <form data-demo-form>
+        <input type="text" aria-label="Your name" placeholder="Your name" required>
+        <input type="email" aria-label="Email" placeholder="Email" required>
+        <input type="date" aria-label="Date" required>
+        <select aria-label="Guests"><option>2 guests</option><option>3 guests</option><option>4 guests</option></select>
+        <button type="submit">Request reservation</button>
+      </form>
+    </section>
+  </main>
+
+  <div class="demo-toast" role="status">Your table request has been received ✦</div>
+  <a class="demo-back" href="../index.html#portfolio">← Back to portfolio</a>
+  <script src="demo.js"></script>
+</body>
+</html>

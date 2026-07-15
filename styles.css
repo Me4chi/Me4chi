@@ -147,6 +147,18 @@ nav a {
 }
 nav a:first-child { border-left: 1px solid #72552e; }
 nav a:hover { background: #d0ae6714; color: var(--gold); }
+.header-actions { display: flex; flex: none; align-items: center; gap: 8px; }
+.header-tool {
+  min-width: 46px;
+  padding: 10px 9px;
+  border: 1px solid var(--gold-dark);
+  background: #130d09;
+  color: var(--gold);
+  font-family: var(--pixel);
+  font-size: 6px;
+  white-space: nowrap;
+}
+.header-tool:hover { background: #291a10; color: var(--cream); }
 
 main { padding-bottom: 40px; }
 .hero,
@@ -330,6 +342,29 @@ footer { width: min(var(--max), calc(100% - 40px)); margin-right: auto; margin-l
 .skill-grid p { margin: 0 0 20px; color: var(--muted); font-size: 13px; }
 .service-card .chips { justify-content: flex-start; margin-top: auto; }
 
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.portfolio-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 2px solid var(--gold-dark);
+  background: linear-gradient(145deg, #123b25e8, #071b13f2);
+  box-shadow: inset 0 0 0 2px #17472c, 6px 7px 0 #020705;
+  transition: transform .2s, border-color .2s;
+}
+.portfolio-card:hover { border-color: var(--sakura); transform: translateY(-7px); }
+.browser-shot { position: relative; overflow: hidden; padding-top: 25px; border-bottom: 2px solid var(--gold-dark); background: #21160f; }
+.browser-shot > span { position: absolute; top: 8px; left: 10px; display: flex; gap: 5px; }
+.browser-shot > span i { width: 7px; height: 7px; border-radius: 50%; background: var(--sakura); }
+.browser-shot > span i:nth-child(2) { background: var(--gold); }
+.browser-shot > span i:nth-child(3) { background: var(--moss); }
+.browser-shot img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: transform .35s; }
+.portfolio-card:hover .browser-shot img { transform: scale(1.025); }
+.portfolio-info { padding: 22px; }
+.portfolio-info > span { color: var(--sakura); font-family: var(--pixel); font-size: 6px; }
+.portfolio-info h3 { margin: 10px 0 8px; font-family: var(--jp); font-size: 25px; }
+.portfolio-info p { min-height: 64px; margin: 0 0 16px; color: var(--muted); font-size: 13px; }
+.portfolio-info b { color: var(--gold); font-family: var(--pixel); font-size: 7px; }
+
 .skill-grid article { text-align: center; }
 .skill-grid article > b { display: block; color: var(--gold); font-size: 33px; line-height: 1; }
 .meter { height: 13px; padding: 3px; border: 1px solid var(--gold-dark); background: #03100b; }
@@ -348,6 +383,9 @@ footer { width: min(var(--max), calc(100% - 40px)); margin-right: auto; margin-l
 .about-panel ul { display: grid; gap: 11px; margin: 24px 0 0; padding: 0; list-style: none; }
 .about-panel li { padding: 12px 14px; border: 1px solid var(--gold-dark); background: #092317c7; }
 .about-panel li span { margin-right: 10px; color: var(--sakura); }
+.about-panel li i,
+.game-hud i,
+footer i { font-style: normal; }
 .contact-links { display: grid; gap: 11px; margin-top: 24px; }
 .contact-links a { display: flex; align-items: center; gap: 14px; padding: 13px; border: 1px solid var(--gold-dark); background: #092317c7; transition: background .2s, transform .2s; }
 .contact-links a:hover { background: #154128; transform: translateX(4px); }
@@ -441,7 +479,8 @@ body.game-open { overflow: hidden; }
   .hero { grid-template-columns: 300px 1fr; gap: 28px; padding: 28px; }
   .quest-board { grid-template-columns: 1fr; }
   .service-grid,
-  .skill-grid { grid-template-columns: 1fr; }
+  .skill-grid,
+  .portfolio-grid { grid-template-columns: 1fr; }
   .service-card.featured { transform: none; }
   .process-map { grid-template-columns: 1fr 1fr; }
 }
@@ -454,7 +493,8 @@ body.game-open { overflow: hidden; }
   .bottom-grid,
   footer { width: calc(100% - 24px); }
   .site-header { margin-top: 12px; }
-  .site-header > .small { display: none; }
+  .header-actions { order: 2; margin-left: auto; }
+  .header-actions .small { display: none; }
   nav a { min-width: 104px; padding: 0 12px; font-size: 12px; }
   .hero { min-height: auto; grid-template-columns: 1fr; padding: 18px; }
   .profile-panel { max-width: 430px; width: 100%; margin: auto; }

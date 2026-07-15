@@ -12,6 +12,7 @@
 
 <p align="center">
   <a href="https://me4chi.github.io/Me4chi/"><img src="https://img.shields.io/badge/PORTFOLIO-OPEN-0b281b?style=for-the-badge&labelColor=3a2417&color=d0ae67" alt="Portfolio"></a>
+  <a href="https://me4chi.github.io/Me4chi/output/pdf/Me4chi-Resume.pdf"><img src="https://img.shields.io/badge/RESUME-PDF-0b281b?style=for-the-badge&labelColor=3a2417&color=f2dda6" alt="Resume PDF"></a>
   <a href="https://t.me/Me4chiKun"><img src="https://img.shields.io/badge/TELEGRAM-%40Me4chiKun-0b281b?style=for-the-badge&labelColor=3a2417&color=e97f91" alt="Telegram"></a>
   <a href="mailto:uzlow.k005@gmail.com"><img src="https://img.shields.io/badge/EMAIL-CONTACT-0b281b?style=for-the-badge&labelColor=3a2417&color=91ad55" alt="Email"></a>
 </p>
@@ -40,6 +41,12 @@ Clean code, responsive interfaces and clear communication from start to release.
   <img src="https://img.shields.io/badge/JavaScript-0b281b?style=for-the-badge&logo=javascript&logoColor=d0ae67" alt="JavaScript">
   <img src="https://img.shields.io/badge/Git-0b281b?style=for-the-badge&logo=git&logoColor=f2dda6" alt="Git">
 </p>
+
+### ✿ LIVE WEBSITE DEMOS ✿
+
+| [NOVA Marketplace](https://me4chi.github.io/Me4chi/demos/marketplace.html) | [NEXUS Daily](https://me4chi.github.io/Me4chi/demos/news.html) | [MORI Coffee](https://me4chi.github.io/Me4chi/demos/cafe.html) |
+|:---:|:---:|:---:|
+| Ecommerce · Filters · Cart | News feed · Categories | Landing · Menu · Booking |
 
 ### ✿ AVAILABLE QUESTS ✿
 

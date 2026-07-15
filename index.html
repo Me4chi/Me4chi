@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-ru="Перейти к содержимому">Skip to content</a>
 
   <div class="petals" aria-hidden="true">
     <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
@@ -24,12 +24,18 @@
   <header class="site-header">
     <a class="logo" href="#top" aria-label="Me4chi home"><span>✿</span> Me4chi</a>
     <nav aria-label="Primary navigation">
-      <a href="#top">⌂ Home</a>
-      <a href="#services">▣ Services</a>
-      <a href="#skills">◆ Skills</a>
-      <a href="#about">● About</a>
+      <a href="#top" data-ru="⌂ Главная">⌂ Home</a>
+      <a href="#services" data-ru="▣ Услуги">▣ Services</a>
+      <a href="#portfolio" data-ru="▦ Портфолио">▦ Portfolio</a>
+      <a href="#skills" data-ru="◆ Навыки">◆ Skills</a>
+      <a href="#about" data-ru="● Обо мне">● About</a>
     </nav>
-    <a class="wood-button small" href="#contact">✉ Contact</a>
+    <div class="header-actions">
+      <button class="header-tool lang-toggle" type="button" aria-label="Switch language">RU</button>
+      <button class="header-tool sound-toggle" type="button" aria-label="Turn sound on" aria-pressed="false">♪ OFF</button>
+      <a class="header-tool resume-link" href="output/pdf/Me4chi-Resume.pdf" download>CV ↓</a>
+      <a class="wood-button small" href="#contact" data-ru="✉ Связаться">✉ Contact</a>
+    </div>
   </header>
 
   <main id="main">
@@ -39,79 +45,100 @@
           <img src="https://github.com/Me4chi.png?size=320" alt="Me4chi GitHub avatar" width="320" height="320" decoding="async">
         </div>
         <div class="nameplate">ME4CHI</div>
-        <p class="role">Game & Software Developer</p>
+        <p class="role" data-ru="Разработчик игр и приложений">Game & Software Developer</p>
         <div class="profile-tags" aria-label="Main technologies">
           <span>UNITY</span><span>GODOT</span><span>C#</span><span>JAVASCRIPT</span>
         </div>
-        <a class="profile-link" href="https://github.com/Me4chi" target="_blank" rel="noreferrer">View GitHub profile ↗</a>
+        <a class="profile-link" href="https://github.com/Me4chi" target="_blank" rel="noreferrer" data-ru="Открыть профиль GitHub ↗">View GitHub profile ↗</a>
       </article>
 
       <div class="hero-copy">
-        <p class="eyebrow"><button class="secret-trigger" type="button" aria-label="Open the secret mini game"></button> AVAILABLE FOR FREELANCE · 工房</p>
+        <p class="eyebrow"><button class="secret-trigger" type="button" aria-label="Open the secret mini game"></button> <span data-ru="ОТКРЫТ ДЛЯ ЗАКАЗОВ · 工房">AVAILABLE FOR FREELANCE · 工房</span></p>
         <h1>Me4chi</h1>
-        <h2>I craft <span>games, apps</span><br>and memorable websites.</h2>
-        <p>I develop projects with Unity, Godot, C#, HTML, CSS and JavaScript — from a first playable idea to a polished release.</p>
+        <h2 data-ru="Я создаю <span>игры и приложения</span><br>и запоминающиеся сайты.">I craft <span>games, apps</span><br>and memorable websites.</h2>
+        <p data-ru="Разрабатываю проекты на Unity, Godot, C#, HTML, CSS и JavaScript — от первой рабочей идеи до готового релиза.">I develop projects with Unity, Godot, C#, HTML, CSS and JavaScript — from a first playable idea to a polished release.</p>
         <div class="hero-actions">
-          <a class="wood-button" href="#services">Choose a service</a>
-          <a class="plain-link" href="https://github.com/Me4chi" target="_blank" rel="noreferrer">Open GitHub ↗</a>
+          <a class="wood-button" href="#services" data-ru="Выбрать услугу">Choose a service</a>
+          <a class="plain-link" href="https://github.com/Me4chi" target="_blank" rel="noreferrer" data-ru="Открыть GitHub ↗">Open GitHub ↗</a>
         </div>
 
         <div class="quest-board" aria-label="Development specialties">
-          <article><b>01</b><span>Game worlds</span><small>Unity · Godot</small></article>
-          <article><b>02</b><span>Desktop tools</span><small>C# · .NET</small></article>
-          <article><b>03</b><span>Web experiences</span><small>HTML · CSS · JS</small></article>
+          <article><b>01</b><span data-ru="Игровые миры">Game worlds</span><small>Unity · Godot</small></article>
+          <article><b>02</b><span data-ru="Программы для ПК">Desktop tools</span><small>C# · .NET</small></article>
+          <article><b>03</b><span data-ru="Веб-проекты">Web experiences</span><small>HTML · CSS · JS</small></article>
         </div>
       </div>
     </section>
 
     <section class="section frame" id="services">
       <div class="section-title">
-        <p>✿ AVAILABLE QUESTS ✿</p>
-        <h2>What can we create together?</h2>
+        <p data-ru="✿ ДОСТУПНЫЕ УСЛУГИ ✿">✿ AVAILABLE QUESTS ✿</p>
+        <h2 data-ru="Что мы можем создать вместе?">What can we create together?</h2>
       </div>
       <div class="service-grid">
         <article class="service-card">
           <span class="card-number">01</span>
           <div class="pixel-icon controller" aria-hidden="true">＋</div>
-          <h3>Game development</h3>
-          <p>2D and 3D games, gameplay systems, prototypes, interfaces and bug fixing in Unity and Godot.</p>
+          <h3 data-ru="Разработка игр">Game development</h3>
+          <p data-ru="2D- и 3D-игры, игровые системы, прототипы, интерфейсы и исправление ошибок в Unity и Godot.">2D and 3D games, gameplay systems, prototypes, interfaces and bug fixing in Unity and Godot.</p>
           <div class="chips"><span>Unity</span><span>Godot</span><span>C#</span><span>GDScript</span></div>
         </article>
         <article class="service-card featured">
           <span class="card-number">02</span>
           <div class="pixel-icon window-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-          <h3>Desktop applications</h3>
-          <p>Practical Windows tools with clear interfaces, reliable logic and maintainable C# code.</p>
+          <h3 data-ru="Приложения для ПК">Desktop applications</h3>
+          <p data-ru="Практичные программы для Windows с понятным интерфейсом, надёжной логикой и поддерживаемым кодом на C#.">Practical Windows tools with clear interfaces, reliable logic and maintainable C# code.</p>
           <div class="chips"><span>C#</span><span>.NET</span><span>Windows</span></div>
         </article>
         <article class="service-card">
           <span class="card-number">03</span>
           <div class="pixel-icon code-icon" aria-hidden="true">&lt;/&gt;</div>
-          <h3>Web development</h3>
-          <p>Fast responsive landing pages, portfolio sites and interactive browser experiences.</p>
+          <h3 data-ru="Веб-разработка">Web development</h3>
+          <p data-ru="Быстрые адаптивные лендинги, сайты-портфолио и интерактивные веб-приложения.">Fast responsive landing pages, portfolio sites and interactive browser experiences.</p>
           <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
         </article>
       </div>
     </section>
 
+    <section class="section frame" id="portfolio">
+      <div class="section-title">
+        <p data-ru="✿ ПРИМЕРЫ САЙТОВ ✿">✿ WEBSITE SHOWCASE ✿</p>
+        <h2 data-ru="Живые концепты для разных направлений">Live concepts for different businesses</h2>
+      </div>
+      <div class="portfolio-grid">
+        <a class="portfolio-card" href="demos/marketplace.html" target="_blank" rel="noreferrer">
+          <div class="browser-shot"><span><i></i><i></i><i></i></span><img src="assets/marketplace-preview.png" alt="NOVA marketplace website preview" width="1280" height="800" loading="lazy"></div>
+          <div class="portfolio-info"><span>ECOMMERCE · INTERACTIVE</span><h3>NOVA Marketplace</h3><p data-ru="Каталог товаров, фильтры категорий и рабочий счётчик корзины.">Product catalog, category filters and a working cart counter.</p><b data-ru="ОТКРЫТЬ ДЕМО ↗">OPEN LIVE DEMO ↗</b></div>
+        </a>
+        <a class="portfolio-card" href="demos/news.html" target="_blank" rel="noreferrer">
+          <div class="browser-shot"><span><i></i><i></i><i></i></span><img src="assets/news-preview.png" alt="NEXUS news feed website preview" width="1280" height="800" loading="lazy"></div>
+          <div class="portfolio-info"><span>MEDIA · EDITORIAL</span><h3>NEXUS Daily</h3><p data-ru="Адаптивная лента новостей, главный материал и фильтрация категорий.">Responsive news feed, featured story and category filtering.</p><b data-ru="ОТКРЫТЬ ДЕМО ↗">OPEN LIVE DEMO ↗</b></div>
+        </a>
+        <a class="portfolio-card" href="demos/cafe.html" target="_blank" rel="noreferrer">
+          <div class="browser-shot"><span><i></i><i></i><i></i></span><img src="assets/cafe-preview.png" alt="MORI cafe website preview" width="1280" height="800" loading="lazy"></div>
+          <div class="portfolio-info"><span>LOCAL BUSINESS · BOOKING</span><h3>MORI Coffee</h3><p data-ru="Атмосферный лендинг, меню и форма бронирования столика.">Atmospheric landing page, menu and reservation form.</p><b data-ru="ОТКРЫТЬ ДЕМО ↗">OPEN LIVE DEMO ↗</b></div>
+        </a>
+      </div>
+    </section>
+
     <section class="section frame" id="skills">
       <div class="section-title">
-        <p>✿ INVENTORY ✿</p>
-        <h2>Skills & development stack</h2>
+        <p data-ru="✿ ИНВЕНТАРЬ ✿">✿ INVENTORY ✿</p>
+        <h2 data-ru="Навыки и технологии">Skills & development stack</h2>
       </div>
       <div class="skill-grid">
         <article>
-          <b>🎮</b><h3>Game engines</h3>
+          <b>🎮</b><h3 data-ru="Игровые движки">Game engines</h3>
           <p>Unity · Godot · Gameplay · UI · Prototyping · 2D / 3D</p>
           <div class="meter"><i style="--level:88%"></i></div>
         </article>
         <article>
-          <b>⚙</b><h3>Programming</h3>
+          <b>⚙</b><h3 data-ru="Программирование">Programming</h3>
           <p>C# · JavaScript · GDScript · Git · JSON · REST APIs</p>
           <div class="meter"><i style="--level:82%"></i></div>
         </article>
         <article>
-          <b>⌘</b><h3>Frontend</h3>
+          <b>⌘</b><h3 data-ru="Фронтенд">Frontend</h3>
           <p>HTML5 · CSS3 · Responsive UI · Animation · Accessibility</p>
           <div class="meter"><i style="--level:86%"></i></div>
         </article>
@@ -120,33 +147,33 @@
 
     <section class="section frame process-section">
       <div class="section-title">
-        <p>✿ MISSION MAP ✿</p>
-        <h2>A clear path from idea to release</h2>
+        <p data-ru="✿ КАРТА ПРОЕКТА ✿">✿ MISSION MAP ✿</p>
+        <h2 data-ru="Понятный путь от идеи до релиза">A clear path from idea to release</h2>
       </div>
       <ol class="process-map">
-        <li><span>01</span><div><b>Discover</b><p>Goals, audience and the smallest useful first version.</p></div></li>
-        <li><span>02</span><div><b>Build</b><p>Visible progress in short, testable stages.</p></div></li>
-        <li><span>03</span><div><b>Polish</b><p>Testing, responsive details and performance checks.</p></div></li>
-        <li><span>04</span><div><b>Deliver</b><p>Clean source files and a clear handoff.</p></div></li>
+        <li><span>01</span><div><b data-ru="Исследование">Discover</b><p data-ru="Цели, аудитория и минимальная полезная первая версия.">Goals, audience and the smallest useful first version.</p></div></li>
+        <li><span>02</span><div><b data-ru="Разработка">Build</b><p data-ru="Видимый прогресс короткими проверяемыми этапами.">Visible progress in short, testable stages.</p></div></li>
+        <li><span>03</span><div><b data-ru="Полировка">Polish</b><p data-ru="Тестирование, адаптивность и проверка производительности.">Testing, responsive details and performance checks.</p></div></li>
+        <li><span>04</span><div><b data-ru="Передача">Deliver</b><p data-ru="Чистые исходники и понятная передача готового проекта.">Clean source files and a clear handoff.</p></div></li>
       </ol>
     </section>
 
     <section class="bottom-grid" id="about">
       <article class="section frame about-panel">
-        <div class="section-title"><p>✿ PLAYER PROFILE ✿</p><h2>About me</h2></div>
-        <p>I develop games, desktop applications and websites. I care about readable code, responsive interfaces and steady communication throughout the project.</p>
+        <div class="section-title"><p data-ru="✿ ПРОФИЛЬ ИГРОКА ✿">✿ PLAYER PROFILE ✿</p><h2 data-ru="Обо мне">About me</h2></div>
+        <p data-ru="Я разрабатываю игры, приложения для ПК и сайты. Для меня важны читаемый код, адаптивные интерфейсы и стабильная связь на протяжении проекта.">I develop games, desktop applications and websites. I care about readable code, responsive interfaces and steady communication throughout the project.</p>
         <ul>
-          <li><span>◆</span> Clear requirements and realistic scope</li>
-          <li><span>◆</span> Regular progress updates</li>
-          <li><span>◆</span> Testing before delivery</li>
+          <li><span>◆</span><i data-ru=" Чёткие требования и реалистичный объём"> Clear requirements and realistic scope</i></li>
+          <li><span>◆</span><i data-ru=" Регулярные отчёты о прогрессе"> Regular progress updates</i></li>
+          <li><span>◆</span><i data-ru=" Тестирование перед передачей"> Testing before delivery</i></li>
         </ul>
       </article>
 
       <article class="section frame contact-panel" id="contact">
-        <div class="section-title"><p>✿ NEW QUEST ✿</p><h2>Let’s work together</h2></div>
-        <p>Have a game, desktop application or website in mind? Tell me about the idea and the result you need.</p>
+        <div class="section-title"><p data-ru="✿ НОВЫЙ ПРОЕКТ ✿">✿ NEW QUEST ✿</p><h2 data-ru="Давайте работать вместе">Let’s work together</h2></div>
+        <p data-ru="Есть идея игры, приложения или сайта? Расскажите о задаче и результате, который хотите получить.">Have a game, desktop application or website in mind? Tell me about the idea and the result you need.</p>
         <div class="contact-links">
-          <a href="mailto:uzlow.k005@gmail.com"><b>✉</b><span>Email<small>uzlow.k005@gmail.com</small></span></a>
+          <a href="mailto:uzlow.k005@gmail.com"><b>✉</b><span data-ru="Почта<small>uzlow.k005@gmail.com</small>">Email<small>uzlow.k005@gmail.com</small></span></a>
           <a href="https://t.me/Me4chiKun" target="_blank" rel="noreferrer"><b>➤</b><span>Telegram<small>@Me4chiKun</small></span></a>
           <a href="https://github.com/Me4chi" target="_blank" rel="noreferrer"><b>◆</b><span>GitHub<small>github.com/Me4chi</small></span></a>
         </div>
@@ -155,30 +182,132 @@
   </main>
 
   <footer class="frame">
-    <span>✿</span> Thanks for visiting my world <span>✿</span>
+    <span>✿</span> <i data-ru="Спасибо, что заглянули в мой мир">Thanks for visiting my world</i> <span>✿</span>
   </footer>
 
   <div class="mini-game" id="mini-game" hidden>
     <section class="game-shell frame" role="dialog" aria-modal="true" aria-labelledby="game-title">
       <button class="game-close" type="button" aria-label="Close mini game">×</button>
       <div class="section-title">
-        <p>✿ SECRET QUEST ✿</p>
-        <h2 id="game-title">Firefly hunt</h2>
+        <p data-ru="✿ СЕКРЕТНОЕ ЗАДАНИЕ ✿">✿ SECRET QUEST ✿</p>
+        <h2 id="game-title" data-ru="Охота на светлячков">Firefly hunt</h2>
       </div>
-      <p class="game-copy">Catch as many wandering fireflies as you can in 20 seconds.</p>
+      <p class="game-copy" data-ru="Поймай как можно больше светлячков за 20 секунд.">Catch as many wandering fireflies as you can in 20 seconds.</p>
       <div class="game-hud">
-        <span>SCORE <b id="game-score">0</b></span>
-        <span>TIME <b id="game-time">20</b></span>
+        <span><i data-ru="СЧЁТ">SCORE</i> <b id="game-score">0</b></span>
+        <span><i data-ru="ВРЕМЯ">TIME</i> <b id="game-time">20</b></span>
       </div>
       <div class="game-field">
         <button class="firefly-target" type="button" aria-label="Catch firefly" hidden>✦</button>
-        <p class="game-result" aria-live="polite">The forest is waiting.</p>
+        <p class="game-result" aria-live="polite" data-ru="Лес ждёт тебя.">The forest is waiting.</p>
       </div>
-      <button class="wood-button game-start" type="button">START HUNT</button>
+      <button class="wood-button game-start" type="button" data-ru="НАЧАТЬ ОХОТУ">START HUNT</button>
     </section>
   </div>
 
   <script>
+    (() => {
+      const toggle = document.querySelector('.lang-toggle');
+      const translated = [...document.querySelectorAll('[data-ru]')];
+      translated.forEach(element => element.dataset.en = element.innerHTML);
+
+      const setLanguage = language => {
+        document.documentElement.lang = language;
+        translated.forEach(element => element.innerHTML = element.dataset[language]);
+        toggle.textContent = language === 'en' ? 'RU' : 'EN';
+        toggle.setAttribute('aria-label', language === 'en' ? 'Переключить на русский' : 'Switch to English');
+        document.title = language === 'en' ? 'Me4chi — Game & Software Developer' : 'Me4chi — Разработчик игр, приложений и сайтов';
+        localStorage.setItem('portfolio-language', language);
+        document.dispatchEvent(new CustomEvent('languagechange'));
+      };
+
+      setLanguage(localStorage.getItem('portfolio-language') === 'ru' ? 'ru' : 'en');
+      toggle.addEventListener('click', () => setLanguage(document.documentElement.lang === 'en' ? 'ru' : 'en'));
+    })();
+
+    (() => {
+      const toggle = document.querySelector('.sound-toggle');
+      const AudioEngine = window.AudioContext || window.webkitAudioContext;
+      let context;
+      let master;
+      let soundOn = false;
+
+      const updateLabel = () => {
+        const russian = document.documentElement.lang === 'ru';
+        toggle.textContent = soundOn ? (russian ? '♪ ВКЛ' : '♪ ON') : (russian ? '♪ ВЫКЛ' : '♪ OFF');
+        toggle.setAttribute('aria-label', soundOn
+          ? (russian ? 'Выключить звук' : 'Turn sound off')
+          : (russian ? 'Включить звук' : 'Turn sound on'));
+        toggle.setAttribute('aria-pressed', soundOn);
+      };
+      const createAudio = () => {
+        if (context || !AudioEngine) return;
+        context = new AudioEngine();
+        master = context.createGain();
+        master.gain.value = 0;
+        master.connect(context.destination);
+
+        const buffer = context.createBuffer(1, context.sampleRate * 2, context.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < data.length; i += 1) data[i] = Math.random() * 2 - 1;
+        const wind = context.createBufferSource();
+        const windFilter = context.createBiquadFilter();
+        const windGain = context.createGain();
+        wind.buffer = buffer;
+        wind.loop = true;
+        windFilter.type = 'lowpass';
+        windFilter.frequency.value = 520;
+        windGain.gain.value = .025;
+        wind.connect(windFilter).connect(windGain).connect(master);
+        wind.start();
+
+        const hum = context.createOscillator();
+        const humGain = context.createGain();
+        hum.type = 'sine';
+        hum.frequency.value = 82;
+        humGain.gain.value = .012;
+        hum.connect(humGain).connect(master);
+        hum.start();
+      };
+      const tone = (frequency, duration = .06, delay = 0) => {
+        if (!soundOn || !context) return;
+        const oscillator = context.createOscillator();
+        const gain = context.createGain();
+        const start = context.currentTime + delay;
+        oscillator.type = 'square';
+        oscillator.frequency.value = frequency;
+        gain.gain.setValueAtTime(.08, start);
+        gain.gain.exponentialRampToValueAtTime(.001, start + duration);
+        oscillator.connect(gain).connect(master);
+        oscillator.start(start);
+        oscillator.stop(start + duration);
+      };
+
+      toggle.addEventListener('click', async () => {
+        createAudio();
+        if (!context) return;
+        await context.resume();
+        soundOn = !soundOn;
+        master.gain.setTargetAtTime(soundOn ? .18 : 0, context.currentTime, .08);
+        updateLabel();
+        if (soundOn) {
+          tone(440, .08);
+          tone(660, .1, .07);
+        }
+      });
+      document.addEventListener('click', event => {
+        if (!soundOn || event.target.closest('.sound-toggle')) return;
+        if (event.target.closest('.firefly-target')) {
+          tone(760, .07);
+          tone(1040, .09, .05);
+        } else if (event.target.closest('a, button')) {
+          tone(230, .045);
+        }
+      });
+      document.addEventListener('languagechange', updateLabel);
+      updateLabel();
+    })();
+
     (() => {
       const trigger = document.querySelector('.secret-trigger');
       const overlay = document.querySelector('#mini-game');
@@ -192,6 +321,7 @@
       let time = 20;
       let clock;
       let wander;
+      const isRussian = () => document.documentElement.lang === 'ru';
 
       const stop = () => {
         clearInterval(clock);
@@ -204,10 +334,12 @@
       const finish = () => {
         stop();
         target.hidden = true;
-        const rank = score >= 20 ? 'SHRINE MASTER' : score >= 10 ? 'NIGHT SCOUT' : 'PETAL ROOKIE';
-        result.textContent = `Caught: ${score} · Rank: ${rank}`;
+        const rank = isRussian()
+          ? (score >= 20 ? 'ХРАНИТЕЛЬ ХРАМА' : score >= 10 ? 'НОЧНОЙ РАЗВЕДЧИК' : 'УЧЕНИК САКУРЫ')
+          : (score >= 20 ? 'SHRINE MASTER' : score >= 10 ? 'NIGHT SCOUT' : 'PETAL ROOKIE');
+        result.textContent = isRussian() ? `Поймано: ${score} · Ранг: ${rank}` : `Caught: ${score} · Rank: ${rank}`;
         result.hidden = false;
-        startButton.textContent = 'PLAY AGAIN';
+        startButton.textContent = isRussian() ? 'ИГРАТЬ СНОВА' : 'PLAY AGAIN';
       };
       const start = () => {
         stop();
@@ -217,7 +349,7 @@
         timeView.textContent = time;
         result.hidden = true;
         target.hidden = false;
-        startButton.textContent = 'RESTART';
+        startButton.textContent = isRussian() ? 'СНАЧАЛА' : 'RESTART';
         moveFirefly();
         wander = setInterval(moveFirefly, 850);
         clock = setInterval(() => {
@@ -231,10 +363,10 @@
         document.body.classList.add('game-open');
         scoreView.textContent = '0';
         timeView.textContent = '20';
-        result.textContent = 'The forest is waiting.';
+        result.textContent = isRussian() ? 'Лес ждёт тебя.' : 'The forest is waiting.';
         result.hidden = false;
         target.hidden = true;
-        startButton.textContent = 'START HUNT';
+        startButton.textContent = isRussian() ? 'НАЧАТЬ ОХОТУ' : 'START HUNT';
         startButton.focus();
       };
       const close = () => {

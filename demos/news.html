@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <title>NEXUS Daily — Demo by Me4chi</title>
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body class="news">
+  <header class="demo-nav">
+    <a class="news-logo" href="#">NEXUS<i>/</i>DAILY</a>
+    <nav><a href="#feed">Technology</a><a href="#feed">Games</a><a href="#feed">Culture</a><a href="#feed">Science</a></nav>
+    <span class="live-pill">● LIVE</span>
+  </header>
+
+  <main class="news-main">
+    <section class="lead-story">
+      <div class="lead-art" aria-hidden="true"></div>
+      <div class="lead-copy">
+        <span class="news-kicker">TECHNOLOGY · 8 MIN READ</span>
+        <h1>The creative tools shaping a new generation.</h1>
+        <p>Independent creators are building ambitious worlds with smaller teams, sharper tools and a completely different workflow.</p>
+        <span class="meta">By Maya Chen · July 15, 2026</span>
+      </div>
+    </section>
+
+    <div class="news-layout" id="feed">
+      <section>
+        <div class="feed-head"><h2>Latest stories</h2><span class="meta">Updated 4 min ago</span></div>
+        <div class="filters" aria-label="News filters">
+          <button class="filter active" type="button" data-filter="all">All</button>
+          <button class="filter" type="button" data-filter="games">Games</button>
+          <button class="filter" type="button" data-filter="tech">Tech</button>
+        </div>
+        <div class="feed">
+          <article class="story" data-category="games"><div class="story-art" style="--story-bg:linear-gradient(135deg,#493778,#171727)">🎮</div><div><span class="news-kicker">GAMES</span><h3>Why tiny game worlds can feel endlessly alive</h3><p>Designers explain how systems and atmosphere create depth.</p><span class="meta">6 min read</span></div></article>
+          <article class="story" data-category="tech"><div class="story-art" style="--story-bg:linear-gradient(135deg,#174c55,#111f25)">⌁</div><div><span class="news-kicker">TECH</span><h3>The quiet return of personal software</h3><p>Small focused apps are replacing complicated platforms.</p><span class="meta">5 min read</span></div></article>
+          <article class="story" data-category="games"><div class="story-art" style="--story-bg:linear-gradient(135deg,#68412f,#221713)">✦</div><div><span class="news-kicker">INDIE</span><h3>Pixel art is becoming more expressive, not nostalgic</h3><p>A new wave of artists treats pixels as a modern medium.</p><span class="meta">9 min read</span></div></article>
+        </div>
+      </section>
+      <aside class="trending">
+        <h2>Trending now</h2>
+        <article class="trend"><b>01</b><p>Inside the engines powering tomorrow’s indie games</p></article>
+        <article class="trend"><b>02</b><p>Can a website feel as memorable as a game world?</p></article>
+        <article class="trend"><b>03</b><p>Five interface details users notice immediately</p></article>
+        <article class="trend"><b>04</b><p>The new economics of small creative teams</p></article>
+      </aside>
+    </div>
+  </main>
+
+  <a class="demo-back" href="../index.html#portfolio">← Back to portfolio</a>
+  <script src="demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2ee">
+  <title>NOVA Market — Demo by Me4chi</title>
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body class="market">
+  <header class="demo-nav">
+    <a class="market-logo" href="#">NOVA<span>●</span></a>
+    <nav><a href="#shop">New</a><a href="#shop">Tech</a><a href="#shop">Home</a><a href="#shop">Lifestyle</a></nav>
+    <button class="cart-pill" type="button">Bag · <span data-cart>0</span></button>
+  </header>
+
+  <main>
+    <section class="market-hero">
+      <div class="market-copy">
+        <small>SPRING DROP 2026</small>
+        <h1>Useful things. Better designed.</h1>
+        <p>A curated marketplace for expressive tech, thoughtful objects and everyday essentials.</p>
+        <a class="market-cta" href="#shop">Explore the collection →</a>
+      </div>
+      <div class="market-art" aria-hidden="true"></div>
+    </section>
+
+    <section class="market-section" id="shop">
+      <div class="market-title">
+        <h2>Fresh arrivals</h2>
+        <div class="filters" aria-label="Product filters">
+          <button class="filter active" type="button" data-filter="all">All</button>
+          <button class="filter" type="button" data-filter="tech">Tech</button>
+          <button class="filter" type="button" data-filter="home">Home</button>
+        </div>
+      </div>
+      <div class="product-grid">
+        <article class="product" data-category="tech">
+          <div class="product-art" style="--product-bg:#e4d9ff">⌨️</div>
+          <div class="product-info"><div><h3>Mono Keys</h3><p>$129 · Lilac</p></div><button class="add-cart" type="button" aria-label="Add Mono Keys to cart">+</button></div>
+        </article>
+        <article class="product" data-category="home">
+          <div class="product-art" style="--product-bg:#d8ead0">🪴</div>
+          <div class="product-info"><div><h3>Living Desk</h3><p>$38 · Fern</p></div><button class="add-cart" type="button" aria-label="Add Living Desk to cart">+</button></div>
+        </article>
+        <article class="product" data-category="tech">
+          <div class="product-art" style="--product-bg:#ffd6c8">🎧</div>
+          <div class="product-info"><div><h3>Orbit Audio</h3><p>$189 · Coral</p></div><button class="add-cart" type="button" aria-label="Add Orbit Audio to cart">+</button></div>
+        </article>
+        <article class="product" data-category="home">
+          <div class="product-art" style="--product-bg:#f1e7bd">☕</div>
+          <div class="product-info"><div><h3>Slow Morning</h3><p>$24 · Sand</p></div><button class="add-cart" type="button" aria-label="Add Slow Morning to cart">+</button></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <a class="demo-back" href="../index.html#portfolio">← Back to portfolio</a>
+  <script src="demo.js"></script>
+</body>
+</html>
