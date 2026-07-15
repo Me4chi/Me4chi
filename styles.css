@@ -230,7 +230,19 @@ footer { width: min(var(--max), calc(100% - 40px)); margin-right: auto; margin-l
   font-size: 8px;
   letter-spacing: .12em;
 }
-.eyebrow i { display: inline-block; width: 8px; height: 8px; margin-right: 10px; background: var(--moss); box-shadow: 0 0 10px var(--moss); }
+.secret-trigger {
+  width: 8px;
+  height: 8px;
+  margin: 0 10px 0 0;
+  padding: 0;
+  border: 0;
+  background: var(--moss);
+  box-shadow: 0 0 10px var(--moss);
+  vertical-align: 1px;
+  animation: secret-pulse 1.8s steps(2) infinite;
+}
+.secret-trigger:focus-visible { outline: 2px solid var(--cream); outline-offset: 4px; }
+@keyframes secret-pulse { 50% { filter: brightness(1.8); } }
 .hero h1 {
   margin: 0;
   color: var(--cream);
@@ -346,6 +358,81 @@ footer { width: min(var(--max), calc(100% - 40px)); margin-right: auto; margin-l
 footer { margin-top: 30px; padding: 18px; color: var(--gold); font-family: var(--pixel); font-size: 8px; text-align: center; }
 footer span { color: var(--sakura); }
 
+body.game-open { overflow: hidden; }
+.mini-game[hidden] { display: none; }
+.mini-game {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #020705d9;
+  backdrop-filter: blur(8px);
+}
+.game-shell { width: min(680px, 100%); padding: 30px; text-align: center; }
+.game-shell .section-title { margin-bottom: 12px; }
+.game-close {
+  position: absolute;
+  z-index: 5;
+  top: 15px;
+  right: 15px;
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--gold-dark);
+  background: var(--wood);
+  color: var(--cream);
+  font-family: var(--pixel);
+  cursor: pointer;
+}
+.game-copy { margin: 0 0 18px; color: var(--muted); font-size: 13px; }
+.game-hud { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 10px; }
+.game-hud span { color: var(--gold); font-family: var(--pixel); font-size: 8px; }
+.game-hud b { color: var(--cream); }
+.game-field {
+  position: relative;
+  height: 330px;
+  overflow: hidden;
+  border: 2px solid var(--gold-dark);
+  background:
+    linear-gradient(#03100b8c, #03100bb8),
+    url("assets/japanese-garden-bg.png") center / cover;
+  box-shadow: inset 0 0 35px #000d, 6px 7px 0 var(--shadow);
+}
+.firefly-target {
+  position: absolute;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--gold);
+  font-family: var(--pixel);
+  font-size: 30px;
+  line-height: 1;
+  text-shadow: 0 0 6px var(--gold), 0 0 18px #f8df73;
+  transform: translate(-50%, -50%);
+  cursor: crosshair;
+  animation: firefly-pulse .7s steps(2) infinite;
+}
+.firefly-target:focus-visible { outline: 2px solid var(--cream); }
+@keyframes firefly-pulse { 50% { opacity: .48; transform: translate(-50%, -50%) scale(.82); } }
+.game-result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 40px);
+  margin: 0;
+  color: var(--cream);
+  font-family: var(--pixel);
+  font-size: 10px;
+  line-height: 2;
+  text-shadow: 2px 2px 0 var(--ink);
+  transform: translate(-50%, -50%);
+}
+.game-start { margin-top: 22px; cursor: pointer; }
+
 @media (max-width: 1000px) {
   .site-header { position: relative; top: auto; flex-wrap: wrap; }
   .logo { font-size: 24px; }
@@ -382,6 +469,8 @@ footer span { color: var(--sakura); }
   .process-map,
   .bottom-grid { grid-template-columns: 1fr; }
   .bottom-grid { gap: 30px; }
+  .game-shell { padding: 24px 16px 18px; }
+  .game-field { height: 300px; }
 }
 
 @media (max-width: 420px) {

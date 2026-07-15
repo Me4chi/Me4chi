@@ -47,7 +47,7 @@
       </article>
 
       <div class="hero-copy">
-        <p class="eyebrow"><i></i> AVAILABLE FOR FREELANCE · 工房</p>
+        <p class="eyebrow"><button class="secret-trigger" type="button" aria-label="Open the secret mini game"></button> AVAILABLE FOR FREELANCE · 工房</p>
         <h1>Me4chi</h1>
         <h2>I craft <span>games, apps</span><br>and memorable websites.</h2>
         <p>I develop projects with Unity, Godot, C#, HTML, CSS and JavaScript — from a first playable idea to a polished release.</p>
@@ -157,5 +157,108 @@
   <footer class="frame">
     <span>✿</span> Thanks for visiting my world <span>✿</span>
   </footer>
+
+  <div class="mini-game" id="mini-game" hidden>
+    <section class="game-shell frame" role="dialog" aria-modal="true" aria-labelledby="game-title">
+      <button class="game-close" type="button" aria-label="Close mini game">×</button>
+      <div class="section-title">
+        <p>✿ SECRET QUEST ✿</p>
+        <h2 id="game-title">Firefly hunt</h2>
+      </div>
+      <p class="game-copy">Catch as many wandering fireflies as you can in 20 seconds.</p>
+      <div class="game-hud">
+        <span>SCORE <b id="game-score">0</b></span>
+        <span>TIME <b id="game-time">20</b></span>
+      </div>
+      <div class="game-field">
+        <button class="firefly-target" type="button" aria-label="Catch firefly" hidden>✦</button>
+        <p class="game-result" aria-live="polite">The forest is waiting.</p>
+      </div>
+      <button class="wood-button game-start" type="button">START HUNT</button>
+    </section>
+  </div>
+
+  <script>
+    (() => {
+      const trigger = document.querySelector('.secret-trigger');
+      const overlay = document.querySelector('#mini-game');
+      const closeButton = overlay.querySelector('.game-close');
+      const startButton = overlay.querySelector('.game-start');
+      const target = overlay.querySelector('.firefly-target');
+      const result = overlay.querySelector('.game-result');
+      const scoreView = overlay.querySelector('#game-score');
+      const timeView = overlay.querySelector('#game-time');
+      let score = 0;
+      let time = 20;
+      let clock;
+      let wander;
+
+      const stop = () => {
+        clearInterval(clock);
+        clearInterval(wander);
+      };
+      const moveFirefly = () => {
+        target.style.left = `${8 + Math.random() * 84}%`;
+        target.style.top = `${12 + Math.random() * 76}%`;
+      };
+      const finish = () => {
+        stop();
+        target.hidden = true;
+        const rank = score >= 20 ? 'SHRINE MASTER' : score >= 10 ? 'NIGHT SCOUT' : 'PETAL ROOKIE';
+        result.textContent = `Caught: ${score} · Rank: ${rank}`;
+        result.hidden = false;
+        startButton.textContent = 'PLAY AGAIN';
+      };
+      const start = () => {
+        stop();
+        score = 0;
+        time = 20;
+        scoreView.textContent = score;
+        timeView.textContent = time;
+        result.hidden = true;
+        target.hidden = false;
+        startButton.textContent = 'RESTART';
+        moveFirefly();
+        wander = setInterval(moveFirefly, 850);
+        clock = setInterval(() => {
+          time -= 1;
+          timeView.textContent = time;
+          if (time === 0) finish();
+        }, 1000);
+      };
+      const open = () => {
+        overlay.hidden = false;
+        document.body.classList.add('game-open');
+        scoreView.textContent = '0';
+        timeView.textContent = '20';
+        result.textContent = 'The forest is waiting.';
+        result.hidden = false;
+        target.hidden = true;
+        startButton.textContent = 'START HUNT';
+        startButton.focus();
+      };
+      const close = () => {
+        stop();
+        overlay.hidden = true;
+        document.body.classList.remove('game-open');
+        trigger.focus();
+      };
+
+      trigger.addEventListener('click', open);
+      startButton.addEventListener('click', start);
+      closeButton.addEventListener('click', close);
+      target.addEventListener('click', () => {
+        score += 1;
+        scoreView.textContent = score;
+        moveFirefly();
+      });
+      overlay.addEventListener('click', event => {
+        if (event.target === overlay) close();
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && !overlay.hidden) close();
+      });
+    })();
+  </script>
 </body>
 </html>
