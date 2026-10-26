@@ -286,6 +286,16 @@ footer { width: min(var(--max), calc(100% - 40px)); margin-right: auto; margin-l
   transition: transform .15s, filter .15s;
 }
 .wood-button:hover { filter: brightness(1.18); transform: translate(-2px, -2px); }
+.wood-button.journey-button {
+  padding: 18px 24px;
+  font-size: 10px;
+  background: linear-gradient(#f0c27a, #c47f35);
+  color: #1c1009;
+  box-shadow: inset 0 0 0 2px #ffe0a3, 5px 6px 0 #160d08, 0 0 26px #e8ad6388;
+  animation: journey-glow 2.6s steps(4) infinite alternate;
+}
+@keyframes journey-glow { to { box-shadow: inset 0 0 0 2px #ffe0a3, 5px 6px 0 #160d08, 0 0 42px #e8ad63cc; } }
+@media (prefers-reduced-motion: reduce) { .wood-button.journey-button { animation: none; } }
 .wood-button.small { padding: 12px 15px; font-size: 7px; }
 .plain-link { color: var(--gold); font-family: var(--pixel); font-size: 8px; }
 
