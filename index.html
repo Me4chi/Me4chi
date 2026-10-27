@@ -25,6 +25,7 @@
       <a class="logo" href="#top" aria-label="Me4chi — home"><span class="logo-mark" aria-hidden="true"></span>Me4chi</a>
       <nav class="nav" aria-label="Primary">
         <a href="#work" data-ru="Проекты">Work</a>
+        <a href="#private" data-ru="В работе">In progress</a>
         <a href="#sites" data-ru="Сайты">Websites</a>
         <a href="#stack" data-ru="Стек">Stack</a>
         <a href="#contact" data-ru="Контакты">Contact</a>
@@ -117,9 +118,55 @@
       </div>
     </section>
 
+    <section class="section container" id="private" aria-labelledby="private-title">
+      <header class="section-head">
+        <p class="kicker">02 · <span data-ru="В разработке">In development</span></p>
+        <h2 id="private-title" data-ru="Закрытые проекты">Private projects</h2>
+        <p data-ru="Игры и коммерческие работы в закрытых репозиториях. Код не публикую, но с радостью покажу и расскажу подробнее.">Games and client work in private repositories. The code isn’t public, but I’m happy to walk you through it.</p>
+      </header>
+      <div class="services">
+        <article class="service reveal">
+          <p class="project-type" data-ru="Онлайн-RPG · активна">Online RPG · active</p>
+          <h3>Game</h3>
+          <p data-ru="Зональная 2.5D MMO: клиент на Unity 6 и собственный авторитетный сервер на .NET 10 — сервер решает урон, позиции и награды. Свой протокол поверх UDP с DTLS, PostgreSQL и 25 миграций.">A zoned 2.5D MMO: a Unity 6 client and my own authoritative .NET 10 server that decides damage, positions and rewards. A custom protocol over UDP with DTLS, PostgreSQL and 25 migrations.</p>
+          <ul class="tags"><li>Unity 6</li><li>C#</li><li>.NET 10</li><li>PostgreSQL</li><li>LiteNetLib</li></ul>
+        </article>
+        <article class="service reveal">
+          <p class="project-type" data-ru="Roblox · активна">Roblox · active</p>
+          <h3>Cultivation RPG</h3>
+          <p data-ru="Мультиплеерная боевая RPG о культивации: путь от мастера боевых искусств (уся) к бессмертному (сянься). Код синхронизируется в Studio через Rojo, логика покрыта тестами вне Roblox.">A multiplayer combat RPG about cultivation: from martial artist (wuxia) to immortal (xianxia). Code syncs into Studio via Rojo; game logic is tested outside Roblox.</p>
+          <ul class="tags"><li>Roblox</li><li>Luau</li><li>Rojo</li><li>Lune</li></ul>
+        </article>
+        <article class="service reveal">
+          <p class="project-type" data-ru="Рогалик · играбелен">Roguelike · playable</p>
+          <h3>ABYSS</h3>
+          <p data-ru="Пошаговый рогалик в тёмном фэнтези: бой на d20 в духе D&amp;D, дерево из 120 умений, permadeath и бестиарий. 192 коммита и ≈ 18 000 строк GDScript.">A turn-based dark-fantasy roguelike: D&amp;D-style d20 combat, a 120-skill tree, permadeath and a bestiary. 192 commits and ≈ 18,000 lines of GDScript.</p>
+          <ul class="tags"><li>Godot 4.6</li><li>GDScript</li><li>Pixel art</li></ul>
+        </article>
+        <article class="service reveal">
+          <p class="project-type" data-ru="FPS · прототип">FPS · prototype</p>
+          <h3>NefticCore</h3>
+          <p data-ru="Шутер от первого лица в стиле PS1 и Gothic: low-poly подземелья, пиксельные текстуры, ближний бой, магия, лук и скелеты с навигацией по NavMesh. Все системы написаны вручную.">A first-person shooter in the spirit of PS1 and Gothic: low-poly dungeons, pixel textures, melee, magic, a bow and NavMesh-driven skeletons. Every system written by hand.</p>
+          <ul class="tags"><li>Unity 6</li><li>C#</li><li>URP</li><li>NavMesh</li></ul>
+        </article>
+        <article class="service reveal">
+          <p class="project-type" data-ru="Командный проект · 2023">Team project · 2023</p>
+          <h3>Live or Death</h3>
+          <p data-ru="2D action-RPG в команде из трёх человек: враги с context steering, инвентарь на интерфейсах, лут и переходы между комнатами. Работа через ветки и пулл-реквесты.">A 2D action-RPG built by a team of three: context-steering enemies, an interface-based inventory, loot and room transitions. Branches and pull requests throughout.</p>
+          <ul class="tags"><li>Unity</li><li>C#</li><li>Cinemachine</li></ul>
+        </article>
+        <article class="service reveal">
+          <p class="project-type" data-ru="Коммерческий сайт · сдан">Client website · delivered</p>
+          <h3>Dragon Biztrip</h3>
+          <p data-ru="Многостраничный сайт визового агентства на трёх языках — русском, английском и китайском: переключение без перезагрузки, мобильное меню, модальное окно WeChat.">A multi-page site for a visa agency in three languages — Russian, English and Chinese: instant language switching, a mobile menu and a WeChat modal.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>i18n</li></ul>
+        </article>
+      </div>
+    </section>
+
     <section class="section container" id="sites" aria-labelledby="sites-title">
       <header class="section-head">
-        <p class="kicker">02 · <span data-ru="Сайты">Websites</span></p>
+        <p class="kicker">03 · <span data-ru="Сайты">Websites</span></p>
         <h2 id="sites-title" data-ru="Пять живых демо-сайтов">Five live website demos</h2>
         <p data-ru="Разные ниши — разный характер. Каждый сайт рабочий: корзина, фильтры, графики, бронирование, формы с проверкой.">Different niches, different character. Every demo works: cart, filters, charts, booking, validated forms.</p>
       </header>
@@ -174,7 +221,7 @@
 
     <section class="section container" id="services" aria-labelledby="services-title">
       <header class="section-head">
-        <p class="kicker">03 · <span data-ru="Услуги">Services</span></p>
+        <p class="kicker">04 · <span data-ru="Услуги">Services</span></p>
         <h2 id="services-title" data-ru="Чем могу помочь">What I can build for you</h2>
       </header>
       <div class="services">
@@ -201,7 +248,7 @@
 
     <section class="section container" id="stack" aria-labelledby="stack-title">
       <header class="section-head">
-        <p class="kicker">04 · <span data-ru="Стек">Stack</span></p>
+        <p class="kicker">05 · <span data-ru="Стек">Stack</span></p>
         <h2 id="stack-title" data-ru="Инструменты">Tools I work with</h2>
       </header>
       <div class="stack reveal">
@@ -215,7 +262,7 @@
 
     <section class="section container" id="process" aria-labelledby="process-title">
       <header class="section-head">
-        <p class="kicker">05 · <span data-ru="Процесс">Process</span></p>
+        <p class="kicker">06 · <span data-ru="Процесс">Process</span></p>
         <h2 id="process-title" data-ru="Как я работаю">How a project goes</h2>
       </header>
       <ol class="process">
@@ -228,7 +275,7 @@
 
     <section class="section container contact" id="contact" aria-labelledby="contact-title">
       <div class="contact-copy">
-        <p class="kicker">06 · <span data-ru="Контакты">Contact</span></p>
+        <p class="kicker">07 · <span data-ru="Контакты">Contact</span></p>
         <h2 id="contact-title" data-ru="Есть идея? Давайте сделаем.">Have an idea? Let’s build it.</h2>
         <p data-ru="Расскажите об игре, приложении или сайте и о результате, который нужен. Отвечаю в течение дня.">Tell me about the game, app or website and the result you need. I reply within a day.</p>
       </div>

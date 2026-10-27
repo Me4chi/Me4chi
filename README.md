@@ -53,6 +53,13 @@ Clean code, responsive interfaces and clear communication from start to release.
 | Living pixel worlds → looping GIFs | Procedural dungeons for Unity | Cinematic pixel portfolio |
 | TypeScript · Vite · CI | C# · UPM · NUnit | React · PixiJS · GSAP |
 
+### ✿ IN DEVELOPMENT ✿
+
+| Game | Cultivation RPG | ABYSS | NefticCore |
+|:---:|:---:|:---:|:---:|
+| 2.5D MMO, authoritative server | Wuxia combat RPG | Dark-fantasy roguelike | PS1-style FPS |
+| Unity 6 · .NET 10 · PostgreSQL | Roblox · Luau · Rojo | Godot 4.6 · GDScript | Unity 6 · URP |
+
 ### ✿ LIVE WEBSITE DEMOS ✿
 
 | [NOVA Market](https://me4chi.github.io/Me4chi/demos/marketplace.html) | [NEXUS Daily](https://me4chi.github.io/Me4chi/demos/news.html) | [MORI Coffee](https://me4chi.github.io/Me4chi/demos/cafe.html) | [FLUX Analytics](https://me4chi.github.io/Me4chi/demos/dashboard.html) | [EMBER](https://me4chi.github.io/Me4chi/demos/game.html) |
