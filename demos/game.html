@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c0a10">
+  <meta name="description" content="EMBER — indie game landing demo: animated pixel hero, class picker, gallery, roadmap and wishlist.">
+  <title>EMBER — Indie game demo by Me4chi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Inter:wght@400;500;600&display=swap">
+  <style>
+    :root { --bg: #0c0a10; --panel: #16121c; --line: #2c2433; --text: #f1e9dd; --muted: #a99db0; --ember: #ff7a2f; --gold: #ffc65c; color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, system-ui, sans-serif; }
+    a { color: inherit; }
+    button, input { font: inherit; color: inherit; }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+    .pixel { font-family: 'Pixelify Sans', monospace; }
+    .wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
+    canvas { image-rendering: pixelated; display: block; }
+
+    .hero { position: relative; min-height: min(92vh, 820px); display: grid; align-items: end; overflow: hidden; }
+    #scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(transparent 40%, var(--bg)); pointer-events: none; }
+    .hero-copy { position: relative; z-index: 1; padding: 0 0 80px; }
+    .tag { display: inline-block; padding: 6px 12px; border: 2px solid var(--ember); color: var(--gold); font: 700 13px 'Pixelify Sans'; letter-spacing: .1em; }
+    h1 { margin: 16px 0 8px; font: 700 clamp(64px, 12vw, 150px)/.9 'Pixelify Sans', monospace; letter-spacing: .02em; color: var(--text); text-shadow: 0 0 40px #ff7a2f88, 4px 4px 0 #3a1408; }
+    .hero p { max-width: 520px; color: var(--muted); font-size: 18px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 22px; border: 0; background: var(--ember); color: #1a0c04; font: 700 17px 'Pixelify Sans'; cursor: pointer; text-decoration: none; box-shadow: 4px 4px 0 #6a2a08; transition: transform .1s, box-shadow .1s; }
+    .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 #6a2a08; }
+    .btn.ghost { background: transparent; color: var(--text); border: 2px solid var(--line); box-shadow: none; }
+
+    section { padding: 90px 0; }
+    h2 { margin: 0 0 12px; font: 700 clamp(34px, 5vw, 54px)/1 'Pixelify Sans', monospace; }
+    .lead { max-width: 600px; margin: 0 0 36px; color: var(--muted); }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .feature { padding: 24px; border: 2px solid var(--line); background: var(--panel); }
+    .feature b { display: block; margin: 12px 0 6px; font: 700 20px 'Pixelify Sans'; color: var(--gold); }
+    .feature p { margin: 0; color: var(--muted); }
+    .icon { width: 40px; height: 40px; }
+
+    .classes { display: grid; grid-template-columns: 300px 1fr; gap: 28px; align-items: center; padding: 28px; border: 2px solid var(--line); background: var(--panel); }
+    .tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+    .tabs button { padding: 10px 16px; border: 2px solid var(--line); background: none; cursor: pointer; font: 700 16px 'Pixelify Sans'; }
+    .tabs button[aria-selected='true'] { border-color: var(--ember); color: var(--gold); background: #ff7a2f18; }
+    #hero-sprite { width: 100%; aspect-ratio: 1; background: radial-gradient(circle, #ff7a2f22, transparent 65%); }
+    .stat { display: grid; grid-template-columns: 90px 1fr 34px; gap: 12px; align-items: center; margin: 10px 0; }
+    .stat .track { display: flex; gap: 3px; }
+    .stat .track i { flex: 1; height: 12px; background: var(--line); }
+    .stat .track i.on { background: var(--ember); }
+
+    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .shot { aspect-ratio: 16 / 10; border: 2px solid var(--line); cursor: zoom-in; padding: 0; background: var(--panel); overflow: hidden; }
+    .shot canvas { width: 100%; height: 100%; }
+    dialog { padding: 0; border: 2px solid var(--ember); background: var(--bg); max-width: min(960px, 92vw); }
+    dialog::backdrop { background: #000c; }
+    dialog canvas { width: 100%; }
+    dialog form { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; }
+    dialog button { padding: 8px 14px; border: 2px solid var(--line); background: none; cursor: pointer; font: 700 14px 'Pixelify Sans'; }
+
+    .road { position: relative; display: grid; gap: 18px; margin: 0; padding: 0 0 0 28px; list-style: none; }
+    .road::before { content: ''; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
+    .road li { position: relative; padding: 16px 20px; border: 2px solid var(--line); background: var(--panel); }
+    .road li::before { content: ''; position: absolute; left: -27px; top: 22px; width: 12px; height: 12px; background: var(--line); }
+    .road li.done::before { background: var(--ember); box-shadow: 0 0 12px var(--ember); }
+    .road b { font: 700 18px 'Pixelify Sans'; } .road span { color: var(--muted); }
+
+    .specs { width: 100%; border-collapse: collapse; }
+    .specs th, .specs td { padding: 12px; border-bottom: 1px solid var(--line); text-align: left; }
+    .specs th { color: var(--gold); font: 700 15px 'Pixelify Sans'; }
+    .join { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; padding: 32px; border: 2px solid var(--ember); background: linear-gradient(135deg, #2a1208, var(--panel)); }
+    .join form { display: flex; gap: 10px; flex-wrap: wrap; }
+    .join input { flex: 1; min-width: 200px; padding: 14px; border: 2px solid var(--line); background: var(--bg); }
+    .msg { flex-basis: 100%; min-height: 1.4em; color: var(--gold); }
+    footer { padding: 40px 0 90px; color: var(--muted); text-align: center; font-size: 14px; }
+    .toast { position: fixed; z-index: 40; left: 50%; top: 20px; padding: 12px 18px; border: 2px solid var(--ember); background: var(--panel); font: 700 15px 'Pixelify Sans'; transform: translate(-50%, -120px); transition: transform .3s; }
+    .toast.show { transform: translate(-50%, 0); }
+    .back { position: fixed; z-index: 20; left: 18px; bottom: 18px; padding: 10px 16px; background: var(--ember); color: #1a0c04; font: 700 14px 'Pixelify Sans'; text-decoration: none; }
+    @media (max-width: 860px) { .features, .classes, .join { grid-template-columns: 1fr; } .gallery { grid-template-columns: repeat(2, 1fr); } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <div class="wrap hero-copy">
+      <span class="tag">EARLY ACCESS · 2027</span>
+      <h1>EMBER</h1>
+      <p>Carry the last flame through a dying kingdom. A pixel-art action RPG of fire, ash and hard choices.</p>
+      <div class="actions"><button class="btn" id="wishlist" type="button">♥ Wishlist now</button><a class="btn ghost" href="#classes">Choose your hero</a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap" aria-labelledby="f-title">
+      <h2 id="f-title">A kingdom in ash</h2>
+      <p class="lead">Every run lights the map a little further. Every death leaves an ember for the next hero.</p>
+      <div class="features">
+        <div class="feature"><svg class="icon" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><path fill="#ff7a2f" d="M3 0h1v1h1v2h1v3H5v1H3V6H2V3h1z"/><path fill="#ffc65c" d="M3 4h2v2H3z"/></svg><b>Living fire</b><p>Light spreads, burns and reveals. Your flame is your map, your weapon and your clock.</p></div>
+        <div class="feature"><svg class="icon" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><path fill="#c9c2d6" d="M6 0h2v2H7v1H6v1H5v1H4v1H3v1H1V6H0V5h1V4h1V3h1V2h1V1h2z"/><path fill="#ffc65c" d="M1 6h1v1H1z"/></svg><b>Tight combat</b><p>Parry, dodge and chain fire skills. Hand-animated frames with no input lag.</p></div>
+        <div class="feature"><svg class="icon" viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><path fill="#7fb88a" d="M3 0h2v2h2v2H5v4H3V4H1V2h2z"/></svg><b>Choices that stay</b><p>Rebuild villages or let them burn. The world remembers across every run.</p></div>
+      </div>
+    </section>
+
+    <section class="wrap" id="classes" aria-labelledby="c-title">
+      <h2 id="c-title">Choose your hero</h2>
+      <p class="lead">Three bearers of the flame, each with their own way to fight.</p>
+      <div class="classes">
+        <canvas id="hero-sprite" width="16" height="16" role="img" aria-label="Selected hero"></canvas>
+        <div>
+          <div class="tabs" role="tablist" id="class-tabs"></div>
+          <h3 class="pixel" id="class-name" style="margin:0 0 6px;font-size:28px"></h3>
+          <p id="class-text" style="color:var(--muted);margin:0 0 16px"></p>
+          <div id="stats"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" aria-labelledby="g-title">
+      <h2 id="g-title">Screenshots</h2>
+      <p class="lead">Concept scenes rendered in-engine. Click to enlarge.</p>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <section class="wrap" aria-labelledby="r-title">
+      <h2 id="r-title">Roadmap</h2>
+      <ol class="road">
+        <li class="done"><b>Prototype</b> · <span>Combat, fire spreading, first biome</span></li>
+        <li class="done"><b>Vertical slice</b> · <span>Three heroes, village rebuilding, boss: The Ash Warden</span></li>
+        <li><b>Early Access — spring 2027</b> · <span>Four biomes, 40 relics, Steam Deck support</span></li>
+        <li><b>1.0 — 2028</b> · <span>Full story, co-op mode, new game+</span></li>
+      </ol>
+    </section>
+
+    <section class="wrap" aria-labelledby="s-title">
+      <h2 id="s-title">System requirements</h2>
+      <table class="specs">
+        <thead><tr><th scope="col"></th><th scope="col">Minimum</th><th scope="col">Recommended</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">OS</th><td>Windows 10 64-bit</td><td>Windows 11</td></tr>
+          <tr><th scope="row">CPU</th><td>Dual-core 2.4 GHz</td><td>Quad-core 3.0 GHz</td></tr>
+          <tr><th scope="row">Memory</th><td>4 GB RAM</td><td>8 GB RAM</td></tr>
+          <tr><th scope="row">Graphics</th><td>Intel HD 620</td><td>GTX 1050</td></tr>
+          <tr><th scope="row">Storage</th><td>1 GB</td><td>1 GB SSD</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="wrap">
+      <div class="join">
+        <div><h2 style="font-size:36px">Join the devlog</h2><p style="color:var(--muted);margin:0">Monthly progress, behind-the-scenes art and playtest invites.</p></div>
+        <form id="join" novalidate>
+          <label for="join-email" style="position:absolute;left:-9999px">Email</label>
+          <input id="join-email" type="email" placeholder="you@example.com" autocomplete="email" aria-describedby="join-msg">
+          <button class="btn" type="submit">Sign up</button>
+          <span class="msg" id="join-msg" role="status"></span>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>EMBER is a fictional game — a demo landing page by Me4chi.</footer>
+  <dialog id="lightbox" aria-label="Screenshot"><canvas id="big" width="160" height="100"></canvas><form method="dialog"><span class="pixel" id="big-title"></span><button>Close ✕</button></form></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <a class="back" href="../index.html#sites">← Portfolio</a>
+
+  <script>
+    const $ = s => document.querySelector(s);
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ---- Hero scene: pixel castle on a ridge, drifting embers ----
+    const scene = $('#scene');
+    const g = scene.getContext('2d');
+    const W = 240, H = 135;
+    scene.width = W; scene.height = H;
+    let s = 3;
+    const rnd = () => ((s = (s * 16807) % 2147483647) / 2147483647);
+    const ridge = Array.from({ length: W }, (_, x) => 92 + Math.sin(x / 19) * 7 + Math.sin(x / 7) * 2);
+    const embers = Array.from({ length: 70 }, () => ({ x: rnd() * W, y: rnd() * H, v: 0.15 + rnd() * 0.4, p: rnd() * 6 }));
+    function paintScene(t) {
+      const sky = g.createLinearGradient(0, 0, 0, H);
+      sky.addColorStop(0, '#120c1a'); sky.addColorStop(0.6, '#3a1622'); sky.addColorStop(1, '#7a2a1a');
+      g.fillStyle = sky; g.fillRect(0, 0, W, H);
+      g.fillStyle = '#ffb46a'; g.fillRect(170, 30, 10, 10); g.fillStyle = '#ff7a2f55'; g.fillRect(166, 26, 18, 18);
+      g.fillStyle = '#2a1018';
+      for (let x = 0; x < W; x++) g.fillRect(x, 70 + Math.sin(x / 31) * 9, 1, H);
+      g.fillStyle = '#16080c';
+      for (let x = 0; x < W; x++) g.fillRect(x, ridge[x], 1, H);
+      // Castle silhouette
+      const cx = 64;
+      g.fillRect(cx, 62, 40, 30); g.fillRect(cx - 6, 48, 12, 44); g.fillRect(cx + 34, 44, 12, 48); g.fillRect(cx + 14, 38, 12, 24);
+      for (let i = 0; i < 5; i++) g.fillRect(cx + i * 8, 59, 4, 3);
+      g.fillStyle = '#ffb040';
+      for (const [wx, wy] of [[cx - 2, 56], [cx + 38, 52], [cx + 18, 46], [cx + 10, 72], [cx + 26, 72]]) if (Math.sin(t / 400 + wx) > -0.7) g.fillRect(wx, wy, 2, 3);
+      for (const e of embers) {
+        const y = (e.y - t * 0.01 * e.v * 6) % H;
+        const yy = y < 0 ? y + H : y;
+        const x = e.x + Math.sin(t / 900 + e.p) * 6;
+        g.fillStyle = Math.sin(t / 200 + e.p) > 0 ? '#ffc65c' : '#ff7a2f';
+        g.fillRect(Math.round(x), Math.round(yy), 1, 1);
+      }
+    }
+    const loop = t => { paintScene(t); if (!reduced) requestAnimationFrame(loop); };
+    requestAnimationFrame(loop);
+
+    // ---- Heroes: 16×16 sprites from palette maps ----
+    const heroes = {
+      Knight: { text: 'A shield against the dark. Parries turn enemy fire into his own.', stats: { Strength: 9, Agility: 4, Fire: 5, Defense: 10 }, pal: { k: '#1a1018', a: '#c9c2d6', b: '#7a7488', s: '#e8b48a', c: '#b0302a', f: '#ffc65c' },
+        map: ['......kkkk......', '.....kaaaak.....', '....kaabbaak....', '....kakkkkak....', '....kaaaaaak....', '.....kssssk.....', '...kkaaaaaakk...', '..kaakaaaakaak..', '..kakcaaaacakf..', '..kakaaaaaakakf.', '..kk.kaaaak.kkf.', '.....kakkak..kf.', '.....kak.kak.k..', '.....kbk.kbk....', '....kkbk.kbkk...', '....kkkk.kkkk...'] },
+      Mage: { text: 'Bends the flame into storms. Fragile, brilliant and very loud.', stats: { Strength: 3, Agility: 6, Fire: 10, Defense: 4 }, pal: { k: '#1a1018', a: '#5a3a8a', b: '#3a2460', s: '#e8b48a', f: '#ff7a2f', g: '#ffc65c' },
+        map: ['.......k........', '......kak.......', '.....kaaak......', '....kaaaaak.....', '...kkkkkkkkk....', '.....kssssk..gg.', '.....ksksk..gffg', '....kaaaaak..gg.', '...kaaabaaak..k.', '...kaaabaaaakk..', '...kaaabaaaak...', '....kaaabaak....', '....kaaabaak....', '....kaaabaak....', '...kbbbbbbbbk...', '...kkkkkkkkkk...'] },
+      Ranger: { text: 'Strikes from the treeline with burning arrows. Never where you look.', stats: { Strength: 5, Agility: 10, Fire: 6, Defense: 5 }, pal: { k: '#1a1018', a: '#3f6b3a', b: '#2a4626', s: '#e8b48a', w: '#8a5a32', f: '#ff7a2f' },
+        map: ['......kkkk......', '.....kaaaak.....', '....kaaaaaak....', '....kakssskk....', '....kksksk.k....', '.....kssssk..w..', '....kaaaaak.w...', '...kaaaaaaakw...', '..kakaaaaaakwk..', '..kk.kaaaak.w.f.', '.....kaaaak.w...', '.....kbbbbk..w..', '.....kbkkbk.....', '.....kbk.kbk....', '....kkbk.kbkk...', '....kkkk.kkkk...'] },
+    };
+    let current = 'Knight';
+    const sprite = $('#hero-sprite').getContext('2d');
+    function renderHero() {
+      const h = heroes[current];
+      $('#class-tabs').innerHTML = Object.keys(heroes).map(n => `<button type="button" role="tab" aria-selected="${n === current}" data-hero="${n}">${n}</button>`).join('');
+      $('#class-name').textContent = current;
+      $('#class-text').textContent = h.text;
+      $('#stats').innerHTML = Object.entries(h.stats).map(([k, v]) => `<div class="stat"><span>${k}</span><span class="track" aria-hidden="true">${Array.from({ length: 10 }, (_, i) => `<i class="${i < v ? 'on' : ''}"></i>`).join('')}</span><b>${v}</b></div>`).join('');
+      sprite.clearRect(0, 0, 16, 16);
+      h.map.forEach((row, y) => [...row].forEach((ch, x) => { if (h.pal[ch]) { sprite.fillStyle = h.pal[ch]; sprite.fillRect(x, y, 1, 1); } }));
+      $('#hero-sprite').setAttribute('aria-label', `${current} sprite`);
+    }
+    document.addEventListener('click', e => { const t = e.target.closest('[data-hero]'); if (t) { current = t.dataset.hero; renderHero(); } });
+
+    // ---- Gallery: four procedurally painted scenes ----
+    const shots = [
+      ['The Ashen Gate', ['#1a0e16', '#5a1e22', '#c24a1e'], '#2a0c10'],
+      ['Frozen Hearth', ['#0c1424', '#2a4a6a', '#9ac8e8'], '#0a1018'],
+      ['Ember Woods', ['#0c140e', '#1e3a22', '#e88a2a'], '#08100a'],
+      ['The Warden', ['#140a1e', '#3a1a5a', '#ff5a5a'], '#0a0612'],
+    ];
+    function paintShot(c, [_, [a, b, glow], ground], k) {
+      const x = c.getContext('2d');
+      const grad = x.createLinearGradient(0, 0, 0, c.height);
+      grad.addColorStop(0, a); grad.addColorStop(0.7, b); grad.addColorStop(1, glow);
+      x.fillStyle = grad; x.fillRect(0, 0, c.width, c.height);
+      let q = k * 31 + 5;
+      const r = () => ((q = (q * 16807) % 2147483647) / 2147483647);
+      x.fillStyle = ground;
+      for (let i = 0; i < c.width; i++) x.fillRect(i, c.height * 0.7 + Math.sin(i / 9 + k) * 5, 1, c.height);
+      for (let t = 0; t < 14; t++) { const tx = r() * c.width, th = 20 + r() * 40; x.fillRect(tx, c.height * 0.7 - th, 3, th); x.fillRect(tx - 4, c.height * 0.7 - th, 11, 8); }
+      x.fillStyle = glow;
+      for (let i = 0; i < 30; i++) x.fillRect(Math.round(r() * c.width), Math.round(r() * c.height * 0.8), 1, 1);
+      x.fillStyle = '#f1e9dd'; x.fillRect(c.width * 0.45, c.height * 0.7 - 9, 3, 9);
+    }
+    $('#gallery').innerHTML = shots.map(([n], i) => `<button class="shot" type="button" data-shot="${i}" aria-label="Enlarge: ${n}"><canvas width="160" height="100"></canvas></button>`).join('');
+    document.querySelectorAll('.shot canvas').forEach((c, i) => paintShot(c, shots[i], i));
+    document.addEventListener('click', e => {
+      const t = e.target.closest('[data-shot]');
+      if (!t) return;
+      const i = Number(t.dataset.shot);
+      paintShot($('#big'), shots[i], i);
+      $('#big-title').textContent = shots[i][0];
+      $('#lightbox').showModal();
+    });
+
+    const toast = msg => { const el = $('#toast'); el.textContent = msg; el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 2200); };
+    $('#wishlist').addEventListener('click', () => toast('♥ Added to your wishlist (demo)'));
+    $('#join').addEventListener('submit', e => {
+      e.preventDefault();
+      const ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test($('#join-email').value.trim());
+      $('#join-email').setAttribute('aria-invalid', !ok);
+      $('#join-msg').textContent = ok ? 'You are in! First devlog arrives next month. (demo)' : 'Please enter a valid email address.';
+    });
+    renderHero();
+  </script>
+</body>
+</html>

@@ -3,395 +3,306 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Me4chi — Unity, Godot, C# and web developer building games, desktop applications and responsive websites.">
-  <meta name="theme-color" content="#071b13">
-  <meta property="og:title" content="Me4chi — Game & Software Developer">
-  <meta property="og:description" content="Games, desktop applications and websites crafted with pixel-art atmosphere.">
+  <meta name="description" content="Me4chi — game, desktop and web developer. Unity, Godot, Roblox, C#, TypeScript. Open-source tools, games and websites.">
+  <meta name="theme-color" content="#0d1410">
+  <meta property="og:title" content="Me4chi — Game, Desktop & Web Developer">
+  <meta property="og:description" content="Games, open-source tools and websites with a pixel-art soul.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://me4chi.github.io/Me4chi/">
-  <title>Me4chi — Game & Software Developer</title>
+  <meta property="og:image" content="https://me4chi.github.io/Me4chi/assets/projects/journey.webp">
+  <title>Me4chi — Game, Desktop & Web Developer</title>
   <link rel="canonical" href="https://me4chi.github.io/Me4chi/">
-  <link rel="preconnect" href="https://github.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Pixelify+Sans:wght@500;600;700&family=Press+Start+2P&display=swap">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main" data-ru="Перейти к содержимому">Skip to content</a>
-
-  <div class="petals" aria-hidden="true">
-    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-  </div>
+  <a class="skip" href="#main" data-ru="Перейти к содержимому">Skip to content</a>
 
   <header class="site-header">
-    <a class="logo" href="#top" aria-label="Me4chi home"><span>✿</span> Me4chi</a>
-    <nav aria-label="Primary navigation">
-      <a href="#top" data-ru="⌂ Главная">⌂ Home</a>
-      <a href="#services" data-ru="▣ Услуги">▣ Services</a>
-      <a href="#portfolio" data-ru="▦ Портфолио">▦ Portfolio</a>
-      <a href="#skills" data-ru="◆ Навыки">◆ Skills</a>
-      <a href="#about" data-ru="● Обо мне">● About</a>
-    </nav>
-    <div class="header-actions">
-      <button class="header-tool lang-toggle" type="button" aria-label="Switch language">RU</button>
-      <button class="header-tool sound-toggle" type="button" aria-label="Turn sound on" aria-pressed="false">♪ OFF</button>
-      <a class="header-tool resume-link" href="output/pdf/Me4chi-Resume.pdf" download>CV ↓</a>
-      <a class="wood-button small" href="#contact" data-ru="✉ Связаться">✉ Contact</a>
+    <div class="container header-row">
+      <a class="logo" href="#top" aria-label="Me4chi — home"><span class="logo-mark" aria-hidden="true"></span>Me4chi</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#work" data-ru="Проекты">Work</a>
+        <a href="#private" data-ru="В работе">In progress</a>
+        <a href="#sites" data-ru="Сайты">Websites</a>
+        <a href="#stack" data-ru="Стек">Stack</a>
+        <a href="#contact" data-ru="Контакты">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="chip-btn" id="lang" type="button" aria-label="Переключить на русский">RU</button>
+        <a class="chip-btn" href="output/pdf/Me4chi-Resume.pdf" download data-ru="Резюме ↓">CV ↓</a>
+        <a class="btn btn-small" href="journey/" data-ru="Journey ✦">Journey ✦</a>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero frame" id="top">
-      <article class="profile-panel">
-        <div class="avatar-shell">
-          <img src="https://github.com/Me4chi.png?size=320" alt="Me4chi GitHub avatar" width="320" height="320" decoding="async">
-        </div>
-        <div class="nameplate">ME4CHI</div>
-        <p class="role" data-ru="Разработчик игр и приложений">Game & Software Developer</p>
-        <div class="profile-tags" aria-label="Main technologies">
-          <span>UNITY</span><span>GODOT</span><span>C#</span><span>JAVASCRIPT</span>
-        </div>
-        <a class="profile-link" href="https://github.com/Me4chi" target="_blank" rel="noreferrer" data-ru="Открыть профиль GitHub ↗">View GitHub profile ↗</a>
-      </article>
-
+    <section class="hero container" id="top" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><button class="secret-trigger" type="button" aria-label="Open the secret mini game"></button> <span data-ru="ОТКРЫТ ДЛЯ ЗАКАЗОВ · 工房">AVAILABLE FOR FREELANCE · 工房</span></p>
-        <h1>Me4chi</h1>
-        <h2 data-ru="Я создаю <span>игры и приложения</span><br>и запоминающиеся сайты.">I craft <span>games, apps</span><br>and memorable websites.</h2>
-        <p data-ru="Разрабатываю проекты на Unity, Godot, C#, HTML, CSS и JavaScript — от первой рабочей идеи до готового релиза.">I develop projects with Unity, Godot, C#, HTML, CSS and JavaScript — from a first playable idea to a polished release.</p>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span data-ru="Открыт для проектов · 2026">Open for projects · 2026</span></p>
+        <h1 id="hero-title" data-ru="Я строю <em>миры</em>,<br>игры и сайты.">I build <em>worlds</em>,<br>games and websites.</h1>
+        <p class="lead" data-ru="Разработчик игр, приложений и сайтов. Unity, Godot и Roblox, C# и TypeScript — от первого прототипа до релиза, с аккуратным кодом и понятной коммуникацией.">Game, desktop and web developer. Unity, Godot and Roblox, C# and TypeScript — from the first prototype to release, with clean code and clear communication.</p>
         <div class="hero-actions">
-          <a class="wood-button journey-button" href="journey/" data-ru="✦ Войти в мир →">✦ Enter the journey →</a>
-          <a class="wood-button" href="#services" data-ru="Выбрать услугу">Choose a service</a>
-          <a class="plain-link" href="https://github.com/Me4chi" target="_blank" rel="noreferrer" data-ru="Открыть GitHub ↗">Open GitHub ↗</a>
+          <a class="btn" href="#work" data-ru="Смотреть проекты">See my work</a>
+          <a class="btn btn-ghost" href="#contact" data-ru="Обсудить проект">Start a project</a>
         </div>
-
-        <div class="quest-board" aria-label="Development specialties">
-          <article><b>01</b><span data-ru="Игровые миры">Game worlds</span><small>Unity · Godot</small></article>
-          <article><b>02</b><span data-ru="Программы для ПК">Desktop tools</span><small>C# · .NET</small></article>
-          <article><b>03</b><span data-ru="Веб-проекты">Web experiences</span><small>HTML · CSS · JS</small></article>
+        <dl class="stats">
+          <div><dt data-ru="лет в разработке">years building</dt><dd>4</dd></div>
+          <div><dt data-ru="проектов">projects</dt><dd>19</dd></div>
+          <div><dt data-ru="игровых движка">game engines</dt><dd>3</dd></div>
+          <div><dt data-ru="open-source инструмента">open-source tools</dt><dd>2</dd></div>
+        </dl>
+      </div>
+      <figure class="hero-world">
+        <div class="window">
+          <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>world-of-the-day.gif</span></div>
+          <img id="daily" src="https://raw.githubusercontent.com/Me4chi/pixel-world-generator/daily/world.gif" width="1122" height="372" alt="World of the day: a procedurally generated pixel landscape that changes every morning" decoding="async">
         </div>
-      </div>
+        <figcaption data-ru="Мир дня — новый пиксельный мир каждое утро из моего генератора">World of the day — a new pixel world every morning from my generator</figcaption>
+      </figure>
     </section>
 
-    <section class="section frame" id="services">
-      <div class="section-title">
-        <p data-ru="✿ ДОСТУПНЫЕ УСЛУГИ ✿">✿ AVAILABLE QUESTS ✿</p>
-        <h2 data-ru="Что мы можем создать вместе?">What can we create together?</h2>
-      </div>
-      <div class="service-grid">
-        <article class="service-card">
-          <span class="card-number">01</span>
-          <div class="pixel-icon controller" aria-hidden="true">＋</div>
-          <h3 data-ru="Разработка игр">Game development</h3>
-          <p data-ru="2D- и 3D-игры, игровые системы, прототипы, интерфейсы и исправление ошибок в Unity и Godot.">2D and 3D games, gameplay systems, prototypes, interfaces and bug fixing in Unity and Godot.</p>
-          <div class="chips"><span>Unity</span><span>Godot</span><span>C#</span><span>GDScript</span></div>
-        </article>
-        <article class="service-card featured">
-          <span class="card-number">02</span>
-          <div class="pixel-icon window-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-          <h3 data-ru="Приложения для ПК">Desktop applications</h3>
-          <p data-ru="Практичные программы для Windows с понятным интерфейсом, надёжной логикой и поддерживаемым кодом на C#.">Practical Windows tools with clear interfaces, reliable logic and maintainable C# code.</p>
-          <div class="chips"><span>C#</span><span>.NET</span><span>Windows</span></div>
-        </article>
-        <article class="service-card">
-          <span class="card-number">03</span>
-          <div class="pixel-icon code-icon" aria-hidden="true">&lt;/&gt;</div>
-          <h3 data-ru="Веб-разработка">Web development</h3>
-          <p data-ru="Быстрые адаптивные лендинги, сайты-портфолио и интерактивные веб-приложения.">Fast responsive landing pages, portfolio sites and interactive browser experiences.</p>
-          <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-        </article>
-      </div>
-    </section>
+    <section class="section container" id="work" aria-labelledby="work-title">
+      <header class="section-head">
+        <p class="kicker">01 · <span data-ru="Проекты">Selected work</span></p>
+        <h2 id="work-title" data-ru="Открытые проекты">Open-source &amp; public projects</h2>
+        <p data-ru="Публичные репозитории: от инструментов для разработчиков до коммерческих сайтов. Код открыт — можно посмотреть, как всё устроено.">Public repositories, from developer tools to commercial websites. The code is open — see exactly how everything works.</p>
+      </header>
 
-    <section class="section frame" id="portfolio">
-      <div class="section-title">
-        <p data-ru="✿ ПРИМЕРЫ САЙТОВ ✿">✿ WEBSITE SHOWCASE ✿</p>
-        <h2 data-ru="Живые концепты для разных направлений">Live concepts for different businesses</h2>
-      </div>
-      <div class="portfolio-grid">
-        <a class="portfolio-card" href="demos/marketplace.html" target="_blank" rel="noreferrer">
-          <div class="browser-shot"><span><i></i><i></i><i></i></span><img src="assets/marketplace-preview.png" alt="NOVA marketplace website preview" width="1280" height="800" loading="lazy"></div>
-          <div class="portfolio-info"><span>ECOMMERCE · INTERACTIVE</span><h3>NOVA Marketplace</h3><p data-ru="Каталог товаров, фильтры категорий и рабочий счётчик корзины.">Product catalog, category filters and a working cart counter.</p><b data-ru="ОТКРЫТЬ ДЕМО ↗">OPEN LIVE DEMO ↗</b></div>
-        </a>
-        <a class="portfolio-card" href="demos/news.html" target="_blank" rel="noreferrer">
-          <div class="browser-shot"><span><i></i><i></i><i></i></span><img src="assets/news-preview.png" alt="NEXUS news feed website preview" width="1280" height="800" loading="lazy"></div>
-          <div class="portfolio-info"><span>MEDIA · EDITORIAL</span><h3>NEXUS Daily</h3><p data-ru="Адаптивная лента новостей, главный материал и фильтрация категорий.">Responsive news feed, featured story and category filtering.</p><b data-ru="ОТКРЫТЬ ДЕМО ↗">OPEN LIVE DEMO ↗</b></div>
-        </a>
-        <a class="portfolio-card" href="demos/cafe.html" target="_blank" rel="noreferrer">
-          <div class="browser-shot"><span><i></i><i></i><i></i></span><img src="assets/cafe-preview.png" alt="MORI cafe website preview" width="1280" height="800" loading="lazy"></div>
-          <div class="portfolio-info"><span>LOCAL BUSINESS · BOOKING</span><h3>MORI Coffee</h3><p data-ru="Атмосферный лендинг, меню и форма бронирования столика.">Atmospheric landing page, menu and reservation form.</p><b data-ru="ОТКРЫТЬ ДЕМО ↗">OPEN LIVE DEMO ↗</b></div>
-        </a>
-      </div>
-    </section>
+      <div class="bento">
+        <article class="project project-wide reveal">
+          <a class="project-media pixel-media" href="https://me4chi.github.io/pixel-world-generator/" tabindex="-1" aria-hidden="true"><img src="assets/projects/pixel-world.gif" width="384" height="216" alt="" loading="lazy"></a>
+          <div class="project-body">
+            <p class="project-type" data-ru="Веб-инструмент · MIT">Web tool · MIT</p>
+            <h3>Pixel World Generator</h3>
+            <p data-ru="Процедурные живые пиксельные миры: 8 биомов, 22 вида построек, сезоны, гроза, северное сияние, таймлапс и панорамы. Экспорт в бесшовный GIF, PNG и WebM, командная строка и «Мир дня» через GitHub Actions.">Living procedural pixel worlds: 8 biomes, 22 kinds of landmarks, seasons, storms, auroras, time-lapses and panoramas. Exports seamless GIFs, PNG and WebM; ships a CLI and a daily world via GitHub Actions.</p>
+            <ul class="tags"><li>TypeScript</li><li>Vite</li><li>Web Workers</li><li>GIF encoding</li><li>GitHub Actions</li></ul>
+            <div class="links"><a href="https://me4chi.github.io/pixel-world-generator/" data-ru="Открыть ↗">Open app ↗</a><a href="https://github.com/Me4chi/pixel-world-generator" data-ru="Код ↗">Code ↗</a></div>
+          </div>
+        </article>
 
-    <section class="section frame" id="skills">
-      <div class="section-title">
-        <p data-ru="✿ ИНВЕНТАРЬ ✿">✿ INVENTORY ✿</p>
-        <h2 data-ru="Навыки и технологии">Skills & development stack</h2>
-      </div>
-      <div class="skill-grid">
-        <article>
-          <b>🎮</b><h3 data-ru="Игровые движки">Game engines</h3>
-          <p>Unity · Godot · Gameplay · UI · Prototyping · 2D / 3D</p>
-          <div class="meter"><i style="--level:88%"></i></div>
+        <article class="project reveal">
+          <a class="project-media pixel-media dark" href="https://github.com/Me4chi/noise-dungeons" tabindex="-1" aria-hidden="true"><img src="assets/projects/noise-dungeons.png" width="768" height="512" alt="" loading="lazy"></a>
+          <div class="project-body">
+            <p class="project-type" data-ru="Библиотека для Unity · MIT">Unity library · MIT</p>
+            <h3>Noise Dungeons</h3>
+            <p data-ru="Генератор подземелий: пещеры из собственного шума Перлина, комнаты и коридоры, гарантированная связность. 3D-префабы или 2D Tilemap, пакет UPM и тесты.">Dungeon generator: caves from custom Perlin noise, rooms and corridors with guaranteed connectivity. 3D prefabs or 2D Tilemap, a UPM package with tests.</p>
+            <ul class="tags"><li>C#</li><li>Unity</li><li>Algorithms</li><li>NUnit</li></ul>
+            <div class="links"><a href="https://github.com/Me4chi/noise-dungeons" data-ru="Код ↗">Code ↗</a></div>
+          </div>
         </article>
-        <article>
-          <b>⚙</b><h3 data-ru="Программирование">Programming</h3>
-          <p>C# · JavaScript · GDScript · Git · JSON · REST APIs</p>
-          <div class="meter"><i style="--level:82%"></i></div>
+
+        <article class="project reveal">
+          <a class="project-media" href="journey/" tabindex="-1" aria-hidden="true"><img src="assets/projects/journey.webp" width="960" height="600" alt="" loading="lazy"></a>
+          <div class="project-body">
+            <p class="project-type" data-ru="Кинематографичный сайт">Cinematic website</p>
+            <h3>Journey</h3>
+            <p data-ru="Портфолио как короткий пиксельный фильм: скролл управляет камерой в 2.5D-мире, свет, туман и персонаж — всё рисуется кодом.">A portfolio as a short pixel film: scrolling directs a camera through a 2.5D world; light, fog and the character are all drawn in code.</p>
+            <ul class="tags"><li>React</li><li>PixiJS</li><li>GSAP</li><li>TypeScript</li></ul>
+            <div class="links"><a href="journey/" data-ru="Открыть ↗">Open ↗</a><a href="https://github.com/Me4chi/Me4chi/tree/main/cinematic" data-ru="Код ↗">Code ↗</a></div>
+          </div>
         </article>
-        <article>
-          <b>⌘</b><h3 data-ru="Фронтенд">Frontend</h3>
-          <p>HTML5 · CSS3 · Responsive UI · Animation · Accessibility</p>
-          <div class="meter"><i style="--level:86%"></i></div>
+
+        <article class="project reveal">
+          <a class="project-media" href="https://github.com/Me4chi/Belgrad.su" tabindex="-1" aria-hidden="true"><img src="assets/projects/belgrad.webp" width="960" height="600" alt="" loading="lazy"></a>
+          <div class="project-body">
+            <p class="project-type" data-ru="Коммерческий сайт">Client website</p>
+            <h3>Belgrad.su</h3>
+            <p data-ru="Каталог импортёра напитков из шести стран: фильтры, поиск, карточки товаров и форма связи на чистом JavaScript.">Catalog for a beverage importer from six countries: filters, search, product cards and a validated contact form in vanilla JavaScript.</p>
+            <ul class="tags"><li>JavaScript</li><li>CSS</li><li>JSON data</li></ul>
+            <div class="links"><a href="https://github.com/Me4chi/Belgrad.su" data-ru="Код ↗">Code ↗</a></div>
+          </div>
         </article>
       </div>
     </section>
 
-    <section class="section frame process-section">
-      <div class="section-title">
-        <p data-ru="✿ КАРТА ПРОЕКТА ✿">✿ MISSION MAP ✿</p>
-        <h2 data-ru="Понятный путь от идеи до релиза">A clear path from idea to release</h2>
+    <section class="section container" id="private" aria-labelledby="private-title">
+      <header class="section-head">
+        <p class="kicker">02 · <span data-ru="В разработке">In development</span></p>
+        <h2 id="private-title" data-ru="Закрытые проекты">Private projects</h2>
+        <p data-ru="Игры и коммерческие работы в закрытых репозиториях. Код не публикую, но с радостью покажу и расскажу подробнее.">Games and client work in private repositories. The code isn’t public, but I’m happy to walk you through it.</p>
+      </header>
+      <div class="services">
+        <article class="service reveal">
+          <p class="project-type" data-ru="Онлайн-RPG · активна">Online RPG · active</p>
+          <h3>Game</h3>
+          <p data-ru="Зональная 2.5D MMO: клиент на Unity 6 и собственный авторитетный сервер на .NET 10 — сервер решает урон, позиции и награды. Свой протокол поверх UDP с DTLS, PostgreSQL и 25 миграций.">A zoned 2.5D MMO: a Unity 6 client and my own authoritative .NET 10 server that decides damage, positions and rewards. A custom protocol over UDP with DTLS, PostgreSQL and 25 migrations.</p>
+          <ul class="tags"><li>Unity 6</li><li>C#</li><li>.NET 10</li><li>PostgreSQL</li><li>LiteNetLib</li></ul>
+        </article>
+        <article class="service reveal">
+          <p class="project-type" data-ru="Roblox · активна">Roblox · active</p>
+          <h3>Cultivation RPG</h3>
+          <p data-ru="Мультиплеерная боевая RPG о культивации: путь от мастера боевых искусств (уся) к бессмертному (сянься). Код синхронизируется в Studio через Rojo, логика покрыта тестами вне Roblox.">A multiplayer combat RPG about cultivation: from martial artist (wuxia) to immortal (xianxia). Code syncs into Studio via Rojo; game logic is tested outside Roblox.</p>
+          <ul class="tags"><li>Roblox</li><li>Luau</li><li>Rojo</li><li>Lune</li></ul>
+        </article>
+        <article class="service reveal">
+          <p class="project-type" data-ru="Рогалик · играбелен">Roguelike · playable</p>
+          <h3>ABYSS</h3>
+          <p data-ru="Пошаговый рогалик в тёмном фэнтези: бой на d20 в духе D&amp;D, дерево из 120 умений, permadeath и бестиарий. 192 коммита и ≈ 18 000 строк GDScript.">A turn-based dark-fantasy roguelike: D&amp;D-style d20 combat, a 120-skill tree, permadeath and a bestiary. 192 commits and ≈ 18,000 lines of GDScript.</p>
+          <ul class="tags"><li>Godot 4.6</li><li>GDScript</li><li>Pixel art</li></ul>
+        </article>
+        <article class="service reveal">
+          <p class="project-type" data-ru="FPS · прототип">FPS · prototype</p>
+          <h3>NefticCore</h3>
+          <p data-ru="Шутер от первого лица в стиле PS1 и Gothic: low-poly подземелья, пиксельные текстуры, ближний бой, магия, лук и скелеты с навигацией по NavMesh. Все системы написаны вручную.">A first-person shooter in the spirit of PS1 and Gothic: low-poly dungeons, pixel textures, melee, magic, a bow and NavMesh-driven skeletons. Every system written by hand.</p>
+          <ul class="tags"><li>Unity 6</li><li>C#</li><li>URP</li><li>NavMesh</li></ul>
+        </article>
+        <article class="service reveal">
+          <p class="project-type" data-ru="Командный проект · 2023">Team project · 2023</p>
+          <h3>Live or Death</h3>
+          <p data-ru="2D action-RPG в команде из трёх человек: враги с context steering, инвентарь на интерфейсах, лут и переходы между комнатами. Работа через ветки и пулл-реквесты.">A 2D action-RPG built by a team of three: context-steering enemies, an interface-based inventory, loot and room transitions. Branches and pull requests throughout.</p>
+          <ul class="tags"><li>Unity</li><li>C#</li><li>Cinemachine</li></ul>
+        </article>
+        <article class="service reveal">
+          <p class="project-type" data-ru="Коммерческий сайт · сдан">Client website · delivered</p>
+          <h3>Dragon Biztrip</h3>
+          <p data-ru="Многостраничный сайт визового агентства на трёх языках — русском, английском и китайском: переключение без перезагрузки, мобильное меню, модальное окно WeChat.">A multi-page site for a visa agency in three languages — Russian, English and Chinese: instant language switching, a mobile menu and a WeChat modal.</p>
+          <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>i18n</li></ul>
+        </article>
       </div>
-      <ol class="process-map">
-        <li><span>01</span><div><b data-ru="Исследование">Discover</b><p data-ru="Цели, аудитория и минимальная полезная первая версия.">Goals, audience and the smallest useful first version.</p></div></li>
-        <li><span>02</span><div><b data-ru="Разработка">Build</b><p data-ru="Видимый прогресс короткими проверяемыми этапами.">Visible progress in short, testable stages.</p></div></li>
-        <li><span>03</span><div><b data-ru="Полировка">Polish</b><p data-ru="Тестирование, адаптивность и проверка производительности.">Testing, responsive details and performance checks.</p></div></li>
-        <li><span>04</span><div><b data-ru="Передача">Deliver</b><p data-ru="Чистые исходники и понятная передача готового проекта.">Clean source files and a clear handoff.</p></div></li>
+    </section>
+
+    <section class="section container" id="sites" aria-labelledby="sites-title">
+      <header class="section-head">
+        <p class="kicker">03 · <span data-ru="Сайты">Websites</span></p>
+        <h2 id="sites-title" data-ru="Пять живых демо-сайтов">Five live website demos</h2>
+        <p data-ru="Разные ниши — разный характер. Каждый сайт рабочий: корзина, фильтры, графики, бронирование, формы с проверкой.">Different niches, different character. Every demo works: cart, filters, charts, booking, validated forms.</p>
+      </header>
+      <ol class="sites">
+        <li class="site reveal">
+          <a href="demos/marketplace.html">
+            <span class="site-shot"><img src="assets/previews/marketplace.webp" width="960" height="600" alt="" loading="lazy"></span>
+            <span class="site-num">01</span>
+            <span class="site-niche" data-ru="Интернет-магазин">Ecommerce</span>
+            <strong>NOVA Market</strong>
+            <span class="site-text" data-ru="Каталог, фильтры, сортировка, поиск и выезжающая корзина с бесплатной доставкой.">Catalog, filters, sorting, search and a slide-in cart with a free-shipping meter.</span>
+          </a>
+        </li>
+        <li class="site reveal">
+          <a href="demos/news.html">
+            <span class="site-shot"><img src="assets/previews/news.webp" width="960" height="600" alt="" loading="lazy"></span>
+            <span class="site-num">02</span>
+            <span class="site-niche" data-ru="Медиа">Media</span>
+            <strong>NEXUS Daily</strong>
+            <span class="site-text" data-ru="Рубрики, поиск, тёмная тема и подписка на рассылку с проверкой почты.">Sections, search, dark mode and a newsletter signup with validation.</span>
+          </a>
+        </li>
+        <li class="site reveal">
+          <a href="demos/cafe.html">
+            <span class="site-shot"><img src="assets/previews/cafe.webp" width="960" height="600" alt="" loading="lazy"></span>
+            <span class="site-num">03</span>
+            <span class="site-niche" data-ru="Локальный бизнес">Local business</span>
+            <strong>MORI Coffee</strong>
+            <span class="site-text" data-ru="Меню по вкладкам, статус «открыто сейчас» и бронирование столика.">Tabbed menu, live “open now” status and table booking.</span>
+          </a>
+        </li>
+        <li class="site reveal">
+          <a href="demos/dashboard.html">
+            <span class="site-shot"><img src="assets/previews/dashboard.webp" width="960" height="600" alt="" loading="lazy"></span>
+            <span class="site-num">04</span>
+            <span class="site-niche" data-ru="SaaS-дашборд">SaaS dashboard</span>
+            <strong>FLUX Analytics</strong>
+            <span class="site-text" data-ru="Показатели, интерактивный график, каналы трафика, сортировка и поиск заказов.">KPIs, an interactive chart, traffic channels, sortable and searchable orders.</span>
+          </a>
+        </li>
+        <li class="site reveal">
+          <a href="demos/game.html">
+            <span class="site-shot"><img src="assets/previews/game.webp" width="960" height="600" alt="" loading="lazy"></span>
+            <span class="site-num">05</span>
+            <span class="site-niche" data-ru="Лендинг игры">Game landing</span>
+            <strong>EMBER</strong>
+            <span class="site-text" data-ru="Живая пиксельная сцена, выбор героя, галерея, дорожная карта и вишлист.">Animated pixel scene, hero picker, gallery, roadmap and wishlist.</span>
+          </a>
+        </li>
       </ol>
     </section>
 
-    <section class="bottom-grid" id="about">
-      <article class="section frame about-panel">
-        <div class="section-title"><p data-ru="✿ ПРОФИЛЬ ИГРОКА ✿">✿ PLAYER PROFILE ✿</p><h2 data-ru="Обо мне">About me</h2></div>
-        <p data-ru="Я разрабатываю игры, приложения для ПК и сайты. Для меня важны читаемый код, адаптивные интерфейсы и стабильная связь на протяжении проекта.">I develop games, desktop applications and websites. I care about readable code, responsive interfaces and steady communication throughout the project.</p>
-        <ul>
-          <li><span>◆</span><i data-ru=" Чёткие требования и реалистичный объём"> Clear requirements and realistic scope</i></li>
-          <li><span>◆</span><i data-ru=" Регулярные отчёты о прогрессе"> Regular progress updates</i></li>
-          <li><span>◆</span><i data-ru=" Тестирование перед передачей"> Testing before delivery</i></li>
-        </ul>
-      </article>
+    <section class="section container" id="services" aria-labelledby="services-title">
+      <header class="section-head">
+        <p class="kicker">04 · <span data-ru="Услуги">Services</span></p>
+        <h2 id="services-title" data-ru="Чем могу помочь">What I can build for you</h2>
+      </header>
+      <div class="services">
+        <article class="service reveal">
+          <span class="service-icon" aria-hidden="true">▶</span>
+          <h3 data-ru="Игры">Games</h3>
+          <p data-ru="Геймплей, боевые системы, процедурная генерация, UI и прототипы на Unity, Godot и Roblox. Сетевая игра с сервером — тоже.">Gameplay, combat systems, procedural generation, UI and prototypes in Unity, Godot and Roblox — including networked games with a server.</p>
+          <ul class="tags"><li>Unity</li><li>Godot</li><li>Roblox</li><li>C#</li><li>GDScript</li><li>Luau</li></ul>
+        </article>
+        <article class="service reveal">
+          <span class="service-icon" aria-hidden="true">▣</span>
+          <h3 data-ru="Приложения и серверы">Apps &amp; servers</h3>
+          <p data-ru="Утилиты для Windows, серверы на .NET, базы данных PostgreSQL, автоматизация и скрипты на Python.">Windows utilities, .NET servers, PostgreSQL databases, automation and Python tooling.</p>
+          <ul class="tags"><li>C#</li><li>.NET</li><li>PostgreSQL</li><li>Python</li></ul>
+        </article>
+        <article class="service reveal">
+          <span class="service-icon" aria-hidden="true">◇</span>
+          <h3 data-ru="Сайты">Websites</h3>
+          <p data-ru="Лендинги, магазины, дашборды и интерактивные сайты с анимацией — быстрые, адаптивные и доступные.">Landing pages, shops, dashboards and interactive animated sites — fast, responsive and accessible.</p>
+          <ul class="tags"><li>TypeScript</li><li>React</li><li>Vite</li><li>PixiJS</li><li>GSAP</li></ul>
+        </article>
+      </div>
+    </section>
 
-      <article class="section frame contact-panel" id="contact">
-        <div class="section-title"><p data-ru="✿ НОВЫЙ ПРОЕКТ ✿">✿ NEW QUEST ✿</p><h2 data-ru="Давайте работать вместе">Let’s work together</h2></div>
-        <p data-ru="Есть идея игры, приложения или сайта? Расскажите о задаче и результате, который хотите получить.">Have a game, desktop application or website in mind? Tell me about the idea and the result you need.</p>
-        <div class="contact-links">
-          <a href="mailto:uzlow.k005@gmail.com"><b>✉</b><span data-ru="Почта<small>uzlow.k005@gmail.com</small>">Email<small>uzlow.k005@gmail.com</small></span></a>
-          <a href="https://t.me/Me4chiKun" target="_blank" rel="noreferrer"><b>➤</b><span>Telegram<small>@Me4chiKun</small></span></a>
-          <a href="https://github.com/Me4chi" target="_blank" rel="noreferrer"><b>◆</b><span>GitHub<small>github.com/Me4chi</small></span></a>
-        </div>
-      </article>
+    <section class="section container" id="stack" aria-labelledby="stack-title">
+      <header class="section-head">
+        <p class="kicker">05 · <span data-ru="Стек">Stack</span></p>
+        <h2 id="stack-title" data-ru="Инструменты">Tools I work with</h2>
+      </header>
+      <div class="stack reveal">
+        <div><h3 data-ru="Движки">Engines</h3><p>Unity · Godot · Roblox Studio</p></div>
+        <div><h3 data-ru="Языки">Languages</h3><p>C# · TypeScript · JavaScript · GDScript · Luau · Python · SQL</p></div>
+        <div><h3 data-ru="Веб">Web</h3><p>React · Vite · PixiJS · GSAP · HTML · CSS · Web Workers</p></div>
+        <div><h3 data-ru="Сервер и данные">Server &amp; data</h3><p>.NET · PostgreSQL · UDP networking · REST</p></div>
+        <div><h3 data-ru="Процесс">Workflow</h3><p>Git · GitHub Actions · automated tests · Aseprite</p></div>
+      </div>
+    </section>
+
+    <section class="section container" id="process" aria-labelledby="process-title">
+      <header class="section-head">
+        <p class="kicker">06 · <span data-ru="Процесс">Process</span></p>
+        <h2 id="process-title" data-ru="Как я работаю">How a project goes</h2>
+      </header>
+      <ol class="process">
+        <li class="reveal"><b>01</b><h3 data-ru="Разбор">Discover</h3><p data-ru="Цели, аудитория и самая маленькая полезная первая версия.">Goals, audience and the smallest useful first version.</p></li>
+        <li class="reveal"><b>02</b><h3 data-ru="Разработка">Build</h3><p data-ru="Видимый прогресс короткими этапами, которые можно проверить.">Visible progress in short stages you can try yourself.</p></li>
+        <li class="reveal"><b>03</b><h3 data-ru="Полировка">Polish</h3><p data-ru="Тесты, адаптивность, производительность и доступность.">Tests, responsive details, performance and accessibility.</p></li>
+        <li class="reveal"><b>04</b><h3 data-ru="Передача">Deliver</h3><p data-ru="Чистый код, документация и понятная передача проекта.">Clean code, documentation and a clear handoff.</p></li>
+      </ol>
+    </section>
+
+    <section class="section container contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-copy">
+        <p class="kicker">07 · <span data-ru="Контакты">Contact</span></p>
+        <h2 id="contact-title" data-ru="Есть идея? Давайте сделаем.">Have an idea? Let’s build it.</h2>
+        <p data-ru="Расскажите об игре, приложении или сайте и о результате, который нужен. Отвечаю в течение дня.">Tell me about the game, app or website and the result you need. I reply within a day.</p>
+      </div>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:uzlow.k005@gmail.com">uzlow.k005@gmail.com</a><button class="copy" type="button" data-copy="uzlow.k005@gmail.com" data-ru="Копировать">Copy</button></li>
+        <li><span>Telegram</span><a href="https://t.me/Me4chiKun" rel="noreferrer">@Me4chiKun</a></li>
+        <li><span>GitHub</span><a href="https://github.com/Me4chi" rel="noreferrer">github.com/Me4chi</a></li>
+        <li><span data-ru="Резюме">Resume</span><a href="output/pdf/Me4chi-Resume.pdf" download>Me4chi-Resume.pdf</a></li>
+      </ul>
     </section>
   </main>
 
-  <footer class="frame">
-    <span>✿</span> <i data-ru="Спасибо, что заглянули в мой мир">Thanks for visiting my world</i> <span>✿</span>
+  <footer class="footer container">
+    <span>© 2026 Me4chi</span>
+    <span data-ru="Сделано вручную, пиксель за пикселем">Handmade, pixel by pixel</span>
+    <button class="egg" id="egg" type="button" aria-label="Secret: firefly hunt">✦</button>
   </footer>
 
-  <div class="mini-game" id="mini-game" hidden>
-    <section class="game-shell frame" role="dialog" aria-modal="true" aria-labelledby="game-title">
-      <button class="game-close" type="button" aria-label="Close mini game">×</button>
-      <div class="section-title">
-        <p data-ru="✿ СЕКРЕТНОЕ ЗАДАНИЕ ✿">✿ SECRET QUEST ✿</p>
-        <h2 id="game-title" data-ru="Охота на светлячков">Firefly hunt</h2>
-      </div>
-      <p class="game-copy" data-ru="Поймай как можно больше светлячков за 20 секунд.">Catch as many wandering fireflies as you can in 20 seconds.</p>
-      <div class="game-hud">
-        <span><i data-ru="СЧЁТ">SCORE</i> <b id="game-score">0</b></span>
-        <span><i data-ru="ВРЕМЯ">TIME</i> <b id="game-time">20</b></span>
-      </div>
-      <div class="game-field">
-        <button class="firefly-target" type="button" aria-label="Catch firefly" hidden>✦</button>
-        <p class="game-result" aria-live="polite" data-ru="Лес ждёт тебя.">The forest is waiting.</p>
-      </div>
-      <button class="wood-button game-start" type="button" data-ru="НАЧАТЬ ОХОТУ">START HUNT</button>
-    </section>
-  </div>
+  <dialog class="game" id="game" aria-labelledby="game-title">
+    <h2 id="game-title" data-ru="Охота на светлячков">Firefly hunt</h2>
+    <p data-ru="Поймай как можно больше светлячков за 15 секунд.">Catch as many fireflies as you can in 15 seconds.</p>
+    <div class="game-hud"><span data-ru="Счёт">Score</span> <b id="score">0</b> · <span data-ru="Время">Time</span> <b id="time">15</b></div>
+    <div class="game-field" id="field"><button class="firefly" id="firefly" type="button" aria-label="Catch the firefly" hidden></button></div>
+    <div class="game-actions"><button class="btn" id="start" type="button" data-ru="Начать">Start</button><button class="btn btn-ghost" id="close-game" type="button" data-ru="Закрыть">Close</button></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script>
-    (() => {
-      const toggle = document.querySelector('.lang-toggle');
-      const translated = [...document.querySelectorAll('[data-ru]')];
-      translated.forEach(element => element.dataset.en = element.innerHTML);
-
-      const setLanguage = language => {
-        document.documentElement.lang = language;
-        translated.forEach(element => element.innerHTML = element.dataset[language]);
-        toggle.textContent = language === 'en' ? 'RU' : 'EN';
-        toggle.setAttribute('aria-label', language === 'en' ? 'Переключить на русский' : 'Switch to English');
-        document.title = language === 'en' ? 'Me4chi — Game & Software Developer' : 'Me4chi — Разработчик игр, приложений и сайтов';
-        localStorage.setItem('portfolio-language', language);
-        document.dispatchEvent(new CustomEvent('languagechange'));
-      };
-
-      setLanguage(localStorage.getItem('portfolio-language') === 'ru' ? 'ru' : 'en');
-      toggle.addEventListener('click', () => setLanguage(document.documentElement.lang === 'en' ? 'ru' : 'en'));
-    })();
-
-    (() => {
-      const toggle = document.querySelector('.sound-toggle');
-      const AudioEngine = window.AudioContext || window.webkitAudioContext;
-      let context;
-      let master;
-      let soundOn = false;
-
-      const updateLabel = () => {
-        const russian = document.documentElement.lang === 'ru';
-        toggle.textContent = soundOn ? (russian ? '♪ ВКЛ' : '♪ ON') : (russian ? '♪ ВЫКЛ' : '♪ OFF');
-        toggle.setAttribute('aria-label', soundOn
-          ? (russian ? 'Выключить звук' : 'Turn sound off')
-          : (russian ? 'Включить звук' : 'Turn sound on'));
-        toggle.setAttribute('aria-pressed', soundOn);
-      };
-      const createAudio = () => {
-        if (context || !AudioEngine) return;
-        context = new AudioEngine();
-        master = context.createGain();
-        master.gain.value = 0;
-        master.connect(context.destination);
-
-        const buffer = context.createBuffer(1, context.sampleRate * 2, context.sampleRate);
-        const data = buffer.getChannelData(0);
-        for (let i = 0; i < data.length; i += 1) data[i] = Math.random() * 2 - 1;
-        const wind = context.createBufferSource();
-        const windFilter = context.createBiquadFilter();
-        const windGain = context.createGain();
-        wind.buffer = buffer;
-        wind.loop = true;
-        windFilter.type = 'lowpass';
-        windFilter.frequency.value = 520;
-        windGain.gain.value = .025;
-        wind.connect(windFilter).connect(windGain).connect(master);
-        wind.start();
-
-        const hum = context.createOscillator();
-        const humGain = context.createGain();
-        hum.type = 'sine';
-        hum.frequency.value = 82;
-        humGain.gain.value = .012;
-        hum.connect(humGain).connect(master);
-        hum.start();
-      };
-      const tone = (frequency, duration = .06, delay = 0) => {
-        if (!soundOn || !context) return;
-        const oscillator = context.createOscillator();
-        const gain = context.createGain();
-        const start = context.currentTime + delay;
-        oscillator.type = 'square';
-        oscillator.frequency.value = frequency;
-        gain.gain.setValueAtTime(.08, start);
-        gain.gain.exponentialRampToValueAtTime(.001, start + duration);
-        oscillator.connect(gain).connect(master);
-        oscillator.start(start);
-        oscillator.stop(start + duration);
-      };
-
-      toggle.addEventListener('click', async () => {
-        createAudio();
-        if (!context) return;
-        await context.resume();
-        soundOn = !soundOn;
-        master.gain.setTargetAtTime(soundOn ? .18 : 0, context.currentTime, .08);
-        updateLabel();
-        if (soundOn) {
-          tone(440, .08);
-          tone(660, .1, .07);
-        }
-      });
-      document.addEventListener('click', event => {
-        if (!soundOn || event.target.closest('.sound-toggle')) return;
-        if (event.target.closest('.firefly-target')) {
-          tone(760, .07);
-          tone(1040, .09, .05);
-        } else if (event.target.closest('a, button')) {
-          tone(230, .045);
-        }
-      });
-      document.addEventListener('languagechange', updateLabel);
-      updateLabel();
-    })();
-
-    (() => {
-      const trigger = document.querySelector('.secret-trigger');
-      const overlay = document.querySelector('#mini-game');
-      const closeButton = overlay.querySelector('.game-close');
-      const startButton = overlay.querySelector('.game-start');
-      const target = overlay.querySelector('.firefly-target');
-      const result = overlay.querySelector('.game-result');
-      const scoreView = overlay.querySelector('#game-score');
-      const timeView = overlay.querySelector('#game-time');
-      let score = 0;
-      let time = 20;
-      let clock;
-      let wander;
-      const isRussian = () => document.documentElement.lang === 'ru';
-
-      const stop = () => {
-        clearInterval(clock);
-        clearInterval(wander);
-      };
-      const moveFirefly = () => {
-        target.style.left = `${8 + Math.random() * 84}%`;
-        target.style.top = `${12 + Math.random() * 76}%`;
-      };
-      const finish = () => {
-        stop();
-        target.hidden = true;
-        const rank = isRussian()
-          ? (score >= 20 ? 'ХРАНИТЕЛЬ ХРАМА' : score >= 10 ? 'НОЧНОЙ РАЗВЕДЧИК' : 'УЧЕНИК САКУРЫ')
-          : (score >= 20 ? 'SHRINE MASTER' : score >= 10 ? 'NIGHT SCOUT' : 'PETAL ROOKIE');
-        result.textContent = isRussian() ? `Поймано: ${score} · Ранг: ${rank}` : `Caught: ${score} · Rank: ${rank}`;
-        result.hidden = false;
-        startButton.textContent = isRussian() ? 'ИГРАТЬ СНОВА' : 'PLAY AGAIN';
-      };
-      const start = () => {
-        stop();
-        score = 0;
-        time = 20;
-        scoreView.textContent = score;
-        timeView.textContent = time;
-        result.hidden = true;
-        target.hidden = false;
-        startButton.textContent = isRussian() ? 'СНАЧАЛА' : 'RESTART';
-        moveFirefly();
-        wander = setInterval(moveFirefly, 850);
-        clock = setInterval(() => {
-          time -= 1;
-          timeView.textContent = time;
-          if (time === 0) finish();
-        }, 1000);
-      };
-      const open = () => {
-        overlay.hidden = false;
-        document.body.classList.add('game-open');
-        scoreView.textContent = '0';
-        timeView.textContent = '20';
-        result.textContent = isRussian() ? 'Лес ждёт тебя.' : 'The forest is waiting.';
-        result.hidden = false;
-        target.hidden = true;
-        startButton.textContent = isRussian() ? 'НАЧАТЬ ОХОТУ' : 'START HUNT';
-        startButton.focus();
-      };
-      const close = () => {
-        stop();
-        overlay.hidden = true;
-        document.body.classList.remove('game-open');
-        trigger.focus();
-      };
-
-      trigger.addEventListener('click', open);
-      startButton.addEventListener('click', start);
-      closeButton.addEventListener('click', close);
-      target.addEventListener('click', () => {
-        score += 1;
-        scoreView.textContent = score;
-        moveFirefly();
-      });
-      overlay.addEventListener('click', event => {
-        if (event.target === overlay) close();
-      });
-      document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && !overlay.hidden) close();
-      });
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

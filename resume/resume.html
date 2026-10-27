@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Me4chi — Resume</title>
+  <!-- Source of output/pdf/Me4chi-Resume.pdf: print to A4 with backgrounds (see README in this folder). -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Pixelify+Sans:wght@600;700&family=Press+Start+2P&display=swap">
+  <style>
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 10.5pt/1.5 Manrope, sans-serif; color: #1c241f; background: #fff; }
+    .page { width: 210mm; height: 297mm; display: grid; grid-template-columns: 64mm 1fr; page-break-after: always; overflow: hidden; }
+    .page:last-child { page-break-after: auto; }
+    aside { padding: 16mm 9mm; background: #0d1410; color: #ede6d3; }
+    main { padding: 16mm 13mm 12mm; }
+    .mark { width: 14px; height: 14px; background: #e8ad63; box-shadow: 5px 5px 0 #7fb88a; margin-bottom: 18px; }
+    .name { margin: 0; font: 700 26pt/1 'Pixelify Sans', sans-serif; }
+    .role { margin: 6px 0 22px; color: #e8ad63; font: 7pt/1.6 'Press Start 2P', monospace; }
+    aside h2, main h2 { margin: 18px 0 8px; font: 7pt/1.6 'Press Start 2P', monospace; letter-spacing: .04em; }
+    aside h2 { color: #7fb88a; }
+    main h2 { color: #b8762a; border-bottom: 1px solid #e4dccb; padding-bottom: 5px; }
+    aside p, aside li { margin: 0; font-size: 9.5pt; color: #d8d0bd; }
+    aside ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+    aside a { color: #ede6d3; text-decoration: none; }
+    .lead { margin: 0; font-size: 11pt; color: #2e3a33; }
+    .item { margin: 0 0 9px; }
+    .item b { font-size: 10.5pt; }
+    .item span { color: #6a766e; font-size: 9pt; }
+    .item p { margin: 2px 0 0; color: #3a463f; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+    .demos { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; margin: 0; padding: 0; list-style: none; }
+    .demos li { font-size: 9.5pt; color: #3a463f; } .demos b { color: #1c241f; }
+    .steps { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; font-size: 9pt; color: #3a463f; }
+    .steps b { display: block; color: #1c241f; }
+    .foot { margin-top: 14px; color: #8a948d; font-size: 8pt; }
+    /* Russian runs longer: tighten that page so it stays on one sheet. */
+    .page[lang='ru'] main { font-size: 9.8pt; padding-top: 14mm; }
+    .page[lang='ru'] main h2 { margin-top: 13px; }
+    .page[lang='ru'] .lead { font-size: 10.3pt; }
+    .page[lang='ru'] .item { margin-bottom: 7px; }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <aside>
+      <div class="mark"></div>
+      <h1 class="name">Me4chi</h1>
+      <p class="role">GAME · DESKTOP · WEB DEVELOPER</p>
+      <h2>CONTACT</h2>
+      <ul><li><a href="mailto:uzlow.k005@gmail.com">uzlow.k005@gmail.com</a></li><li><a href="https://t.me/Me4chiKun">Telegram @Me4chiKun</a></li><li><a href="https://github.com/Me4chi">github.com/Me4chi</a></li><li><a href="https://me4chi.github.io/Me4chi/">me4chi.github.io/Me4chi</a></li></ul>
+      <h2>ENGINES</h2><p>Unity · Godot · Roblox Studio</p>
+      <h2>LANGUAGES</h2><p>C# · TypeScript · JavaScript · GDScript · Luau · Python · SQL</p>
+      <h2>WEB</h2><p>React · Vite · PixiJS · GSAP · HTML · CSS · Web Workers</p>
+      <h2>SERVER &amp; DATA</h2><p>.NET · PostgreSQL · UDP networking · REST</p>
+      <h2>WORKFLOW</h2><p>Git · GitHub Actions · automated tests · Aseprite</p>
+      <h2>AVAILABILITY</h2><p>Open for freelance and contract projects</p>
+    </aside>
+    <main>
+      <h2>PROFILE</h2>
+      <p class="lead">Developer of games, desktop tools and websites since 2023. I take an idea to a working, tested product: gameplay and procedural systems, networked servers, fast responsive websites — with readable code, documentation and steady communication.</p>
+      <h2>OPEN-SOURCE &amp; PUBLIC PROJECTS</h2>
+      <div class="item"><b>Pixel World Generator</b> <span>· TypeScript, Vite, Web Workers, GitHub Actions · MIT</span><p>Procedural living pixel worlds: 8 biomes, 22 landmark kinds, seasons, weather, time-lapse and panorama loops. Seamless GIF, PNG and WebM export, a CLI and a daily world published by CI.</p></div>
+      <div class="item"><b>Noise Dungeons</b> <span>· C#, Unity Package Manager, NUnit · MIT</span><p>Unity dungeon generator: Perlin-noise caves, rooms and corridors with guaranteed connectivity (minimum spanning tree), 3D prefab and 2D Tilemap builders, deterministic by seed.</p></div>
+      <div class="item"><b>Journey</b> <span>· React, PixiJS, GSAP, TypeScript</span><p>Cinematic portfolio where scrolling directs a camera through a 2.5D pixel world rendered entirely in code.</p></div>
+      <div class="item"><b>Belgrad.su</b> <span>· JavaScript, CSS, JSON</span><p>Client catalog site for a beverage importer: six country catalogs, filters, search and a validated contact form.</p></div>
+      <h2>LIVE WEBSITE DEMOS</h2>
+      <ul class="demos"><li><b>NOVA Market</b> — shop with cart and filters</li><li><b>NEXUS Daily</b> — media with dark mode</li><li><b>MORI Coffee</b> — menu and table booking</li><li><b>FLUX Analytics</b> — SaaS dashboard, charts</li><li><b>EMBER</b> — indie game landing page</li></ul>
+      <h2>WHAT I BUILD</h2>
+      <div class="grid">
+        <div class="item"><b>Games</b><p>Gameplay, combat, procedural generation, UI and prototypes in Unity, Godot and Roblox.</p></div>
+        <div class="item"><b>Apps &amp; servers</b><p>Windows utilities, .NET servers, PostgreSQL databases, Python automation.</p></div>
+        <div class="item"><b>Websites</b><p>Landing pages, shops, dashboards and interactive animated sites.</p></div>
+        <div class="item"><b>Quality</b><p>Automated tests, performance checks, accessibility and clear handoff.</p></div>
+      </div>
+      <h2>WORKFLOW</h2>
+      <ol class="steps"><li><b>01 Discover</b>Goals and the smallest useful version</li><li><b>02 Build</b>Visible, testable stages</li><li><b>03 Polish</b>Tests, responsiveness, performance</li><li><b>04 Deliver</b>Clean code and documentation</li></ol>
+      <p class="foot">Resume · updated October 2026 · Russian version on page 2</p>
+    </main>
+  </section>
+
+  <section class="page" lang="ru">
+    <aside>
+      <div class="mark"></div>
+      <h1 class="name">Me4chi</h1>
+      <p class="role">ИГРЫ · ПРИЛОЖЕНИЯ · САЙТЫ</p>
+      <h2>КОНТАКТЫ</h2>
+      <ul><li><a href="mailto:uzlow.k005@gmail.com">uzlow.k005@gmail.com</a></li><li><a href="https://t.me/Me4chiKun">Telegram @Me4chiKun</a></li><li><a href="https://github.com/Me4chi">github.com/Me4chi</a></li><li><a href="https://me4chi.github.io/Me4chi/">me4chi.github.io/Me4chi</a></li></ul>
+      <h2>ДВИЖКИ</h2><p>Unity · Godot · Roblox Studio</p>
+      <h2>ЯЗЫКИ</h2><p>C# · TypeScript · JavaScript · GDScript · Luau · Python · SQL</p>
+      <h2>ВЕБ</h2><p>React · Vite · PixiJS · GSAP · HTML · CSS · Web Workers</p>
+      <h2>СЕРВЕР И ДАННЫЕ</h2><p>.NET · PostgreSQL · сеть на UDP · REST</p>
+      <h2>ПРОЦЕСС</h2><p>Git · GitHub Actions · автотесты · Aseprite</p>
+      <h2>ЗАНЯТОСТЬ</h2><p>Открыт для фриланса и проектной работы</p>
+    </aside>
+    <main>
+      <h2>О СЕБЕ</h2>
+      <p class="lead">Разрабатываю игры, приложения и сайты с 2023 года. Довожу идею до рабочего проверенного продукта: геймплей и процедурные системы, сетевые серверы, быстрые адаптивные сайты — с читаемым кодом, документацией и понятной коммуникацией.</p>
+      <h2>ОТКРЫТЫЕ ПРОЕКТЫ</h2>
+      <div class="item"><b>Pixel World Generator</b> <span>· TypeScript, Vite, Web Workers, GitHub Actions · MIT</span><p>Процедурные живые пиксельные миры: 8 биомов, 22 вида построек, сезоны, погода, таймлапс и панорамы. Экспорт в бесшовный GIF, PNG и WebM, командная строка и «Мир дня» через CI.</p></div>
+      <div class="item"><b>Noise Dungeons</b> <span>· C#, Unity Package Manager, NUnit · MIT</span><p>Генератор подземелий для Unity: пещеры из шума Перлина, комнаты и коридоры с гарантированной связностью, сборщики для 3D-префабов и 2D Tilemap, детерминированность по seed.</p></div>
+      <div class="item"><b>Journey</b> <span>· React, PixiJS, GSAP, TypeScript</span><p>Кинематографичное портфолио: скролл управляет камерой в 2.5D-мире, который целиком рисуется кодом.</p></div>
+      <div class="item"><b>Belgrad.su</b> <span>· JavaScript, CSS, JSON</span><p>Сайт-каталог для импортёра напитков: каталоги шести стран, фильтры, поиск и форма связи с проверкой.</p></div>
+      <h2>ДЕМО-САЙТЫ</h2>
+      <ul class="demos"><li><b>NOVA Market</b> — магазин с корзиной</li><li><b>NEXUS Daily</b> — медиа с тёмной темой</li><li><b>MORI Coffee</b> — меню и бронирование</li><li><b>FLUX Analytics</b> — SaaS-дашборд</li><li><b>EMBER</b> — лендинг инди-игры</li></ul>
+      <h2>ЧТО Я ДЕЛАЮ</h2>
+      <div class="grid">
+        <div class="item"><b>Игры</b><p>Геймплей, бой, процедурная генерация, UI и прототипы на Unity, Godot и Roblox.</p></div>
+        <div class="item"><b>Приложения и серверы</b><p>Утилиты для Windows, серверы на .NET, PostgreSQL, автоматизация на Python.</p></div>
+        <div class="item"><b>Сайты</b><p>Лендинги, магазины, дашборды и интерактивные сайты с анимацией.</p></div>
+        <div class="item"><b>Качество</b><p>Автотесты, проверка производительности, доступность и понятная передача.</p></div>
+      </div>
+      <h2>КАК Я РАБОТАЮ</h2>
+      <ol class="steps"><li><b>01 Разбор</b>Цели и минимальная полезная версия</li><li><b>02 Разработка</b>Видимые проверяемые этапы</li><li><b>03 Полировка</b>Тесты, адаптивность, скорость</li><li><b>04 Передача</b>Чистый код и документация</li></ol>
+      <p class="foot">Резюме · обновлено в октябре 2026</p>
+    </main>
+  </section>
+</body>
+</html>

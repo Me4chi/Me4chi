@@ -47,32 +47,13 @@ export interface Project {
   preview: string;
 }
 
-/** Paths are relative to /Me4chi/cinematic/ — the demos live in the classic site. */
+/** Paths are relative to /Me4chi/journey/ — the demos live next to the main site. */
 export const PROJECTS: readonly Project[] = [
-  {
-    id: 'nova',
-    title: 'NOVA Marketplace',
-    kind: 'Ecommerce · Interactive',
-    description: 'Product catalog, category filters and a working cart counter.',
-    href: '../demos/marketplace.html',
-    preview: '../assets/marketplace-preview.png',
-  },
-  {
-    id: 'nexus',
-    title: 'NEXUS Daily',
-    kind: 'Media · Editorial',
-    description: 'Responsive news feed, featured story and category filtering.',
-    href: '../demos/news.html',
-    preview: '../assets/news-preview.png',
-  },
-  {
-    id: 'mori',
-    title: 'MORI Coffee',
-    kind: 'Local business · Booking',
-    description: 'Atmospheric landing page, menu and reservation form.',
-    href: '../demos/cafe.html',
-    preview: '../assets/cafe-preview.png',
-  },
+  { id: 'nova', title: 'NOVA Market', kind: 'Ecommerce', description: 'Catalog, filters, sorting, search and a slide-in cart.', href: '../demos/marketplace.html', preview: '../assets/previews/marketplace.webp' },
+  { id: 'nexus', title: 'NEXUS Daily', kind: 'Media', description: 'Sections, search, dark mode and a newsletter signup.', href: '../demos/news.html', preview: '../assets/previews/news.webp' },
+  { id: 'mori', title: 'MORI Coffee', kind: 'Local business', description: 'Tabbed menu, live opening hours and table booking.', href: '../demos/cafe.html', preview: '../assets/previews/cafe.webp' },
+  { id: 'flux', title: 'FLUX Analytics', kind: 'SaaS dashboard', description: 'KPIs, an interactive chart and a sortable orders table.', href: '../demos/dashboard.html', preview: '../assets/previews/dashboard.webp' },
+  { id: 'ember', title: 'EMBER', kind: 'Game landing', description: 'Animated pixel scene, hero picker, gallery and roadmap.', href: '../demos/game.html', preview: '../assets/previews/game.webp' },
 ];
 
 export const CONTACTS = [

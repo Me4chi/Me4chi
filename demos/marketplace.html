@@ -3,59 +3,215 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f2ee">
+  <meta name="theme-color" content="#f5f3ef">
+  <meta name="description" content="NOVA Market — ecommerce demo: catalog, filters, sorting, search and a working cart.">
   <title>NOVA Market — Demo by Me4chi</title>
-  <link rel="stylesheet" href="demo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <style>
+    :root { --bg: #f5f3ef; --ink: #16151a; --muted: #6b6870; --line: #e3dfd8; --card: #fff; --accent: #ff5b2e; --accent-ink: #fff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.5 Inter, system-ui, sans-serif; }
+    a { color: inherit; }
+    button, input, select { font: inherit; color: inherit; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .wrap { width: min(1200px, 100% - 40px); margin-inline: auto; }
+
+    header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .bar { display: flex; align-items: center; gap: 24px; height: 68px; }
+    .logo { font-weight: 800; font-size: 22px; letter-spacing: -.04em; text-decoration: none; }
+    .logo i { color: var(--accent); font-style: normal; }
+    .search { flex: 1; max-width: 420px; display: flex; align-items: center; gap: 8px; padding: 0 14px; height: 42px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); }
+    .search input { flex: 1; border: 0; outline: 0; background: none; }
+    .cart-btn { margin-left: auto; display: flex; align-items: center; gap: 8px; height: 42px; padding: 0 18px; border: 0; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 600; cursor: pointer; }
+    .cart-btn b { display: grid; place-items: center; min-width: 22px; height: 22px; border-radius: 999px; background: var(--accent); font-size: 12px; }
+
+    .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding: 56px 0 40px; }
+    .eyebrow { display: inline-block; padding: 6px 12px; border-radius: 999px; background: #ffe3d8; color: #b33a14; font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+    h1 { margin: 18px 0; font-size: clamp(40px, 6vw, 76px); line-height: .98; letter-spacing: -.05em; }
+    .hero p { max-width: 460px; color: var(--muted); font-size: 18px; }
+    .cta { display: inline-flex; gap: 10px; align-items: center; margin-top: 18px; padding: 15px 24px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-weight: 700; text-decoration: none; }
+    .hero-art { position: relative; aspect-ratio: 1; border-radius: 32px; background: radial-gradient(circle at 30% 30%, #ffd0bd, transparent 55%), radial-gradient(circle at 75% 70%, #d9cdfd, transparent 50%), #efe9df; overflow: hidden; }
+    .hero-art .orb { position: absolute; border-radius: 50%; animation: float 7s ease-in-out infinite; }
+    .orb.a { inset: 18% 30% 38% 22%; background: linear-gradient(140deg, #ff8a5b, #ff5b2e); box-shadow: 0 40px 60px #ff5b2e44; }
+    .orb.b { width: 28%; aspect-ratio: 1; right: 12%; bottom: 14%; background: linear-gradient(140deg, #b9a4ff, #7a5cff); animation-delay: -2s; }
+    .orb.c { width: 16%; aspect-ratio: 1; left: 12%; bottom: 18%; background: #16151a; animation-delay: -4s; }
+    @keyframes float { 50% { transform: translateY(-14px); } }
+
+    .toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin: 24px 0 20px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { padding: 9px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); cursor: pointer; font-weight: 500; }
+    .chip[aria-pressed='true'] { background: var(--ink); border-color: var(--ink); color: #fff; }
+    select { padding: 9px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; padding-bottom: 80px; }
+    .product { display: grid; gap: 12px; padding: 12px; border-radius: 24px; background: var(--card); border: 1px solid var(--line); transition: transform .2s, box-shadow .2s; }
+    .product:hover { transform: translateY(-4px); box-shadow: 0 20px 40px #16151a14; }
+    .art { position: relative; aspect-ratio: 4 / 3.4; border-radius: 16px; background: var(--tone); overflow: hidden; }
+    .art::before { content: ''; position: absolute; inset: 22% 26%; border-radius: var(--shape); background: var(--solid); box-shadow: 0 24px 30px #0002; }
+    .art::after { content: ''; position: absolute; width: 22%; aspect-ratio: 1; right: 16%; top: 16%; border-radius: 50%; background: #fff8; }
+    .tag { position: absolute; z-index: 1; top: 10px; left: 10px; padding: 4px 10px; border-radius: 999px; background: #fff; font-size: 12px; font-weight: 700; }
+    .meta { display: flex; justify-content: space-between; align-items: end; gap: 10px; padding: 0 4px 4px; }
+    .meta h3 { margin: 0; font-size: 16px; }
+    .meta p { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+    .price { font-weight: 800; }
+    .add { width: 44px; height: 44px; border: 0; border-radius: 50%; background: var(--ink); color: #fff; font-size: 22px; cursor: pointer; flex: none; }
+    .add:hover { background: var(--accent); }
+    .empty { grid-column: 1 / -1; padding: 60px; text-align: center; color: var(--muted); }
+
+    .drawer-bg { position: fixed; inset: 0; z-index: 30; background: #16151a66; opacity: 0; pointer-events: none; transition: opacity .25s; }
+    .drawer { position: fixed; z-index: 31; top: 0; right: 0; bottom: 0; width: min(420px, 100%); display: grid; grid-template-rows: auto auto 1fr auto; background: var(--card); transform: translateX(100%); transition: transform .3s cubic-bezier(.2, .8, .2, 1); }
+    .open .drawer-bg { opacity: 1; pointer-events: auto; }
+    .open .drawer { transform: none; }
+    .drawer header { position: static; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; backdrop-filter: none; }
+    .drawer h2 { margin: 0; font-size: 20px; }
+    .close { width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; background: none; cursor: pointer; font-size: 18px; }
+    .ship { margin: 0 24px; padding: 14px; border-radius: 14px; background: var(--bg); font-size: 14px; }
+    .ship-bar { height: 6px; margin-top: 8px; border-radius: 999px; background: var(--line); overflow: hidden; }
+    .ship-bar i { display: block; height: 100%; background: var(--accent); transition: width .3s; }
+    .lines { margin: 0; padding: 16px 24px; list-style: none; overflow: auto; }
+    .line { display: grid; grid-template-columns: 56px 1fr auto; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .thumb { width: 56px; height: 56px; border-radius: 12px; background: var(--tone); }
+    .qty { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+    .qty button { width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 50%; background: none; cursor: pointer; }
+    .foot { padding: 20px 24px; border-top: 1px solid var(--line); }
+    .total { display: flex; justify-content: space-between; font-size: 18px; font-weight: 800; margin-bottom: 14px; }
+    .checkout { width: 100%; padding: 16px; border: 0; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 700; cursor: pointer; }
+    .checkout:disabled { opacity: .4; cursor: not-allowed; }
+
+    .toast { position: fixed; z-index: 40; left: 50%; bottom: 24px; padding: 12px 20px; border-radius: 999px; background: var(--ink); color: #fff; transform: translate(-50%, 120px); transition: transform .3s; }
+    .toast.show { transform: translate(-50%, 0); }
+    .back { position: fixed; z-index: 20; left: 18px; bottom: 18px; padding: 10px 16px; border-radius: 999px; background: #16151a; color: #fff; font-size: 13px; text-decoration: none; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding-top: 32px; }
+      .search { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  </style>
 </head>
-<body class="market">
-  <header class="demo-nav">
-    <a class="market-logo" href="#">NOVA<span>●</span></a>
-    <nav><a href="#shop">New</a><a href="#shop">Tech</a><a href="#shop">Home</a><a href="#shop">Lifestyle</a></nav>
-    <button class="cart-pill" type="button">Bag · <span data-cart>0</span></button>
+<body>
+  <header>
+    <div class="wrap bar">
+      <a class="logo" href="#">NOVA<i>●</i></a>
+      <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search products" aria-label="Search products"></label>
+      <button class="cart-btn" id="open-cart" type="button" aria-haspopup="dialog">Bag <b id="count">0</b></button>
+    </div>
   </header>
 
-  <main>
-    <section class="market-hero">
-      <div class="market-copy">
-        <small>SPRING DROP 2026</small>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">AUTUMN DROP 2026</span>
         <h1>Useful things. Better designed.</h1>
-        <p>A curated marketplace for expressive tech, thoughtful objects and everyday essentials.</p>
-        <a class="market-cta" href="#shop">Explore the collection →</a>
+        <p>A curated marketplace for expressive tech, thoughtful objects and everyday essentials. Free shipping over $150.</p>
+        <a class="cta" href="#shop">Shop the collection →</a>
       </div>
-      <div class="market-art" aria-hidden="true"></div>
+      <div class="hero-art" aria-hidden="true"><span class="orb a"></span><span class="orb b"></span><span class="orb c"></span></div>
     </section>
 
-    <section class="market-section" id="shop">
-      <div class="market-title">
-        <h2>Fresh arrivals</h2>
-        <div class="filters" aria-label="Product filters">
-          <button class="filter active" type="button" data-filter="all">All</button>
-          <button class="filter" type="button" data-filter="tech">Tech</button>
-          <button class="filter" type="button" data-filter="home">Home</button>
-        </div>
+    <section id="shop" aria-labelledby="shop-title">
+      <div class="toolbar">
+        <h2 id="shop-title" style="margin:0">Fresh arrivals</h2>
+        <div class="chips" role="group" aria-label="Category" id="chips"></div>
+        <label>Sort <select id="sort" aria-label="Sort products"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></label>
       </div>
-      <div class="product-grid">
-        <article class="product" data-category="tech">
-          <div class="product-art" style="--product-bg:#e4d9ff">⌨️</div>
-          <div class="product-info"><div><h3>Mono Keys</h3><p>$129 · Lilac</p></div><button class="add-cart" type="button" aria-label="Add Mono Keys to cart">+</button></div>
-        </article>
-        <article class="product" data-category="home">
-          <div class="product-art" style="--product-bg:#d8ead0">🪴</div>
-          <div class="product-info"><div><h3>Living Desk</h3><p>$38 · Fern</p></div><button class="add-cart" type="button" aria-label="Add Living Desk to cart">+</button></div>
-        </article>
-        <article class="product" data-category="tech">
-          <div class="product-art" style="--product-bg:#ffd6c8">🎧</div>
-          <div class="product-info"><div><h3>Orbit Audio</h3><p>$189 · Coral</p></div><button class="add-cart" type="button" aria-label="Add Orbit Audio to cart">+</button></div>
-        </article>
-        <article class="product" data-category="home">
-          <div class="product-art" style="--product-bg:#f1e7bd">☕</div>
-          <div class="product-info"><div><h3>Slow Morning</h3><p>$24 · Sand</p></div><button class="add-cart" type="button" aria-label="Add Slow Morning to cart">+</button></div>
-        </article>
-      </div>
+      <div class="grid" id="grid" aria-live="polite"></div>
     </section>
   </main>
 
-  <a class="demo-back" href="../index.html#portfolio">← Back to portfolio</a>
-  <script src="demo.js"></script>
+  <div id="cart-root">
+    <div class="drawer-bg" id="drawer-bg"></div>
+    <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title" id="drawer">
+      <header><h2 id="cart-title">Your bag</h2><button class="close" id="close-cart" type="button" aria-label="Close bag">✕</button></header>
+      <div class="ship" id="ship"></div>
+      <ul class="lines" id="lines"></ul>
+      <div class="foot"><div class="total"><span>Total</span><span id="total">$0</span></div><button class="checkout" id="checkout" type="button">Checkout</button></div>
+    </aside>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <a class="back" href="../index.html#sites">← Portfolio</a>
+
+  <script>
+    const products = [
+      { id: 1, name: 'Mono Keys', cat: 'Tech', price: 129, tone: '#e6defc', solid: '#7a5cff', shape: '14px', tag: 'New' },
+      { id: 2, name: 'Orbit Audio', cat: 'Tech', price: 189, tone: '#ffe0d4', solid: '#ff5b2e', shape: '50%' },
+      { id: 3, name: 'Living Desk', cat: 'Home', price: 38, tone: '#dcefd5', solid: '#3f8f4f', shape: '40% 40% 12px 12px' },
+      { id: 4, name: 'Slow Morning Mug', cat: 'Home', price: 24, tone: '#f3eac4', solid: '#c49a2c', shape: '12px 12px 40% 40%' },
+      { id: 5, name: 'Field Bag', cat: 'Lifestyle', price: 96, tone: '#dbe7f2', solid: '#2f5f8f', shape: '30px 30px 10px 10px', tag: 'Best seller' },
+      { id: 6, name: 'Pocket Light', cat: 'Tech', price: 59, tone: '#fbe3ec', solid: '#d6336c', shape: '50% 50% 8px 8px' },
+      { id: 7, name: 'Linen Throw', cat: 'Home', price: 74, tone: '#efe7dd', solid: '#a07c5a', shape: '6px' },
+      { id: 8, name: 'Trail Bottle', cat: 'Lifestyle', price: 32, tone: '#d8f1ee', solid: '#1f9e8f', shape: '20px 20px 40px 40px' },
+    ];
+    const cats = ['All', 'Tech', 'Home', 'Lifestyle'];
+    const state = { cat: 'All', sort: 'featured', query: '', cart: new Map() };
+    const $ = s => document.querySelector(s);
+    const money = n => `$${n.toFixed(0)}`;
+
+    function renderChips() {
+      $('#chips').innerHTML = cats.map(c => `<button class="chip" type="button" aria-pressed="${c === state.cat}" data-cat="${c}">${c}</button>`).join('');
+    }
+    function renderGrid() {
+      let list = products.filter(p => (state.cat === 'All' || p.cat === state.cat) && p.name.toLowerCase().includes(state.query));
+      if (state.sort === 'low') list = [...list].sort((a, b) => a.price - b.price);
+      if (state.sort === 'high') list = [...list].sort((a, b) => b.price - a.price);
+      $('#grid').innerHTML = list.length ? list.map(p => `
+        <article class="product">
+          <div class="art" style="--tone:${p.tone};--solid:${p.solid};--shape:${p.shape}">${p.tag ? `<span class="tag">${p.tag}</span>` : ''}</div>
+          <div class="meta"><div><h3>${p.name}</h3><p>${p.cat} · <span class="price">${money(p.price)}</span></p></div>
+          <button class="add" type="button" data-add="${p.id}" aria-label="Add ${p.name} to bag">+</button></div>
+        </article>`).join('') : '<p class="empty">Nothing matches your search.</p>';
+    }
+    function renderCart() {
+      const lines = [...state.cart.entries()].map(([id, qty]) => ({ p: products.find(x => x.id === id), qty }));
+      const count = lines.reduce((s, l) => s + l.qty, 0);
+      const total = lines.reduce((s, l) => s + l.qty * l.p.price, 0);
+      $('#count').textContent = count;
+      $('#total').textContent = money(total);
+      $('#checkout').disabled = count === 0;
+      const left = Math.max(0, 150 - total);
+      $('#ship').innerHTML = `${left ? `Add <b>${money(left)}</b> more for free shipping` : '<b>Free shipping unlocked</b> 🎉'}<div class="ship-bar"><i style="width:${Math.min(100, (total / 150) * 100)}%"></i></div>`;
+      $('#lines').innerHTML = lines.length ? lines.map(({ p, qty }) => `
+        <li class="line"><span class="thumb" style="--tone:${p.tone}"></span>
+          <div><b>${p.name}</b><div class="qty"><button type="button" data-dec="${p.id}" aria-label="Remove one ${p.name}">−</button><span>${qty}</span><button type="button" data-inc="${p.id}" aria-label="Add one ${p.name}">+</button></div></div>
+          <b>${money(qty * p.price)}</b></li>`).join('') : '<li class="empty" style="padding:40px 0">Your bag is empty.</li>';
+    }
+    const toast = text => {
+      const t = $('#toast');
+      t.textContent = text;
+      t.classList.add('show');
+      clearTimeout(toast.timer);
+      toast.timer = setTimeout(() => t.classList.remove('show'), 1800);
+    };
+    const setOpen = open => {
+      $('#cart-root').classList.toggle('open', open);
+      if (open) $('#close-cart').focus(); else $('#open-cart').focus();
+    };
+
+    document.addEventListener('click', e => {
+      const t = e.target.closest('button');
+      if (!t) return;
+      if (t.dataset.cat) { state.cat = t.dataset.cat; renderChips(); renderGrid(); }
+      const id = Number(t.dataset.add || t.dataset.inc || t.dataset.dec);
+      if (t.dataset.add || t.dataset.inc) {
+        state.cart.set(id, (state.cart.get(id) || 0) + 1);
+        if (t.dataset.add) toast(`${products.find(p => p.id === id).name} added to bag`);
+        renderCart();
+      }
+      if (t.dataset.dec) {
+        const q = (state.cart.get(id) || 0) - 1;
+        q > 0 ? state.cart.set(id, q) : state.cart.delete(id);
+        renderCart();
+      }
+    });
+    $('#search').addEventListener('input', e => { state.query = e.target.value.trim().toLowerCase(); renderGrid(); });
+    $('#sort').addEventListener('change', e => { state.sort = e.target.value; renderGrid(); });
+    $('#open-cart').addEventListener('click', () => setOpen(true));
+    $('#close-cart').addEventListener('click', () => setOpen(false));
+    $('#drawer-bg').addEventListener('click', () => setOpen(false));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('#cart-root').classList.contains('open')) setOpen(false); });
+    $('#checkout').addEventListener('click', () => { state.cart.clear(); renderCart(); setOpen(false); toast('Order placed — thank you! (demo)'); });
+    renderChips(); renderGrid(); renderCart();
+  </script>
 </body>
 </html>
