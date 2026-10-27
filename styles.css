@@ -183,7 +183,11 @@ h1, h2, h3 { margin: 0; line-height: 1.1; }
   .stack { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 680px) {
-  .nav { display: none; }
+  /* Nav becomes a swipeable second row so sections stay reachable on phones. */
+  .header-row { flex-wrap: wrap; height: auto; padding-top: 10px; row-gap: 4px; }
+  .nav { order: 3; width: 100%; margin: 0 -12px; padding-bottom: 6px; overflow-x: auto; scrollbar-width: none; }
+  .nav a { flex: none; font-size: 14px; }
+  html { scroll-padding-top: 124px; }
   .header-actions .chip-btn[download] { display: none; }
   .header-row { gap: 10px; }
   .hero { padding-top: 40px; }
