@@ -35,18 +35,29 @@ Clean code, responsive interfaces and clear communication from start to release.
   <img src="https://img.shields.io/badge/Godot-0b281b?style=for-the-badge&logo=godotengine&logoColor=91ad55" alt="Godot">
   <img src="https://img.shields.io/badge/C%23-0b281b?style=for-the-badge&logo=dotnet&logoColor=e97f91" alt="C sharp">
   <img src="https://img.shields.io/badge/.NET-0b281b?style=for-the-badge&logo=dotnet&logoColor=d0ae67" alt=".NET">
+  <img src="https://img.shields.io/badge/Roblox-0b281b?style=for-the-badge&logo=roblox&logoColor=f2dda6" alt="Roblox">
   <br>
+  <img src="https://img.shields.io/badge/TypeScript-0b281b?style=for-the-badge&logo=typescript&logoColor=91ad55" alt="TypeScript">
+  <img src="https://img.shields.io/badge/React-0b281b?style=for-the-badge&logo=react&logoColor=e97f91" alt="React">
+  <img src="https://img.shields.io/badge/PostgreSQL-0b281b?style=for-the-badge&logo=postgresql&logoColor=d0ae67" alt="PostgreSQL">
   <img src="https://img.shields.io/badge/HTML5-0b281b?style=for-the-badge&logo=html5&logoColor=e97f91" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-0b281b?style=for-the-badge&logo=css3&logoColor=91ad55" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript-0b281b?style=for-the-badge&logo=javascript&logoColor=d0ae67" alt="JavaScript">
   <img src="https://img.shields.io/badge/Git-0b281b?style=for-the-badge&logo=git&logoColor=f2dda6" alt="Git">
 </p>
 
+### ✿ OPEN-SOURCE ✿
+
+| [Pixel World Generator](https://github.com/Me4chi/pixel-world-generator) | [Noise Dungeons](https://github.com/Me4chi/noise-dungeons) | [Journey](https://me4chi.github.io/Me4chi/journey/) |
+|:---:|:---:|:---:|
+| Living pixel worlds → looping GIFs | Procedural dungeons for Unity | Cinematic pixel portfolio |
+| TypeScript · Vite · CI | C# · UPM · NUnit | React · PixiJS · GSAP |
+
 ### ✿ LIVE WEBSITE DEMOS ✿
 
-| [NOVA Marketplace](https://me4chi.github.io/Me4chi/demos/marketplace.html) | [NEXUS Daily](https://me4chi.github.io/Me4chi/demos/news.html) | [MORI Coffee](https://me4chi.github.io/Me4chi/demos/cafe.html) |
-|:---:|:---:|:---:|
-| Ecommerce · Filters · Cart | News feed · Categories | Landing · Menu · Booking |
+| [NOVA Market](https://me4chi.github.io/Me4chi/demos/marketplace.html) | [NEXUS Daily](https://me4chi.github.io/Me4chi/demos/news.html) | [MORI Coffee](https://me4chi.github.io/Me4chi/demos/cafe.html) | [FLUX Analytics](https://me4chi.github.io/Me4chi/demos/dashboard.html) | [EMBER](https://me4chi.github.io/Me4chi/demos/game.html) |
+|:---:|:---:|:---:|:---:|:---:|
+| Shop · Cart | Media · Dark mode | Menu · Booking | SaaS · Charts | Game landing |
 
 ### ✿ WORLD OF THE DAY ✿
 
@@ -62,9 +73,9 @@ Clean code, responsive interfaces and clear communication from start to release.
 
 | 🎮 GAME DEVELOPMENT | 🖥️ DESKTOP APPLICATIONS | 🌐 WEB DEVELOPMENT |
 |:---:|:---:|:---:|
-| Unity · Godot | C# · .NET | HTML · CSS · JavaScript |
+| Unity · Godot · Roblox | C# · .NET · PostgreSQL | TypeScript · React · PixiJS |
 | 2D / 3D gameplay | Windows utilities | Responsive websites |
-| UI · Prototypes · Fixes | APIs · JSON · Git | Animation · Interactive UI |
+| Procedural generation · UI | Servers · Python tools | Animation · Dashboards |
 
 ### ✿ MISSION MAP ✿
 

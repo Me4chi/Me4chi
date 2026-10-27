@@ -25,7 +25,7 @@ export function ControlBar({ onSkip }: { onSkip: () => void }) {
         {reducedMotion ? 'Motion: calm' : 'Motion: full'}
       </button>
       <button type="button" className="hud-button" onClick={onSkip}>Skip ↓</button>
-      <a className="hud-button" href={CLASSIC_SITE}>Classic</a>
+      <a className="hud-button" href={CLASSIC_SITE}>Portfolio</a>
     </div>
   );
 }

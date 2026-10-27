@@ -51,7 +51,7 @@ export function Epilogue({ onRestart }: { onRestart: () => void }) {
 
       <div className="epilogue-actions">
         <button type="button" className="button" onClick={onRestart}>↺ Restart the journey</button>
-        <a className="button ghost" href={CLASSIC_SITE}>Classic portfolio</a>
+        <a className="button ghost" href={CLASSIC_SITE}>Main portfolio</a>
       </div>
     </section>
   );

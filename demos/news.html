@@ -3,53 +3,144 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101114">
+  <meta name="theme-color" content="#faf8f3">
+  <meta name="description" content="NEXUS Daily — editorial news demo: categories, search, dark mode and newsletter signup.">
   <title>NEXUS Daily — Demo by Me4chi</title>
-  <link rel="stylesheet" href="demo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+    :root { --bg: #faf8f3; --ink: #141414; --muted: #5f5d58; --line: #e2ddd2; --card: #fff; --accent: #d7262f; color-scheme: light; }
+    :root[data-theme='dark'] { --bg: #121315; --ink: #ecebe7; --muted: #a3a29d; --line: #2b2c30; --card: #1a1b1e; --accent: #ff5a5f; color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, sans-serif; transition: background .3s, color .3s; }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; color: inherit; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .wrap { width: min(1160px, 100% - 40px); margin-inline: auto; }
+    .serif { font-family: Fraunces, Georgia, serif; }
+
+    .top { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+    .icon-btn { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: none; cursor: pointer; }
+    .mast { padding: 26px 0 18px; text-align: center; border-bottom: 3px double var(--line); }
+    .mast h1 { margin: 0; font: 800 clamp(44px, 8vw, 92px)/1 Fraunces, serif; letter-spacing: -.03em; }
+    .mast h1 span { color: var(--accent); }
+    nav { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); }
+    .nav { display: flex; align-items: center; gap: 6px; overflow-x: auto; padding: 10px 0; }
+    .tab { flex: none; padding: 7px 14px; border: 0; border-radius: 999px; background: none; cursor: pointer; font-weight: 600; color: var(--muted); }
+    .tab[aria-selected='true'] { background: var(--ink); color: var(--bg); }
+    .find { margin-left: auto; flex: none; width: 200px; padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); }
+
+    .layout { display: grid; grid-template-columns: 1fr 300px; gap: 40px; padding: 32px 0 80px; }
+    .feature { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+    .cover { position: relative; aspect-ratio: 4 / 3; border-radius: 6px; overflow: hidden; background: var(--g); }
+    .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at var(--x, 70%) 30%, #fff6 0 12%, transparent 13%), linear-gradient(transparent 55%, #0006); }
+    .cover::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 38%; background: var(--hill, #0003); clip-path: polygon(0 60%, 18% 30%, 36% 55%, 58% 20%, 78% 50%, 100% 25%, 100% 100%, 0 100%); }
+    .kicker { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .feature h2 { margin: 8px 0 12px; font: 800 clamp(28px, 3.4vw, 42px)/1.08 Fraunces, serif; letter-spacing: -.02em; }
+    .byline { color: var(--muted); font-size: 13px; }
+    .list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; padding-top: 28px; }
+    .story { display: grid; gap: 10px; }
+    .story .cover { aspect-ratio: 16 / 9; }
+    .story h3 { margin: 0; font: 700 21px/1.2 Fraunces, serif; }
+    .story p { margin: 0; color: var(--muted); font-size: 15px; }
+    .story:hover h3, .feature:hover h2 { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+    .none { grid-column: 1 / -1; color: var(--muted); }
+
+    aside h4 { margin: 0 0 12px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+    .trend { margin: 0 0 32px; padding: 0; list-style: none; counter-reset: t; }
+    .trend li { display: grid; grid-template-columns: 34px 1fr; gap: 6px; padding: 12px 0; border-bottom: 1px solid var(--line); counter-increment: t; font-weight: 600; }
+    .trend li::before { content: counter(t, decimal-leading-zero); font: 800 22px/1 Fraunces, serif; color: var(--accent); }
+    .letter { padding: 22px; border-radius: 10px; background: var(--card); border: 1px solid var(--line); }
+    .letter p { margin: 0 0 14px; color: var(--muted); font-size: 14px; }
+    .letter input { width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); }
+    .letter input[aria-invalid='true'] { border-color: var(--accent); }
+    .letter button { width: 100%; margin-top: 10px; padding: 12px; border: 0; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 700; cursor: pointer; }
+    .msg { min-height: 1.4em; margin-top: 8px; font-size: 13px; }
+    .back { position: fixed; z-index: 20; left: 18px; bottom: 18px; padding: 10px 16px; border-radius: 999px; background: #141414; color: #fff; font-size: 13px; }
+    @media (max-width: 860px) {
+      .layout, .feature { grid-template-columns: 1fr; }
+      .list { grid-template-columns: 1fr; }
+      .find { width: 140px; }
+    }
+  </style>
 </head>
-<body class="news">
-  <header class="demo-nav">
-    <a class="news-logo" href="#">NEXUS<i>/</i>DAILY</a>
-    <nav><a href="#feed">Technology</a><a href="#feed">Games</a><a href="#feed">Culture</a><a href="#feed">Science</a></nav>
-    <span class="live-pill">● LIVE</span>
-  </header>
+<body>
+  <div class="wrap top"><span id="today"></span><button class="icon-btn" id="theme" type="button" aria-pressed="false">◐ Dark mode</button></div>
+  <header class="wrap mast"><h1>NEXUS <span>Daily</span></h1></header>
+  <nav aria-label="Sections"><div class="wrap nav" role="tablist" id="tabs"></div></nav>
 
-  <main class="news-main">
-    <section class="lead-story">
-      <div class="lead-art" aria-hidden="true"></div>
-      <div class="lead-copy">
-        <span class="news-kicker">TECHNOLOGY · 8 MIN READ</span>
-        <h1>The creative tools shaping a new generation.</h1>
-        <p>Independent creators are building ambitious worlds with smaller teams, sharper tools and a completely different workflow.</p>
-        <span class="meta">By Maya Chen · July 15, 2026</span>
-      </div>
-    </section>
-
-    <div class="news-layout" id="feed">
-      <section>
-        <div class="feed-head"><h2>Latest stories</h2><span class="meta">Updated 4 min ago</span></div>
-        <div class="filters" aria-label="News filters">
-          <button class="filter active" type="button" data-filter="all">All</button>
-          <button class="filter" type="button" data-filter="games">Games</button>
-          <button class="filter" type="button" data-filter="tech">Tech</button>
-        </div>
-        <div class="feed">
-          <article class="story" data-category="games"><div class="story-art" style="--story-bg:linear-gradient(135deg,#493778,#171727)">🎮</div><div><span class="news-kicker">GAMES</span><h3>Why tiny game worlds can feel endlessly alive</h3><p>Designers explain how systems and atmosphere create depth.</p><span class="meta">6 min read</span></div></article>
-          <article class="story" data-category="tech"><div class="story-art" style="--story-bg:linear-gradient(135deg,#174c55,#111f25)">⌁</div><div><span class="news-kicker">TECH</span><h3>The quiet return of personal software</h3><p>Small focused apps are replacing complicated platforms.</p><span class="meta">5 min read</span></div></article>
-          <article class="story" data-category="games"><div class="story-art" style="--story-bg:linear-gradient(135deg,#68412f,#221713)">✦</div><div><span class="news-kicker">INDIE</span><h3>Pixel art is becoming more expressive, not nostalgic</h3><p>A new wave of artists treats pixels as a modern medium.</p><span class="meta">9 min read</span></div></article>
-        </div>
-      </section>
-      <aside class="trending">
-        <h2>Trending now</h2>
-        <article class="trend"><b>01</b><p>Inside the engines powering tomorrow’s indie games</p></article>
-        <article class="trend"><b>02</b><p>Can a website feel as memorable as a game world?</p></article>
-        <article class="trend"><b>03</b><p>Five interface details users notice immediately</p></article>
-        <article class="trend"><b>04</b><p>The new economics of small creative teams</p></article>
-      </aside>
+  <main class="wrap layout">
+    <div>
+      <article class="feature" id="feature"></article>
+      <div class="list" id="list" aria-live="polite"></div>
     </div>
+    <aside>
+      <h4>Trending</h4>
+      <ol class="trend" id="trend"></ol>
+      <form class="letter" id="letter" novalidate>
+        <h4>The Morning Brief</h4>
+        <p>Five stories worth your coffee, every weekday at 7:00.</p>
+        <label for="email" class="sr" style="position:absolute;left:-9999px">Email</label>
+        <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required aria-describedby="msg">
+        <button type="submit">Subscribe</button>
+        <div class="msg" id="msg" role="status"></div>
+      </form>
+    </aside>
   </main>
+  <a class="back" href="../index.html#sites">← Portfolio</a>
 
-  <a class="demo-back" href="../index.html#portfolio">← Back to portfolio</a>
-  <script src="demo.js"></script>
+  <script>
+    const stories = [
+      { cat: 'Technology', title: 'The creative tools shaping a new generation of makers', text: 'From pocket synthesizers to browser-based game engines, accessible tools are rewriting who gets to create.', g: 'linear-gradient(135deg,#2b2d6e,#7a4cff)', x: '72%', min: 7, author: 'Mia Ortega' },
+      { cat: 'Climate', title: 'Cities are planting forests on their rooftops', text: 'A quiet urban experiment is cooling streets by several degrees.', g: 'linear-gradient(135deg,#1e5e3a,#9bd06a)', x: '30%', min: 5, author: 'Jonas Berg' },
+      { cat: 'Culture', title: 'Why pixel art never went out of style', text: 'Constraints, nostalgia and a surprising amount of maths.', g: 'linear-gradient(135deg,#7a2d55,#ff9a6b)', x: '60%', min: 4, author: 'Aiko Tanaka' },
+      { cat: 'Business', title: 'Small studios, global audiences', text: 'How three-person teams ship to millions without a publisher.', g: 'linear-gradient(135deg,#3a3a3a,#c9a227)', x: '20%', min: 6, author: 'Sam Patel' },
+      { cat: 'Science', title: 'The night sky is getting brighter — and that is a problem', text: 'Light pollution is erasing stars faster than astronomers expected.', g: 'linear-gradient(135deg,#0d1b3a,#3f6bd8)', x: '80%', min: 8, author: 'Lena Fischer' },
+      { cat: 'Technology', title: 'Inside the race for longer-lasting batteries', text: 'Sodium, silicon and a few unexpected breakthroughs.', g: 'linear-gradient(135deg,#0f4c5c,#5ce1e6)', x: '45%', min: 6, author: 'Diego Ruiz' },
+      { cat: 'Culture', title: 'The return of the neighbourhood bookshop', text: 'Independent shops are opening faster than they close for the first time in a decade.', g: 'linear-gradient(135deg,#5a3e2b,#e0b07a)', x: '35%', min: 5, author: 'Clara Moss' },
+    ];
+    const cats = ['Top stories', 'Technology', 'Climate', 'Culture', 'Business', 'Science'];
+    const state = { cat: 'Top stories', q: '' };
+    const $ = s => document.querySelector(s);
+    const cover = s => `<div class="cover" style="--g:${s.g};--x:${s.x}" role="img" aria-label="Illustration for: ${s.title}"></div>`;
+    $('#today').textContent = new Date().toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+
+    function render() {
+      $('#tabs').innerHTML = cats.map(c => `<button class="tab" role="tab" type="button" aria-selected="${c === state.cat}" data-cat="${c}">${c}</button>`).join('') +
+        `<input class="find" id="find" type="search" placeholder="Search" aria-label="Search stories" value="${state.q}">`;
+      const list = stories.filter(s => (state.cat === 'Top stories' || s.cat === state.cat) && (s.title + s.text).toLowerCase().includes(state.q.toLowerCase()));
+      const [first, ...rest] = list;
+      $('#feature').innerHTML = first ? `${cover(first)}<div><span class="kicker">${first.cat}</span><h2><a href="#">${first.title}</a></h2><p>${first.text}</p><span class="byline">By ${first.author} · ${first.min} min read</span></div>` : '';
+      $('#feature').hidden = !first;
+      $('#list').innerHTML = rest.map(s => `<article class="story">${cover(s)}<span class="kicker">${s.cat}</span><h3><a href="#">${s.title}</a></h3><p>${s.text}</p><span class="byline">${s.min} min read</span></article>`).join('') || (first ? '' : '<p class="none">No stories found.</p>');
+      const f = $('#find');
+      f.addEventListener('input', e => { state.q = e.target.value; render(); const n = $('#find'); n.focus(); n.setSelectionRange(n.value.length, n.value.length); });
+    }
+    $('#trend').innerHTML = [...stories].sort((a, b) => b.min - a.min).slice(0, 5).map(s => `<li><a href="#">${s.title}</a></li>`).join('');
+    document.addEventListener('click', e => { const t = e.target.closest('[data-cat]'); if (t) { state.cat = t.dataset.cat; render(); } });
+
+    const theme = $('#theme');
+    const setTheme = dark => {
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      theme.setAttribute('aria-pressed', dark);
+      theme.textContent = dark ? '☀ Light mode' : '◐ Dark mode';
+      try { localStorage.setItem('nexus-theme', dark ? 'dark' : 'light'); } catch {}
+    };
+    let saved = null;
+    try { saved = localStorage.getItem('nexus-theme'); } catch {}
+    setTheme(saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches);
+    theme.addEventListener('click', () => setTheme(document.documentElement.dataset.theme !== 'dark'));
+
+    $('#letter').addEventListener('submit', e => {
+      e.preventDefault();
+      const input = $('#email');
+      const ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value.trim());
+      input.setAttribute('aria-invalid', !ok);
+      $('#msg').textContent = ok ? 'Subscribed! See you tomorrow at 7:00. (demo)' : 'Please enter a valid email address.';
+      if (ok) input.value = '';
+    });
+    render();
+  </script>
 </body>
 </html>
