@@ -48,6 +48,16 @@ Clean code, responsive interfaces and clear communication from start to release.
 |:---:|:---:|:---:|
 | Ecommerce · Filters · Cart | News feed · Categories | Landing · Menu · Booking |
 
+### ✿ WORLD OF THE DAY ✿
+
+<p align="center">
+  <a href="https://me4chi.github.io/pixel-world-generator/">
+    <img src="https://raw.githubusercontent.com/Me4chi/pixel-world-generator/daily/world.gif" width="100%" alt="World of the day — a new pixel world generated every morning">
+  </a>
+  <br>
+  <sub>A new world every morning, made by my <a href="https://github.com/Me4chi/pixel-world-generator">Pixel World Generator</a>.</sub>
+</p>
+
 ### ✿ AVAILABLE QUESTS ✿
 
 | 🎮 GAME DEVELOPMENT | 🖥️ DESKTOP APPLICATIONS | 🌐 WEB DEVELOPMENT |
